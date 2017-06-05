@@ -5,21 +5,21 @@ import java.util.List;
 
 /**
  * 
- * Ã¿´Î´Ó×óµ½ÓÒÉ¨Ãè£¬Èç¹ûÕÒµ½Ò»¸ö°üº¬¿ªÊ¼Î»ÖÃµÄ»ØÎÄ£¬Ôòµİ¹éÇóÊ£ÓàÔªËØµÄ»ØÎÄ·ÖÇø£¬È»ºó°Ñµ±Ç°·ÖÇø¼ÓÈë½â¾ö·½°¸ÖĞ¡£ÕâÊÇ·ÖÖÎ¡£
+ * æ¯æ¬¡ä»å·¦åˆ°å³æ‰«æï¼Œå¦‚æœæ‰¾åˆ°ä¸€ä¸ªåŒ…å«å¼€å§‹ä½ç½®çš„å›æ–‡ï¼Œåˆ™é€’å½’æ±‚å‰©ä½™å…ƒç´ çš„å›æ–‡åˆ†åŒºï¼Œç„¶åæŠŠå½“å‰åˆ†åŒºåŠ å…¥è§£å†³æ–¹æ¡ˆä¸­ã€‚è¿™æ˜¯åˆ†æ²»ã€‚
  * 
  */
 public class PalindromePartitionDivideConquer implements PalindromePartition {
 
 	public char[][][] partition(char[] s) {
-		// ´Ó0¿ªÊ¼
+		// ä»0å¼€å§‹
 		return partition(s, 0);
 	}
 
 	private char[][][] partition(char[] s, int start) {
-		// ³õÊ¼»¯½á¹û¼¯£¬µÚÒ»Î¬¶ÈÊÇ½â¾ö·½°¸µÄ¸öÊı£¬µÚ¶şÎ¬¶ÈÊÇÃ¿¸ö½â¾ö·½°¸°üº¬µÄ·ÖÇøÊı£¬µÚ¶ş¸öÎ¬¶ÈÊÇÃ¿¸ö·ÖÇøµÄ×Ö·ûÊı
+		// åˆå§‹åŒ–ç»“æœé›†ï¼Œç¬¬ä¸€ç»´åº¦æ˜¯è§£å†³æ–¹æ¡ˆçš„ä¸ªæ•°ï¼Œç¬¬äºŒç»´åº¦æ˜¯æ¯ä¸ªè§£å†³æ–¹æ¡ˆåŒ…å«çš„åˆ†åŒºæ•°ï¼Œç¬¬äºŒä¸ªç»´åº¦æ˜¯æ¯ä¸ªåˆ†åŒºçš„å­—ç¬¦æ•°
 		char[][][] currResult = new char[0][][];
 
-		// Èç¹ûµ½ÁË×îÓÒ±ßÒ»¸öÔªËØ£¬Ôòµİ¹é·µ»Ø£¬µ±Ç°½â¾ÍÊÇ×îºóÒ»¸öÔªËØ
+		// å¦‚æœåˆ°äº†æœ€å³è¾¹ä¸€ä¸ªå…ƒç´ ï¼Œåˆ™é€’å½’è¿”å›ï¼Œå½“å‰è§£å°±æ˜¯æœ€åä¸€ä¸ªå…ƒç´ 
 		if (start == s.length - 1) {
 			currResult = new char[1][1][1];
 			currResult[0][0][0] = s[start];
@@ -27,14 +27,14 @@ public class PalindromePartitionDivideConquer implements PalindromePartition {
 			return currResult;
 		}
 
-		// ´Ó¿ªÊ¼ÔªËØÍùºóÕÒµ½Ò»¸ö»ØÎÄ
+		// ä»å¼€å§‹å…ƒç´ å¾€åæ‰¾åˆ°ä¸€ä¸ªå›æ–‡
 		int i = start;
 		while (i < s.length) {
 			if (isPalindrome(s, start, i)) {
-				// ÕÒµ½»ØÎÄºó¼ÌĞøµİ¹é
+				// æ‰¾åˆ°å›æ–‡åç»§ç»­é€’å½’
 				char[][][] nextResult = partition(s, i + 1);
 
-				// ºÏ²¢µ±Ç°·ÖÇøºÍºóÃæµÄ·ÖÇø
+				// åˆå¹¶å½“å‰åˆ†åŒºå’Œåé¢çš„åˆ†åŒº
 				currResult = mergeResult(currResult, s, start, i, nextResult);
 			}
 
@@ -48,24 +48,24 @@ public class PalindromePartitionDivideConquer implements PalindromePartition {
 			int i, char[][][] nextResult) {
 		char[][][] result = new char[currResult.length + nextResult.length][][];
 
-		// ÏÈ¿½±´ÒÑÓĞµÄ½â¾ö·½°¸
+		// å…ˆæ‹·è´å·²æœ‰çš„è§£å†³æ–¹æ¡ˆ
 		int j;
 		for (j = 0; j < currResult.length; j++) {
 			result[j] = currResult[j];
 		}
 
-		// ºÏ²¢ºóÃæµİ¹éµÄ½â¾ö·½°¸
+		// åˆå¹¶åé¢é€’å½’çš„è§£å†³æ–¹æ¡ˆ
 		for (int k = 0; k < nextResult.length; k++) {
-			// ¶ÔÓÚÃ¿Ò»¸ö½â¾ö·½°¸
+			// å¯¹äºæ¯ä¸€ä¸ªè§£å†³æ–¹æ¡ˆ
 			char[][] partion = new char[nextResult[k].length + 1][];
 
-			// µÚÒ»¸ö·ÖÇø¾ÍÊÇµ±Ç°»ØÎÄ
+			// ç¬¬ä¸€ä¸ªåˆ†åŒºå°±æ˜¯å½“å‰å›æ–‡
 			partion[0] = new char[i - start + 1];
 			for (int l = start; l <= i; l++) {
 				partion[0][l - start] = s[l];
 			}
 
-			// ¿½±´ºóÃæµÄ·ÖÇø
+			// æ‹·è´åé¢çš„åˆ†åŒº
 			for (int l = 0; l < nextResult[k].length; l++) {
 				partion[l + 1] = nextResult[k][l];
 			}

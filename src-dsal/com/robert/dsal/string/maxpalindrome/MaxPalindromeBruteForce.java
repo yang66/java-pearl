@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 /**
  * 
- * ʹ������ָ�룬һ����ʼָ�룬һ����βָ�룬��������ָ��֮���ǲ��ǻ��ġ�
+ * 使用两个指针，一个开始指针，一个结尾指针，计算两个指针之间是不是回文。
  * 
- * O(n^2), ����ÿ�ζԱ���Ҫ�ӿ�ʼ�ַ�����Աȣ����ԣ����и���ϵ����O(c*n^2), c���ַ���ƽ�����Ƴ���
+ * O(n^2), 由于每次对比需要从开始字符往后对比，所以，还有个常系数，O(c*n^2), c是字符的平均相似长度
  *
  */
 public class MaxPalindromeBruteForce implements MaxPalindrome {

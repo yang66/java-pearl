@@ -33,15 +33,15 @@ public class PhaserExample {
 
 	void runTasks(List<Runnable> tasks) throws InterruptedException {
 
-		final Phaser phaser = new Phaser(1); // Ä¬ÈÏÒ»¸ö×¢²á register = 1
+		final Phaser phaser = new Phaser(1); // é»˜è®¤ä¸€ä¸ªæ³¨å†Œ register = 1
 
 		for (final Runnable task : tasks) {
-			phaser.register(); // Ôö¼ÓÁËÁ½¸ö×¢²á register = 2 + 1 = 3
+			phaser.register(); // å¢åŠ äº†ä¸¤ä¸ªæ³¨å†Œ register = 2 + 1 = 3
 			new Thread() {
 				public void run() {
 
 					System.out.println("phaser.arriveAndAwaitAdvance();");
-					phaser.arriveAndAwaitAdvance(); // Èç¹ûµÈ´ıµÄºÍ×¢²áÊıÒ»Ñù¶à£¬Ôòµ½ÏÂÒ»¸ö½×¶Î
+					phaser.arriveAndAwaitAdvance(); // å¦‚æœç­‰å¾…çš„å’Œæ³¨å†Œæ•°ä¸€æ ·å¤šï¼Œåˆ™åˆ°ä¸‹ä¸€ä¸ªé˜¶æ®µ
 													// register = 3
 					try {
 
@@ -57,13 +57,13 @@ public class PhaserExample {
 		}
 
 		System.out.println("Main phaser.arriveAndAwaitAdvance();");
-		phaser.arriveAndAwaitAdvance();// Èç¹ûµÈ´ıµÄºÍ×¢²áÊıÒ»Ñù¶à£¬Ôòµ½ÏÂÒ»¸ö½×¶Î register = 3
+		phaser.arriveAndAwaitAdvance();// å¦‚æœç­‰å¾…çš„å’Œæ³¨å†Œæ•°ä¸€æ ·å¤šï¼Œåˆ™åˆ°ä¸‹ä¸€ä¸ªé˜¶æ®µ register = 3
 
 		System.out.println("Main phaser.arriveAndAwaitAdvance();");
-		phaser.arriveAndAwaitAdvance();// Èç¹ûµÈ´ıµÄºÍ×¢²áÊıÒ»Ñù¶à£¬Ôòµ½ÏÂÒ»¸ö½×¶Î register = 1
+		phaser.arriveAndAwaitAdvance();// å¦‚æœç­‰å¾…çš„å’Œæ³¨å†Œæ•°ä¸€æ ·å¤šï¼Œåˆ™åˆ°ä¸‹ä¸€ä¸ªé˜¶æ®µ register = 1
 
 		System.out.println("Main phaser.arriveAndDeregister();");
-		phaser.arriveAndDeregister(); // »¹ÓĞÒ»¸öregister, ¼õÈ¥1, È»ºóÍË³ö
+		phaser.arriveAndDeregister(); // è¿˜æœ‰ä¸€ä¸ªregister, å‡å»1, ç„¶åé€€å‡º
 
 		System.out.println(phaser.getRegisteredParties()); // 0
 	}

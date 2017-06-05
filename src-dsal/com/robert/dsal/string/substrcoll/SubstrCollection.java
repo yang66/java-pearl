@@ -2,7 +2,7 @@ package com.robert.dsal.string.substrcoll;
 
 /**
  * 
- * Çó×Ö·û´®SÖÐ³¤¶ÈÎªnµÄ×Ö·ûÅÅÁÐ¼¯ºÍ£¬±ÈÈç "abc"ÖÐ³¤¶ÈÎª2µÄ"ab"£¬ "bc"
+ * æ±‚å­—ç¬¦ä¸²Sä¸­é•¿åº¦ä¸ºnçš„å­—ç¬¦æŽ’åˆ—é›†å’Œï¼Œæ¯”å¦‚ "abc"ä¸­é•¿åº¦ä¸º2çš„"ab"ï¼Œ "bc"
  * 
  */
 public interface SubstrCollection {

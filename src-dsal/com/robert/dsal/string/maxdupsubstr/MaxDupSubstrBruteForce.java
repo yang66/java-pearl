@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 
- * O(n^2)£¬ÓÉÓÚÄÚ²ãwhileÑ­»·£¬Ó¦¸Ã»¹ÓĞ¸ö³£ÏµÊı, O(c*n^2)
+ * O(n^2)ï¼Œç”±äºå†…å±‚whileå¾ªç¯ï¼Œåº”è¯¥è¿˜æœ‰ä¸ªå¸¸ç³»æ•°, O(c*n^2)
  * 
  */
 public class MaxDupSubstrBruteForce implements MaxDupSubstr {

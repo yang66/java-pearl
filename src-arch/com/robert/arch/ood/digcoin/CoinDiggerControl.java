@@ -5,8 +5,8 @@ import java.util.List;
 
 /**
  * 
- * ¼ÙÉè£ºA Ò»¸örobotÃ¿Ìì¿ÉÒÔÍÚµ½8¸öcoin£»B 50¸öcoin¿ÉÒÔ»»µÃÒ»¸örobot£»
- * ÎÊ£º¸øÄú5¸örobot£¬50¸öcoin£¬10Ììºó£¬×î¶àÓµÓÐ¶àÉÙcoin£¿
+ * å‡è®¾ï¼šA ä¸€ä¸ªrobotæ¯å¤©å¯ä»¥æŒ–åˆ°8ä¸ªcoinï¼›B 50ä¸ªcoinå¯ä»¥æ¢å¾—ä¸€ä¸ªrobotï¼›
+ * é—®ï¼šç»™æ‚¨5ä¸ªrobotï¼Œ50ä¸ªcoinï¼Œ10å¤©åŽï¼Œæœ€å¤šæ‹¥æœ‰å¤šå°‘coinï¼Ÿ
  * 
  */
 public class CoinDiggerControl {

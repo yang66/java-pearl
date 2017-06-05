@@ -4,26 +4,26 @@ public class StaticInitTest {
 	public static void main(String[] args) throws ClassNotFoundException,
 			InstantiationException, IllegalAccessException {
 		/*
-			// ¾²Ì¬³õÊ¼»¯
+			// é™æ€åˆå§‹åŒ–
 			Class<?> clazz = Class.forName("com.robert.jvm.classloader.staticinit.InitObject");
-			// ÒÑ¾­³õÊ¼»¯¹ı
+			// å·²ç»åˆå§‹åŒ–è¿‡
 			clazz.newInstance();
 		*/
 
 		/*
-			// Ã»ÓĞ¾²Ì¬³õÊ¼»¯
+			// æ²¡æœ‰é™æ€åˆå§‹åŒ–
 			Class clazz = Class.forName("com.robert.jvm.classloader.staticinit.InitObject",false, StaticInitTest.class.getClassLoader());
-			// ÊµÀı»¯µÄÊ±ºò¾²Ì¬³õÊ¼»¯
+			// å®ä¾‹åŒ–çš„æ—¶å€™é™æ€åˆå§‹åŒ–
 			clazz.newInstance();
 		*/
 
-		// Ö´ĞĞ¾²Ì¬³õÊ¼
+		// æ‰§è¡Œé™æ€åˆå§‹
 		Class<?> c = ClassLoader.getSystemClassLoader().loadClass("com.robert.jvm.classloader.staticinit.InitObject");
-		// ÊµÀı»¯µÄÊ±ºòÖ´ĞĞ¾²Ì¬³õÊ¼»¯
+		// å®ä¾‹åŒ–çš„æ—¶å€™æ‰§è¡Œé™æ€åˆå§‹åŒ–
 		c.newInstance();
 		
-		// ×Ü½á£¬Ä¬ÈÏClass.forNameÖ´ĞĞ¾²Ì¬³õÊ¼»¯£¬µ«ÊÇ¿ÉÒÔÏÔÊ¾µÄ´«Èë²ÎÊı½øĞĞ¾²Ì¬³õÊ¼»¯£¬ClassLoader.loadClass²»Ö´ĞĞ¾²Ì¬³õÊ¼»¯
-		// Class.newInstanceµÄÊ±ºòÈç¹ûÃ»ÓĞ³õÊ¼»¯¹ı£¬ÄÇÃ´¾Í½øĞĞ³õÊ¼»¯
+		// æ€»ç»“ï¼Œé»˜è®¤Class.forNameæ‰§è¡Œé™æ€åˆå§‹åŒ–ï¼Œä½†æ˜¯å¯ä»¥æ˜¾ç¤ºçš„ä¼ å…¥å‚æ•°è¿›è¡Œé™æ€åˆå§‹åŒ–ï¼ŒClassLoader.loadClassä¸æ‰§è¡Œé™æ€åˆå§‹åŒ–
+		// Class.newInstanceçš„æ—¶å€™å¦‚æœæ²¡æœ‰åˆå§‹åŒ–è¿‡ï¼Œé‚£ä¹ˆå°±è¿›è¡Œåˆå§‹åŒ–
 	}
 }
 

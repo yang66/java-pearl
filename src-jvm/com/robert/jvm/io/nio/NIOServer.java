@@ -13,20 +13,20 @@ import java.nio.channels.SocketChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 import java.util.Iterator;
-// ´¦ÀíÓë¿Í»§¶ËµÄ½»»¥
+// å¤„ç†ä¸å®¢æˆ·ç«¯çš„äº¤äº’
 // a big file
-// »ñÈ¡Selector
-// ¼àÌı¶Ë¿Ú
-// ´¦ÀíÊÂ¼ş
-// ½ÓÊÕÇëÇó
-// ¶ÁĞÅÏ¢
-// Ğ´ÊÂ¼ş
+// è·å–Selector
+// ç›‘å¬ç«¯å£
+// å¤„ç†äº‹ä»¶
+// æ¥æ”¶è¯·æ±‚
+// è¯»ä¿¡æ¯
+// å†™äº‹ä»¶
 
 public class NIOServer {
 
 	static int BLOCK = 4096;
 
-	// ´¦ÀíÓë¿Í»§¶ËµÄ½»»¥
+	// å¤„ç†ä¸å®¢æˆ·ç«¯çš„äº¤äº’
 
 	public class HandleClient {
 
@@ -100,7 +100,7 @@ public class NIOServer {
 
 	}
 
-	// »ñÈ¡Selector
+	// è·å–Selector
 
 	protected Selector getSelector(int port) throws IOException {
 
@@ -118,7 +118,7 @@ public class NIOServer {
 
 	}
 
-	// ¼àÌı¶Ë¿Ú
+	// ç›‘å¬ç«¯å£
 
 	public void listen() {
 
@@ -152,11 +152,11 @@ public class NIOServer {
 
 	}
 
-	// ´¦ÀíÊÂ¼ş
+	// å¤„ç†äº‹ä»¶
 
 	protected void handleKey(SelectionKey key) throws IOException {
 
-		if (key.isAcceptable()) { // ½ÓÊÕÇëÇó
+		if (key.isAcceptable()) { // æ¥æ”¶è¯·æ±‚
 
 			ServerSocketChannel server = (ServerSocketChannel) key.channel();
 
@@ -166,7 +166,7 @@ public class NIOServer {
 
 			channel.register(selector, SelectionKey.OP_READ);
 
-		} else if (key.isReadable()) { // ¶ÁĞÅÏ¢
+		} else if (key.isReadable()) { // è¯»ä¿¡æ¯
 
 			SocketChannel channel = (SocketChannel) key.channel();
 
@@ -192,7 +192,7 @@ public class NIOServer {
 
 			clientBuffer.clear();
 
-		} else if (key.isWritable()) { // Ğ´ÊÂ¼ş
+		} else if (key.isWritable()) { // å†™äº‹ä»¶
 
 			SocketChannel channel = (SocketChannel) key.channel();
 

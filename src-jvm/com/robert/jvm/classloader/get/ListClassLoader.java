@@ -13,7 +13,7 @@ public class ListClassLoader {
 		 * sun.misc.Launcher$AppClassLoader 
 		 * sun.misc.Launcher$ExtClassLoader
 		 * 
-		 * ¿´²»µ½Bootstrap Classloader
+		 * çœ‹ä¸åˆ°Bootstrap Classloader
 		 */
 	}
 }

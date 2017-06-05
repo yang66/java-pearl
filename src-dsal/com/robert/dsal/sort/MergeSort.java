@@ -8,7 +8,7 @@ public class MergeSort implements Sort {
 	}
 
 	private void sort(int[] seq, int start, int end, int[] tmp) {
-		// Èç¹ûÊ£ÏÂÒ»¸öÔªËØ£¬×ÔÈ»ÊÇÅÅĞòµÄ
+		// å¦‚æœå‰©ä¸‹ä¸€ä¸ªå…ƒç´ ï¼Œè‡ªç„¶æ˜¯æ’åºçš„
 		if (start + 1 == end) {
 			tmp[start] = seq[start];
 			return;
@@ -16,13 +16,13 @@ public class MergeSort implements Sort {
 
 		int mid = (start + end) / 2;
 
-		// ·Ö³ÉÁ½×é£¬·Ö±ğÅÅÁĞ£¬ÅÅÁĞºó½á¹û·ÅÈëseq£¬ tmpÓÀÔ¶ÊÇ¸öÁÙÊ±¿Õ¼ä
+		// åˆ†æˆä¸¤ç»„ï¼Œåˆ†åˆ«æ’åˆ—ï¼Œæ’åˆ—åç»“æœæ”¾å…¥seqï¼Œ tmpæ°¸è¿œæ˜¯ä¸ªä¸´æ—¶ç©ºé—´
 		sort(seq, start, mid, tmp);
 		sort(seq, mid, end, tmp);
 
 		int i = start, j = mid;
 
-		// Á½Â·¹é²¢
+		// ä¸¤è·¯å½’å¹¶
 		int c = start;
 		while (i != mid && j != end) {
 			if (seq[i] < seq[j])
@@ -40,7 +40,7 @@ public class MergeSort implements Sort {
 			for (int k = i; k < mid; k++)
 				tmp[c++] = seq[k];
 
-		// ½«ÅÅĞòºóµÄÊı¾İ¹é²¢µ½Ô­Êı×é
+		// å°†æ’åºåçš„æ•°æ®å½’å¹¶åˆ°åŸæ•°ç»„
 		for (int k = start; k < end; k++)
 			seq[k] = tmp[k];
 

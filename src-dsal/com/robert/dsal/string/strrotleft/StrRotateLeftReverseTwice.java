@@ -2,11 +2,11 @@ package com.robert.dsal.string.strrotleft;
 
 /**
  * 
- * ½»»»´ÎÊıO(n)
+ * äº¤æ¢æ¬¡æ•°O(n)
  */
 public class StrRotateLeftReverseTwice implements StrRotateLeft {
 	public void rotateLeft(char[] source, int size) {
-		// ×ó±ÕÓÒ±Õ
+		// å·¦é—­å³é—­
 		reverse(source, 0, source.length - 1);
 		reverse(source, 0, source.length - size - 1);
 		reverse(source, source.length - size, source.length - 1);

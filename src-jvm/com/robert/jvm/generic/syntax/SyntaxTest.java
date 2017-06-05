@@ -2,28 +2,28 @@ package com.robert.jvm.generic.syntax;
 
 public class SyntaxTest {
 	public static void main(String[] args) {
-		// Çø±ğÄ£°å¶¨ÒåÊ±ºòµÄÀàĞÍ²ÎÊı£¬ºÍÄ£°åÊµÀı»¯Ê±ºòµÄÀàĞÍÖ¸¶¨£¬¶¼¿ÉÒÔÊ¹ÓÃÉÏÏÂ½ì£¬£¿ÊÇÓÃÔÚÊµÀı»¯ÖĞµÄÄ£ºıÆ¥ÅäµÄ
+		// åŒºåˆ«æ¨¡æ¿å®šä¹‰æ—¶å€™çš„ç±»å‹å‚æ•°ï¼Œå’Œæ¨¡æ¿å®ä¾‹åŒ–æ—¶å€™çš„ç±»å‹æŒ‡å®šï¼Œéƒ½å¯ä»¥ä½¿ç”¨ä¸Šä¸‹å±Šï¼Œï¼Ÿæ˜¯ç”¨åœ¨å®ä¾‹åŒ–ä¸­çš„æ¨¡ç³ŠåŒ¹é…çš„
 
-		// ¿ÉÒÔ×Ô¶¯ÍÆ²âÀàĞÍÊµÀı»¯
+		// å¯ä»¥è‡ªåŠ¨æ¨æµ‹ç±»å‹å®ä¾‹åŒ–
 		ValueTest<Integer> valueTest = new ValueTest();
-		// <>Õâ¸ö²Ù×÷·ûÊÇÒşÊ¿µÄÄ£°åÊµÀı»¯
+		// <>è¿™ä¸ªæ“ä½œç¬¦æ˜¯éšå£«çš„æ¨¡æ¿å®ä¾‹åŒ–
 		ValueTest<Integer> valueTest1 = new ValueTest<>();
 		ValueTest<Integer> valueTest2 = new ValueTest<Integer>();
 
-		// ÀàÊµÀı»¯µÄÊ±ºò¿ÉÒÔÓÃÄ£ºıÆ¥Åä
+		// ç±»å®ä¾‹åŒ–çš„æ—¶å€™å¯ä»¥ç”¨æ¨¡ç³ŠåŒ¹é…
 		ValueTest<?> valueTest3 = new ValueTest<Integer>();
 		ValueTest<Integer> valueTest4 = new ValueTest<Integer>();
 
-		// ?Ä£ºıÆ¥ÅäµÄ£¬ĞèÒªÇ¿ÖÆ×ª»»
+		// ?æ¨¡ç³ŠåŒ¹é…çš„ï¼Œéœ€è¦å¼ºåˆ¶è½¬æ¢
 		Integer i1 = (Integer) valueTest3.method();
 		Integer i2 = valueTest4.method();
 
 		ValueTest<? extends Object> valueTest5 = new ValueTest();
 
-		// ÏÔÊ¾µÄÊµÀı»¯Ä£°å
+		// æ˜¾ç¤ºçš„å®ä¾‹åŒ–æ¨¡æ¿
 		valueTest5.<String> method1();
 
-		// ÒşÊ½ÊµÀı»¯Ä£°å
+		// éšå¼å®ä¾‹åŒ–æ¨¡æ¿
 		String s = valueTest5.method1();
 
 	}

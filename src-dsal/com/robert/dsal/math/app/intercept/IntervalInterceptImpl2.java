@@ -7,16 +7,16 @@ import java.util.List;
 
 /**
  * 
- * Ê±¼ä¸´ÔÓ¶ÈO(nlog2n), nÊÇÇø¼äµÄ¸öÊı£¬ÒòÎªĞèÒªÅÅĞò
+ * æ—¶é—´å¤æ‚åº¦O(nlog2n), næ˜¯åŒºé—´çš„ä¸ªæ•°ï¼Œå› ä¸ºéœ€è¦æ’åº
  * 
  */
 public class IntervalInterceptImpl2 implements IntervalIntercept {
 
 	public List<Interval> intercept(Interval i1, List<Interval> c2) {
-		// Ïà»¥È¡½»¼¯
+		// ç›¸äº’å–äº¤é›†
 		List<Interval> inter = doIntercept(i1, c2);
 
-		// °´ÕÕµÚÒ»¸öÔªËØÅÅĞò
+		// æŒ‰ç…§ç¬¬ä¸€ä¸ªå…ƒç´ æ’åº
 		Collections.sort(inter, new Comparator<Interval>() {
 			public int compare(Interval o1, Interval o2) {
 				return o1.x - o2.x;
@@ -29,7 +29,7 @@ public class IntervalInterceptImpl2 implements IntervalIntercept {
 			Interval it = c2.get(i);
 			Interval it1 = c2.get(i + 1);
 
-			// ÏàÁÚÔªËØºÏ²¢
+			// ç›¸é‚»å…ƒç´ åˆå¹¶
 			if (it.y >= it1.x) {
 				it1.x = Math.min(it.x, it1.x);
 				it1.y = Math.max(it.y, it1.y);
@@ -38,7 +38,7 @@ public class IntervalInterceptImpl2 implements IntervalIntercept {
 			}
 		}
 
-		// ×îºóÒ»¸öÔªËØÒ»¶¨ÔÚ½á¹û¼¯ÀïÃæ
+		// æœ€åä¸€ä¸ªå…ƒç´ ä¸€å®šåœ¨ç»“æœé›†é‡Œé¢
 		result.add(c2.get(c2.size() - 1));
 
 		return result;

@@ -2,32 +2,32 @@ package com.robert.dsal.advance.findfirstmiddle;
 
 /**
  * 
- * Õâ¸öÊµÏÖºÍFirstPositionElementDynamicProgrammingÊÇÒ»ÑùµÄ£¬µ«ÊÇ³ÌĞòÊÇ×ÔÎÄµµµÄ£¬ÈİÒ×Àí½â
+ * è¿™ä¸ªå®ç°å’ŒFirstPositionElementDynamicProgrammingæ˜¯ä¸€æ ·çš„ï¼Œä½†æ˜¯ç¨‹åºæ˜¯è‡ªæ–‡æ¡£çš„ï¼Œå®¹æ˜“ç†è§£
  * 
  */
 public class FirstPositionElementDynamicProgramming1 implements
 		FirstPositionElementFinder {
 
 	public int findFirstPositionElement(int[] seq) {
-		// µÚÒ»¸öÔªËØ³õÊ¼»¯Îª±ê¸ËÔªËØºÍ×î´óÔªËØ
+		// ç¬¬ä¸€ä¸ªå…ƒç´ åˆå§‹åŒ–ä¸ºæ ‡æ†å…ƒç´ å’Œæœ€å¤§å…ƒç´ 
 		int flag = 0;
 		int max = seq[0];
 
-		// Ñ­»·ËùÓĞÆäËûÔªËØ
+		// å¾ªç¯æ‰€æœ‰å…¶ä»–å…ƒç´ 
 		for (int i = 1; i < seq.length; i++) {
 			if (flag != -1) {
-				// ÓĞ±ê¸ËÔªËØ
+				// æœ‰æ ‡æ†å…ƒç´ 
 				if (seq[i] >= seq[flag])
-					// µ±Ç°ÔªËØ´óÓÚµÈÓÚ±ê¸ËÔªËØ
+					// å½“å‰å…ƒç´ å¤§äºç­‰äºæ ‡æ†å…ƒç´ 
 					max = seq[i];
-				// ²»ĞèÒª¸Ä±ä±ê¸Ë
+				// ä¸éœ€è¦æ”¹å˜æ ‡æ†
 				else
-					// µ±Ç°ÔªËØĞ¡ÓÚ±ê¸ËÔªËØ£¬Ôò×÷·ÏËùÓĞÇ°ÃæÔªËØ
+					// å½“å‰å…ƒç´ å°äºæ ‡æ†å…ƒç´ ï¼Œåˆ™ä½œåºŸæ‰€æœ‰å‰é¢å…ƒç´ 
 					flag = -1;
-				// ²»ĞèÒª¸Ä±ä×î´óÖµ
+				// ä¸éœ€è¦æ”¹å˜æœ€å¤§å€¼
 
 			} else {
-				// ÎŞ±ê¸ËÔªËØ£¬¶øÇÒ³öÏÖÒ»¸ö±ÈÒÔÇ°×î´óÖµ»¹´óµÄÔªËØ£¬ÖØĞÂ³õÊ¼»¯Îª±ê¸ËÔªËØ
+				// æ— æ ‡æ†å…ƒç´ ï¼Œè€Œä¸”å‡ºç°ä¸€ä¸ªæ¯”ä»¥å‰æœ€å¤§å€¼è¿˜å¤§çš„å…ƒç´ ï¼Œé‡æ–°åˆå§‹åŒ–ä¸ºæ ‡æ†å…ƒç´ 
 				if (seq[i] >= max) {
 					flag = i;
 					max = seq[i];

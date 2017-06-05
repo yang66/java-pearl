@@ -9,11 +9,11 @@ public class StrRotateLeftJumpIterate implements StrRotateLeft {
 	public void rotateLeft(char[] source, int size) {
 		int gcd = gcd(size, source.length);
 
-		// Ò»¹²Ñ­»·×î´ó¹«Ô¼ÊýµÄ´ÎÊý
+		// ä¸€å…±å¾ªçŽ¯æœ€å¤§å…¬çº¦æ•°çš„æ¬¡æ•°
 		for (int i = 0; i < gcd; i++) {
 			char t = source[i];
 
-			// Ã¿´Î×ßÒªÒÆ¶¯µÄ×Ö·ûÊýÁ¿ÄÇÃ´´ó
+			// æ¯æ¬¡èµ°è¦ç§»åŠ¨çš„å­—ç¬¦æ•°é‡é‚£ä¹ˆå¤§
 			int m = i;
 			int n = m + size;
 
@@ -33,14 +33,14 @@ public class StrRotateLeftJumpIterate implements StrRotateLeft {
 	}
 
 	private int gcd(int i, int j) {
-		// Èç¹ûj±Èi´ó£¬Ôò½»»»
+		// å¦‚æžœjæ¯”iå¤§ï¼Œåˆ™äº¤æ¢
 		if (j > i) {
 			i = i + j;
 			j = i - j;
 			i = i - j;
 		}
 
-		// Çó×î´ó¹«Ô¼Êý
+		// æ±‚æœ€å¤§å…¬çº¦æ•°
 		int r = i % j;
 
 		while (r != 0) {

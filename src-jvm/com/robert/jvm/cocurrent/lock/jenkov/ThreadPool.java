@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * 
- * 线程池的构成要素
+ * 绾跨▼姹犵殑鏋勬垚瑕佺礌
  * 
  * 1. Container of PooledThread 2. PooledThread 3. BlockingQueue 4. Task
  * Abstraction

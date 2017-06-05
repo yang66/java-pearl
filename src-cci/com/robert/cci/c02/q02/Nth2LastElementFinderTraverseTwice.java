@@ -2,9 +2,9 @@ package com.robert.cci.c02.q02;
 
 /**
  * 
- * ½â·¨£ºµÚÒ»´Î±éÀúÇó³öÁ´±í³¤¶Èm£¬È»ºó´ËÌâ×ª»¯Îª²éÕÒ´ÓµÚÒ»¸öÔªËØ¿ªÊ¼µÄµÚm - n + 1¸öÔªËØ¡£
+ * è§£æ³•ï¼šç¬¬ä¸€æ¬¡éå†æ±‚å‡ºé“¾è¡¨é•¿åº¦mï¼Œç„¶åæ­¤é¢˜è½¬åŒ–ä¸ºæŸ¥æ‰¾ä»ç¬¬ä¸€ä¸ªå…ƒç´ å¼€å§‹çš„ç¬¬m - n + 1ä¸ªå…ƒç´ ã€‚
  * 
- * ×î»µµÄÊ±¼ä¸´ÔÓ¶È: O(2n)
+ * æœ€åçš„æ—¶é—´å¤æ‚åº¦: O(2n)
  * 
  */
 public class Nth2LastElementFinderTraverseTwice implements
@@ -14,7 +14,7 @@ public class Nth2LastElementFinderTraverseTwice implements
 		if (head == null || n <= 0)
 			return null;
 
-		// ¼ÆËã³¤¶È
+		// è®¡ç®—é•¿åº¦
 		int m = 0;
 		LinkedListNode chead = head;
 		while (chead != null) {
@@ -25,7 +25,7 @@ public class Nth2LastElementFinderTraverseTwice implements
 		if (n > m)
 			return null;
 
-		// ²éÕÒÕıÏò m - n + 1
+		// æŸ¥æ‰¾æ­£å‘ m - n + 1
 		int k = m - n + 1;
 		chead = head;
 		while (k-- > 0) {

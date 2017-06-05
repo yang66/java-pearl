@@ -2,9 +2,9 @@ package com.robert.dsal.classic.leapyear;
 
 /**
  * 
- * ËÄÄêÒ»Èò£¬°ÙÄê²»Èò£¬ËÄ°ÙÄêÔÙÈò
+ * å››å¹´ä¸€é—°ï¼Œç™¾å¹´ä¸é—°ï¼Œå››ç™¾å¹´å†é—°
  * 
- * ÄêÄÜ±»4Õû³ýµ«ÊÇ²»ÄÜ±»100Õû³ý£¬»òÕßÄÜ±»400Õû³ý¾ÍÊÇÈòÄê£¬·ñÔò²»ÊÇÈòÄê¡£
+ * å¹´èƒ½è¢«4æ•´é™¤ä½†æ˜¯ä¸èƒ½è¢«100æ•´é™¤ï¼Œæˆ–è€…èƒ½è¢«400æ•´é™¤å°±æ˜¯é—°å¹´ï¼Œå¦åˆ™ä¸æ˜¯é—°å¹´ã€‚
  * 
  */
 public class LeapYear {

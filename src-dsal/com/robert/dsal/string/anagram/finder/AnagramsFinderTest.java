@@ -14,18 +14,18 @@ public class AnagramsFinderTest {
         String sTargetWord = new String(targetWord);
 
         if (hm.containsKey(sTargetWord)) {
-            // Èç¹û°üº¬´ËÍ¬Î»´Ê£¬Ôò·µ»ØÍ¬Î»´ÊÁĞ±í
+            // å¦‚æœåŒ…å«æ­¤åŒä½è¯ï¼Œåˆ™è¿”å›åŒä½è¯åˆ—è¡¨
             return hm.get(sTargetWord).toArray(new String[0]);
         }
 
-        // Èç¹û²»°üº¬£¬Ôò·µ»Ø¿Õ
+        // å¦‚æœä¸åŒ…å«ï¼Œåˆ™è¿”å›ç©º
         return null;
     }
 
     private HashMap<String, List<String>> constructHash(String[] src) {
         HashMap<String, List<String>> hm = new HashMap<String, List<String>>();
 
-        // ¹¹ÔìÍ¬Î»´Êhash±í
+        // æ„é€ åŒä½è¯hashè¡¨
         for (int i = 0; i < src.length; i++) {
             char[] word = src[i].toCharArray();
             Arrays.sort(word);

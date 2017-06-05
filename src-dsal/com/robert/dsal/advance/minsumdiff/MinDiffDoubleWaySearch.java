@@ -7,25 +7,25 @@ import java.util.List;
 import java.util.Map.Entry;
 
 /**
- * Ë«ÏòËÑË÷:
+ * åŒå‘æœç´¢:
  * 
- * °Ñ50¸öÊıÏÈ·Ö³ÉÁ½×éAºÍB£¬Ã¿×é25¸ö£¬Éú³ÉÕâA×éºÍB×é×Ó¼¯³¤¶ÈÎª1-25µÄ×Ó¼¯µÄºÍ£¬¶¼×ö³Éhash±í£¬È»ºóÓÃ¶ÔÓÚAµÄ³¤¶ÈiµÄ¼¯ºÏµÄÔªËØÖ®ºÍk£¬sum/2
- * -k¿´ÊÇ·ñÔÚB³¤¶ÈÎª25-iµÄ×Ó¼¯ÖĞ¡£
+ * æŠŠ50ä¸ªæ•°å…ˆåˆ†æˆä¸¤ç»„Aå’ŒBï¼Œæ¯ç»„25ä¸ªï¼Œç”Ÿæˆè¿™Aç»„å’ŒBç»„å­é›†é•¿åº¦ä¸º1-25çš„å­é›†çš„å’Œï¼Œéƒ½åšæˆhashè¡¨ï¼Œç„¶åç”¨å¯¹äºAçš„é•¿åº¦içš„é›†åˆçš„å…ƒç´ ä¹‹å’Œkï¼Œsum/2
+ * -kçœ‹æ˜¯å¦åœ¨Bé•¿åº¦ä¸º25-içš„å­é›†ä¸­ã€‚
  * 
- * ¼ÙÉè£ºÎÒÃÇÒÑ¾­Ö¤Ã÷1-50¸öÊı×ÖµÄÁ¢·½£¬Æ½·ÖºóºÍÏà²î0»òÕß1
+ * å‡è®¾ï¼šæˆ‘ä»¬å·²ç»è¯æ˜1-50ä¸ªæ•°å­—çš„ç«‹æ–¹ï¼Œå¹³åˆ†åå’Œç›¸å·®0æˆ–è€…1
  * 
  */
 public class MinDiffDoubleWaySearch implements MinDiff {
 
 	public Result minDiff(int start, int end, int power) {
-		// Êı×é³õÊ¼»¯
+		// æ•°ç»„åˆå§‹åŒ–
 		int[] x = new int[end - start + 1];
 
 		for (int i = 0; i < x.length; i++) {
 			x[i] = (int) Math.pow(start + i, power);
 		}
 
-		// °´ÕÕÆæÅ¼Î»ÖÃ·Ö³É2·Ö
+		// æŒ‰ç…§å¥‡å¶ä½ç½®åˆ†æˆ2åˆ†
 		int[] xe = new int[x.length / 2];
 		int[] xo = new int[x.length / 2];
 
@@ -34,30 +34,30 @@ public class MinDiffDoubleWaySearch implements MinDiff {
 			xo[i] = x[i * 2 + 1];
 		}
 
-		// ¼ÆËãÊı×éºÍ
+		// è®¡ç®—æ•°ç»„å’Œ
 		int sum = 0;
 		for (int i = 0; i < x.length; i++) {
 			sum += x[i];
 		}
 
-		// ¼ÆËãhashºÍ£¬Êı×éÓĞ25¸öÔªËØ£¬±íÊ¾´Ó1¸öÊıµ½25¸öÊıµÄºÍµÄ¼¯ºÏ£¬¼¯ºÏÖĞµÄkeyÊÇºÍ£¬valueÊÇ¹¹³ÉÕâ¸öºÍµÄÄÇĞ©Êı×ÖÁĞ±í
+		// è®¡ç®—hashå’Œï¼Œæ•°ç»„æœ‰25ä¸ªå…ƒç´ ï¼Œè¡¨ç¤ºä»1ä¸ªæ•°åˆ°25ä¸ªæ•°çš„å’Œçš„é›†åˆï¼Œé›†åˆä¸­çš„keyæ˜¯å’Œï¼Œvalueæ˜¯æ„æˆè¿™ä¸ªå’Œçš„é‚£äº›æ•°å­—åˆ—è¡¨
 		HashMap<Integer, List<Integer>>[] hos = map(xo);
 		HashMap<Integer, List<Integer>>[] hes = map(xe);
 
-		// ¶ÔÓÚ1¸öÊıµ½25¸öÊıµÄ¼¯ºÏ
+		// å¯¹äº1ä¸ªæ•°åˆ°25ä¸ªæ•°çš„é›†åˆ
 		for (int i = 0; i < hos.length; i++) {
 			HashMap<Integer, List<Integer>> ho = hos[i];
 			Iterator<Entry<Integer, List<Integer>>> iter = ho.entrySet()
 					.iterator();
 
-			// ¶ÔÓÚ¾ßÓĞi¸öÊı×ÖµÄ¼¯ºÏ
+			// å¯¹äºå…·æœ‰iä¸ªæ•°å­—çš„é›†åˆ
 			while (iter.hasNext()) {
 				Entry<Integer, List<Integer>> entryo = iter.next();
-				// È¡µÃ´Ë¼¯ºÏµÄºÍºÍ¼¯ºÏÔªËØ¸öÊı
+				// å–å¾—æ­¤é›†åˆçš„å’Œå’Œé›†åˆå…ƒç´ ä¸ªæ•°
 				int sumo = entryo.getKey();
 				int numo = i + 1;
 
-				// ÕÒµ½ÁíÍâÒ»¸ö25¸öÊı×ÖÊı×éÀïµÄºÍÕâĞ©Êı×éºÏ²¢ÄÜ¹»25¸öµÄ¼¯ºÏ
+				// æ‰¾åˆ°å¦å¤–ä¸€ä¸ª25ä¸ªæ•°å­—æ•°ç»„é‡Œçš„å’Œè¿™äº›æ•°ç»„åˆå¹¶èƒ½å¤Ÿ25ä¸ªçš„é›†åˆ
 				int nume = 25 - numo;
 				HashMap<Integer, List<Integer>> he = hes[nume - 1];
 				Iterator<Entry<Integer, List<Integer>>> iter1 = he.entrySet()
@@ -68,7 +68,7 @@ public class MinDiffDoubleWaySearch implements MinDiff {
 					int sume = entrye.getKey();
 
 					if (sumo + sume == sum / 2) {
-						// ÈçºÎÁ½¸ö¼¯ºÏºÏ²¢ÕıºÃµÈÓÚ×ÜºÍµÄÒ»°ã£¬¾ÍÊÇ´ğ°¸
+						// å¦‚ä½•ä¸¤ä¸ªé›†åˆåˆå¹¶æ­£å¥½ç­‰äºæ€»å’Œçš„ä¸€èˆ¬ï¼Œå°±æ˜¯ç­”æ¡ˆ
 						Result result = new Result();
 						result.diff = ((sum % 2 == 0) ? 0 : 1);
 						result.c1.addAll(entryo.getValue());
@@ -92,7 +92,7 @@ public class MinDiffDoubleWaySearch implements MinDiff {
 	private HashMap<Integer, List<Integer>>[] map(int[] xo) {
 		HashMap<Integer, List<Integer>>[] results = new HashMap[xo.length];
 
-		// 1 - 25¸ö
+		// 1 - 25ä¸ª
 		for (int i = 0; i < results.length; i++) {
 			results[i] = doMap(xo, i + 1);
 		}
@@ -104,7 +104,7 @@ public class MinDiffDoubleWaySearch implements MinDiff {
 		HashMap<Integer, List<Integer>> results = new HashMap<Integer, List<Integer>>();
 		List<Integer> buffer = new ArrayList<Integer>();
 
-		// ²åÈë·¨Çó×éºÍ
+		// æ’å…¥æ³•æ±‚ç»„å’Œ
 		doMap(xo, count, results, buffer, 0, 0);
 
 		return results;
@@ -114,7 +114,7 @@ public class MinDiffDoubleWaySearch implements MinDiff {
 			HashMap<Integer, List<Integer>> result, List<Integer> buffer,
 			int current, int start) {
 		if (current == count) {
-			// ÕÒµ½Ò»¸ö½â
+			// æ‰¾åˆ°ä¸€ä¸ªè§£
 			int sum = sum(buffer);
 
 			List<Integer> coll = new ArrayList<Integer>();
@@ -124,7 +124,7 @@ public class MinDiffDoubleWaySearch implements MinDiff {
 			return;
 		}
 
-		// Ñ­»·¼Óµİ¹é
+		// å¾ªç¯åŠ é€’å½’
 		for (int i = start; i < xo.length - count + current; i++) {
 			buffer.add(xo[i]);
 

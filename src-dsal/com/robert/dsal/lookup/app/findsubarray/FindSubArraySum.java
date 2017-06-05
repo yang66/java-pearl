@@ -5,7 +5,7 @@ import java.util.List;
 // FIXME No solution yet
 /**
  * 
- * ÕÒ³öÊı×éÖĞ×ÓÊı×éµÈÓÚ¸ø¶¨ÖµµÄËùÓĞÇé¿ö¡£
+ * æ‰¾å‡ºæ•°ç»„ä¸­å­æ•°ç»„ç­‰äºç»™å®šå€¼çš„æ‰€æœ‰æƒ…å†µã€‚
  * 
  */
 public interface FindSubArraySum {

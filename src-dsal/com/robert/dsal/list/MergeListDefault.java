@@ -8,7 +8,7 @@ public class MergeListDefault implements MergeList {
 
 		while (m != null && n != null) {
 			LinkedListNode tmp = null;
-			// Ã¿´ÎÄÃ³öÒ»¸öĞ¡µÄ²åµ½Î²²¿
+			// æ¯æ¬¡æ‹¿å‡ºä¸€ä¸ªå°çš„æ’åˆ°å°¾éƒ¨
 			if (m.value < n.value) {
 				tmp = m;
 				m = m.next;
@@ -25,7 +25,7 @@ public class MergeListDefault implements MergeList {
 			}
 		}
 		
-		//°ÑÊ£ÓàµÄ²¿·ÖÖ±½ÓÁ¬½Óµ½Î²²¿
+		//æŠŠå‰©ä½™çš„éƒ¨åˆ†ç›´æ¥è¿æ¥åˆ°å°¾éƒ¨
 		if (m == null)
 			t.next = n;
 

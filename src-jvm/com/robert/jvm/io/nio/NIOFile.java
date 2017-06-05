@@ -33,7 +33,7 @@ public class NIOFile {
 	}
 
 	public void readByNIO(String file) throws IOException {
-		final int BUFFER_SIZE = 0x1200000;// »º³å´óĞ¡Îª12M
+		final int BUFFER_SIZE = 0x1200000;// ç¼“å†²å¤§å°ä¸º12M
 		final FileChannel fcin = new RandomAccessFile(new File(file), "r").getChannel();
 		ByteBuffer rBuffer = ByteBuffer.allocate(BUFFER_SIZE);
 		String enterStr = "\n";
@@ -75,12 +75,12 @@ public class NIOFile {
 		}
 
 		long end = System.currentTimeMillis();
-		System.out.println("¶ÁÈ¡ÎÄ¼şÎÄ¼ş»¨·Ñ£º" + (end - start) + "ºÁÃë");
+		System.out.println("è¯»å–æ–‡ä»¶æ–‡ä»¶èŠ±è´¹ï¼š" + (end - start) + "æ¯«ç§’");
 
 	}
 
 	/**
-	 * ÀûÓÃNIO½«ÄÚÈİÊä³öµ½ÎÄ¼şÖĞ
+	 * åˆ©ç”¨NIOå°†å†…å®¹è¾“å‡ºåˆ°æ–‡ä»¶ä¸­
 	 * 
 	 * @param file
 	 */
@@ -90,12 +90,12 @@ public class NIOFile {
 		ByteBuffer buffer = null;
 		try {
 			fos = new FileOutputStream(file);
-			// µÚÒ»²½ »ñÈ¡Ò»¸öÍ¨µÀ
+			// ç¬¬ä¸€æ­¥ è·å–ä¸€ä¸ªé€šé“
 			fc = fos.getChannel();
 			// buffer=ByteBuffer.allocate(1024);
-			// µÚ¶ş²½ ¶¨Òå»º³åÇø
+			// ç¬¬äºŒæ­¥ å®šä¹‰ç¼“å†²åŒº
 			buffer = ByteBuffer.wrap("Hello World 2".getBytes());
-			// ½«ÄÚÈİĞ´µ½»º³åÇø
+			// å°†å†…å®¹å†™åˆ°ç¼“å†²åŒº
 			fos.flush();
 			fc.write(buffer);
 

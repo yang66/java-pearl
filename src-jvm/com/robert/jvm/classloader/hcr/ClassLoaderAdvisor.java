@@ -13,7 +13,7 @@ public class ClassLoaderAdvisor extends ClassLoader {
 	}
 
 	/**
-	 * ¼ÓÔØÄ³¸öÀà
+	 * åŠ è½½æŸä¸ªç±»
 	 * 
 	 * @param c
 	 * @return
@@ -27,7 +27,7 @@ public class ClassLoaderAdvisor extends ClassLoader {
 	}
 
 	/**
-	 * ¼ÓÔØÄ³¸öÀàµÄ×Ö½ÚÂë
+	 * åŠ è½½æŸä¸ªç±»çš„å­—èŠ‚ç 
 	 * 
 	 * @param c
 	 * @return

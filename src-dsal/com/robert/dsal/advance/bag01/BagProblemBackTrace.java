@@ -2,7 +2,7 @@ package com.robert.dsal.advance.bag01;
 
 /**
  * 
- * 2^n, µ«ÊÇÓĞ»ØËİ£¬±ÈÂùÁ¢·¨ÓĞËù¸Ä½ø£¬ ÕâÒ²ÊÇÉî¶ÈÓÅÏÈ±éÀú
+ * 2^n, ä½†æ˜¯æœ‰å›æº¯ï¼Œæ¯”è›®ç«‹æ³•æœ‰æ‰€æ”¹è¿›ï¼Œ è¿™ä¹Ÿæ˜¯æ·±åº¦ä¼˜å…ˆéå†
  * 
  */
 public class BagProblemBackTrace implements BagProblem {
@@ -26,7 +26,7 @@ public class BagProblemBackTrace implements BagProblem {
 			return;
 		}
 
-		// »ØËİ£¬ÔÚÈİÁ¿³¬³öÁËÏŞÖÆºó»ØËİ£¬Õâ¾ÍÊÇÏŞ¶¨º¯Êı
+		// å›æº¯ï¼Œåœ¨å®¹é‡è¶…å‡ºäº†é™åˆ¶åå›æº¯ï¼Œè¿™å°±æ˜¯é™å®šå‡½æ•°
 		if (current.weightSum > volumn)
 			return;
 

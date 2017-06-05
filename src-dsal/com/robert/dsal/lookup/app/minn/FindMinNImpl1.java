@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 
- * ¿¼ÂÇµ½Êý×éÓÐÕýÊýÓÐ¸ºÊý£¬Ò²¾ÍÊÇ·¶Î§ÔÚ-N...N£¬ÔòÐèÒªÌØÊâ´¦Àí£¬ÑÏ¸ñµÄN+M´Î²Ù×÷ÊÇ²»ÄÜÍê³ÉµÄ£¬µ«ÊÇ¸´ÔÓ¶È¿É¿ØÖÆÔÚO(N+M)·¶Î§ÄÚ¡£
+ * è€ƒè™‘åˆ°æ•°ç»„æœ‰æ­£æ•°æœ‰è´Ÿæ•°ï¼Œä¹Ÿå°±æ˜¯èŒƒå›´åœ¨-N...Nï¼Œåˆ™éœ€è¦ç‰¹æ®Šå¤„ç†ï¼Œä¸¥æ ¼çš„N+Mæ¬¡æ“ä½œæ˜¯ä¸èƒ½å®Œæˆçš„ï¼Œä½†æ˜¯å¤æ‚åº¦å¯æŽ§åˆ¶åœ¨O(N+M)èŒƒå›´å†…ã€‚
  * 
  */
 public class FindMinNImpl1 implements FindMInN {
@@ -13,49 +13,49 @@ public class FindMinNImpl1 implements FindMInN {
 		int[] result = new int[x.length];
 		int count = 0;
 
-		// °Ñ¸ºÊý·ÅÔÚÇ°Ãæ£¬ÕýÊý·ÅÔÚºóÃæ£¬kÊÇ×îºóÒ»¸ö¸ºÊý
+		// æŠŠè´Ÿæ•°æ”¾åœ¨å‰é¢ï¼Œæ­£æ•°æ”¾åœ¨åŽé¢ï¼Œkæ˜¯æœ€åŽä¸€ä¸ªè´Ÿæ•°
 		int k = partition(x);
 
-		// °Ñ¸ºÊý±ä³ÉÕýÊý£¬ÒòÎªk+1Ç°ÃæµÄÖµ¾ÍÊÇ¸ºÊý£¬Õâ¸öÐÅÏ¢×ÔÈ»´æÔÚ
+		// æŠŠè´Ÿæ•°å˜æˆæ­£æ•°ï¼Œå› ä¸ºk+1å‰é¢çš„å€¼å°±æ˜¯è´Ÿæ•°ï¼Œè¿™ä¸ªä¿¡æ¯è‡ªç„¶å­˜åœ¨
 		for (int i = 0; i <= k; i++) {
 			x[i] = -x[i];
 		}
 
-		// ´¦Àí¸ºÊý·¶Î§
+		// å¤„ç†è´Ÿæ•°èŒƒå›´
 		for (int i = 0; i <= k; i++) {
-			// È¡µÃÄ¿±êË÷Òý
+			// å–å¾—ç›®æ ‡ç´¢å¼•
 			int v = x[i];
 			if (v < 0)
 				v = -v;
 			v--;
 
-			// Èç¹ûÄ¿±êÊÇ¸ºÖµ£¬Ôò±íÊ¾ÊÇÖØ¸´ÔªËØ
+			// å¦‚æžœç›®æ ‡æ˜¯è´Ÿå€¼ï¼Œåˆ™è¡¨ç¤ºæ˜¯é‡å¤å…ƒç´ 
 			if (x[v] < 0)
-				result[count++] = -(v + 1); // ÒòÎªkÒÔÇ°ÊÇ¸ºÊý£¬ËùÒÔ£¬ÐèÒª¼ÓÉÏ¸ººÅÊä³ö£¬²¢ÇÒË÷Òý¶ÔÆë
+				result[count++] = -(v + 1); // å› ä¸ºkä»¥å‰æ˜¯è´Ÿæ•°ï¼Œæ‰€ä»¥ï¼Œéœ€è¦åŠ ä¸Šè´Ÿå·è¾“å‡ºï¼Œå¹¶ä¸”ç´¢å¼•å¯¹é½
 
-			// toggle±êÖ¾Î»
+			// toggleæ ‡å¿—ä½
 			x[v] = -x[v];
 		}
 
-		// ÖØÖÃËùÓÐµÄ¸ºÊýÎªÕýÊý
+		// é‡ç½®æ‰€æœ‰çš„è´Ÿæ•°ä¸ºæ­£æ•°
 		for (int i = 0; i < result.length; i++) {
 			if (x[i] < 0)
 				x[i] = -x[i];
 		}
 
-		// ´¦ÀíÕýÊý·¶Î§
+		// å¤„ç†æ­£æ•°èŒƒå›´
 		for (int i = k + 1; i < x.length; i++) {
-			// È¡µÃÄ¿±êË÷Òý
+			// å–å¾—ç›®æ ‡ç´¢å¼•
 			int v = x[i];
 			if (v < 0)
 				v = -v;
 			v--;
 
-			// Êä³öÖØ¸´µÄÕýÊý
+			// è¾“å‡ºé‡å¤çš„æ­£æ•°
 			if (x[v] < 0)
 				result[count++] = v + 1;
 
-			// toggle±êÖ¾Î»
+			// toggleæ ‡å¿—ä½
 			x[v] = -x[v];
 		}
 

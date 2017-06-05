@@ -5,13 +5,13 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /** 
-* Ä¬ÈÏ´úÀí´¦ÀíÀà 
+* é»˜è®¤ä»£ç†å¤„ç†ç±» 
 * @author Robert 
 */  
 public class DefaultInvocationHandler implements InvocationHandler {  
 
   /** 
-   * Ä¿±ê¶ÔÏó 
+   * ç›®æ ‡å¯¹è±¡ 
    */  
   protected Object target;  
 
@@ -20,7 +20,7 @@ public class DefaultInvocationHandler implements InvocationHandler {
   }  
 
   /** 
-   * ´¦Àí·½·¨ 
+   * å¤„ç†æ–¹æ³• 
    */  
   public Object invoke(Object proxy, Method method, Object[] args)  
           throws Throwable {  

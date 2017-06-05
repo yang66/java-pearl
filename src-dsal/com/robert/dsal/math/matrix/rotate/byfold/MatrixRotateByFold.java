@@ -10,7 +10,7 @@ public class MatrixRotateByFold implements MatrixRotate {
 			result[i] = new int[d];
 		}
 
-		// ртуЩ╤т╫гоъё╛╢свСио╫г╣╫сроб╫г╤тушё╛х╩╨Сиооб╤туш
+		// Д╩╔Ф╜ёЕ╞╧Х╖▓Г╨©О╪▄Д╩▌Е╥╕Д╦┼Х╖▓Е┬╟Е▐ЁД╦▀Х╖▓Е╞╧Ф┼≤О╪▄Г└╤Е░▌Д╦┼Д╦▀Е╞╧Ф┼≤
 		for (int i = 0; i < d; i++)
 			for (int j = 0; j < d; j++)
 				result[j][i] = m[i][j];
@@ -33,7 +33,7 @@ public class MatrixRotateByFold implements MatrixRotate {
 			result[i] = new int[d];
 		}
 
-		// ртп╠╤т╫гоъё╛╢ссрио╫г╣╫вСоб╫г╤тушё╛х╩╨Сиооб╤туш
+		// Д╩╔Ф√°Е╞╧Х╖▓Г╨©О╪▄Д╩▌Е▐ЁД╦┼Х╖▓Е┬╟Е╥╕Д╦▀Х╖▓Е╞╧Ф┼≤О╪▄Г└╤Е░▌Д╦┼Д╦▀Е╞╧Ф┼≤
 		for (int i = 0; i < d; i++) {
 			for (int j = 0; j < d; j++) {
 				result[i][j] = m[d - 1 - j][d - 1 - i];

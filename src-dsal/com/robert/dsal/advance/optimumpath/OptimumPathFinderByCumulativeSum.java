@@ -3,11 +3,11 @@ package com.robert.dsal.advance.optimumpath;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO Í¬ÑùÓÃ¶¯Ì¬¹æ»®£¬Èç¹û´ÓÓÒÏÂ½ÇÍù×óÉÏ½ÇÍÆ£¬Ò»´ÎÑ¡Ôñ×ó±ß»òÕßÉÏÃæ×î´óµÄ£¬ÄÇÃ´Ö»ĞèÒªO(n)¿Õ¼ä¸´ÔÓ¶È
+// TODO åŒæ ·ç”¨åŠ¨æ€è§„åˆ’ï¼Œå¦‚æœä»å³ä¸‹è§’å¾€å·¦ä¸Šè§’æ¨ï¼Œä¸€æ¬¡é€‰æ‹©å·¦è¾¹æˆ–è€…ä¸Šé¢æœ€å¤§çš„ï¼Œé‚£ä¹ˆåªéœ€è¦O(n)ç©ºé—´å¤æ‚åº¦
 
 /**
  * 
- * O(n^2), ¶ÔÓÚ¾ØÕóÖĞµÄËùÓĞÔªËØ£¬Õı±ÈÓÚÏßĞÔ, ¿Õ¼ä¸´ÔÓ¶ÈO(n^2)
+ * O(n^2), å¯¹äºçŸ©é˜µä¸­çš„æ‰€æœ‰å…ƒç´ ï¼Œæ­£æ¯”äºçº¿æ€§, ç©ºé—´å¤æ‚åº¦O(n^2)
  * 
  */
 public class OptimumPathFinderByCumulativeSum implements OptimumPathFinder {
@@ -15,7 +15,7 @@ public class OptimumPathFinderByCumulativeSum implements OptimumPathFinder {
 		OptimumPath solution = new OptimumPath();
 		int[][] sum = matrix.clone();
 
-		// µ½´ï¾ØÕóÖĞÄ³Ò»µãÓĞÁ½ÖÖ¿ÉÄÜ£¬Ò»ÖÖ¾ÍÊÇ´Ó×ó±ß¹ıÀ´£¬Ò»ÖÖÊÇ´ÓÉÏ±ß¹ıÀ´£¬×ó±ßºÍÉÏ±ßÈ¡×î´óµÄ¼Óµ½µ±Ç°ÔªËØ£¬×îºóÒ»¸öÔªËØµÄÀÛ¼ÓºÍ¾ÍÊÇ×îÓĞÂ·¾¶µÄÈ¨ÖµÖ®ºÍ
+		// åˆ°è¾¾çŸ©é˜µä¸­æŸä¸€ç‚¹æœ‰ä¸¤ç§å¯èƒ½ï¼Œä¸€ç§å°±æ˜¯ä»å·¦è¾¹è¿‡æ¥ï¼Œä¸€ç§æ˜¯ä»ä¸Šè¾¹è¿‡æ¥ï¼Œå·¦è¾¹å’Œä¸Šè¾¹å–æœ€å¤§çš„åŠ åˆ°å½“å‰å…ƒç´ ï¼Œæœ€åä¸€ä¸ªå…ƒç´ çš„ç´¯åŠ å’Œå°±æ˜¯æœ€æœ‰è·¯å¾„çš„æƒå€¼ä¹‹å’Œ
 		for (int i = 0; i < sum.length; i++) {
 			for (int j = 0; j < sum.length; j++) {
 				int max = 0;
@@ -29,13 +29,13 @@ public class OptimumPathFinderByCumulativeSum implements OptimumPathFinder {
 			}
 		}
 
-		// ×îºóÒ»¸öÔªËØµÄÀÛ¼ÓºÍ¾ÍÊÇ×îÓÅÂ·¾¶µÄÈ¨ÖµÖ®ºÍ
+		// æœ€åä¸€ä¸ªå…ƒç´ çš„ç´¯åŠ å’Œå°±æ˜¯æœ€ä¼˜è·¯å¾„çš„æƒå€¼ä¹‹å’Œ
 		List<Point> points = new ArrayList<Point>();
 		int x = sum.length - 1;
 		int y = sum[0].length - 1;
 		solution.pathValue = sum[x][y];
 
-		// ´Ó×îºóÒ»¸öÔªËØ¿ªÊ¼»ØÍË£¬×ó±ßÔªËØºÍÉÏ±ßÔªËØÄÄ¸ö´ó¾ÍÍÆµ½ÄÄÈ¥
+		// ä»æœ€åä¸€ä¸ªå…ƒç´ å¼€å§‹å›é€€ï¼Œå·¦è¾¹å…ƒç´ å’Œä¸Šè¾¹å…ƒç´ å“ªä¸ªå¤§å°±æ¨åˆ°å“ªå»
 		while (x >= 0 && y >= 0) {
 			Point p = new Point();
 			p.x = x;

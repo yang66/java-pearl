@@ -3,13 +3,13 @@ package com.robert.jvm.classloader.hcr;
 import java.lang.reflect.Proxy;
 
 /**
- * java´úÀí¹¤³§ÊµÏÖ
+ * javaä»£ç†å·¥å‚å®ç°
  * 
  * @author Robert
  */
 public class DynamicProxyFactory {
 	/*
-	 * ·½·¨´¦ÀíÕß
+	 * æ–¹æ³•å¤„ç†è€…
 	 */
 	private DefaultInvocationHandler invocationHandler;
 
@@ -30,7 +30,7 @@ public class DynamicProxyFactory {
 	}
 
 	/**
-	 * ´´½¨´úÀí¶ÔÏó
+	 * åˆ›å»ºä»£ç†å¯¹è±¡
 	 * 
 	 * @param target
 	 * @return

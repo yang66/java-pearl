@@ -4,8 +4,8 @@ import com.robert.dsal.util.AlUtil;
 
 /**
  * 
- * ������һ����Ҫѡ�����һ����������С�ģ����һ����Ҫn�Σ�ÿ���ҳ����Ļ�����С��Ԫ�غ���Ҫ����������Ϊ��������Ķ�������
- * ÿ�������Ҫ����log2N��Ԫ�أ����ԣ����Ӷ���NLog2N
+ * 堆排序一次需要选择出来一个最大或者最小的，因此一共需要n次，每次找出最大的或者最小的元素后，需要调整树，因为树是排序的二叉树，
+ * 每次最多需要调整log2N个元素，所以，复杂度是NLog2N
  * 
  * 
  * http://www.cnblogs.com/dolphin0520/archive/2011/10/06/2199741.html
@@ -43,12 +43,12 @@ public class HeapSort implements Sort {
 	}
 
 	public void sort(int[] seq) {
-		// ����һ����Ҷ�ӽڵ㣬����Ҷ�ӽڵ㣬����ÿһ����Ҷ�ӽڵ����һ�ε���
+		// 后面一半是叶子节点，跳过叶子节点，对于每一个非叶子节点进行一次调整
 		for (int i = seq.length / 2; i >= 0; i--) {
 			adjustHeap(seq, i, seq.length);
 		}
 
-		// ÿ���ó���һ����һ����n�Σ���������log2N,��������Ӷ���nlog2N
+		// 每次拿出来一个，一共是n次，最坏情况下是log2N,所以最坏复杂度是nlog2N
 		sortHeap(seq, 0, seq.length);
 	}
 }

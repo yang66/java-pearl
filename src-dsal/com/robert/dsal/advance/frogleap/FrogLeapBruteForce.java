@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 
- * l^n, l就是元素的平均大小，也是平均弹跳长度
+ * l^n, l灏辨槸鍏冪礌鐨勫钩鍧囧ぇ灏忥紝涔熸槸骞冲潎寮硅烦闀垮害
  * 
  */
 public class FrogLeapBruteForce implements FrogLeap {
@@ -30,7 +30,7 @@ public class FrogLeapBruteForce implements FrogLeap {
 			return;
 		}
 
-		// 题目要求的回溯，不是回溯法里面的回溯
+		// 棰樼洰瑕佹眰鐨勫洖婧紝涓嶆槸鍥炴函娉曢噷闈㈢殑鍥炴函
 		if (arrays[index] == 0)
 			return;
 

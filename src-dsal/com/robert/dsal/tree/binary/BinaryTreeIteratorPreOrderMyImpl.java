@@ -15,14 +15,14 @@ public class BinaryTreeIteratorPreOrderMyImpl implements
 		while (!stack.isEmpty()) {
 			BinaryTreeNode top = stack.pop();
 
-			// 向前和向后都可能遇见叶子节点
+			// 鍚戝墠鍜屽悜鍚庨兘鍙兘閬囪鍙跺瓙鑺傜偣
 			if (top.left == null && top.right == null) {
 				result.add(top.value);
 				last = top;
 				continue;
 			}
 
-			// 向前推进
+			// 鍚戝墠鎺ㄨ繘
 			if (last == null) {
 				result.add(top.value);
 
@@ -37,7 +37,7 @@ public class BinaryTreeIteratorPreOrderMyImpl implements
 				continue;
 			}
 
-			// 向后推进
+			// 鍚戝悗鎺ㄨ繘
 			if (last != null) {
 				if (top.left == last || top.right == last) {
 					last = top;

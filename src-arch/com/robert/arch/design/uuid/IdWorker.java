@@ -1,39 +1,39 @@
 package com.robert.arch.design.uuid;
 
 public class IdWorker {
-    // »úÆ÷ID
+    // æœºå™¨ID
     private final long workerId;
 
-    // ¼ÍÔª¿ªÊ¼Ê±¼ä
+    // çºªå…ƒå¼€å§‹æ—¶é—´
     private final static long twepoch = 1361753741828L;
 
-    // Sequence´Ó0¿ªÊ¼
+    // Sequenceä»0å¼€å§‹
     private long sequence = 0L;
 
-    // »úÆ÷IDËùÕ¼µÄÎ»Êı
+    // æœºå™¨IDæ‰€å çš„ä½æ•°
     private final static long workerIdBits = 4L;
 
-    // »úÆ÷IDµÄ×î´óÖµ
+    // æœºå™¨IDçš„æœ€å¤§å€¼
     public final static long maxWorkerId = -1L ^ -1L << workerIdBits;
 
-    // SequenceËùÕ¼µÄÎ»Êı
+    // Sequenceæ‰€å çš„ä½æ•°
     private final static long sequenceBits = 10L;
 
-    // »úÆ÷IDµÄÆ«ÒÆÁ¿
+    // æœºå™¨IDçš„åç§»é‡
     private final static long workerIdShift = sequenceBits;
 
-    // Ê±¼ä´ÁµÄÆ«ÒÆÁ¿
+    // æ—¶é—´æˆ³çš„åç§»é‡
     private final static long timestampLeftShift = sequenceBits + workerIdBits;
 
-    // SequenceµÄÆÁ±ÎÎ»
+    // Sequenceçš„å±è”½ä½
     public final static long sequenceMask = -1L ^ -1L << sequenceBits;
 
-    // ÉÏÒ»¸öºÁÃëÊı
+    // ä¸Šä¸€ä¸ªæ¯«ç§’æ•°
     private long lastTimestamp = -1L;
 
     public IdWorker(final long workerId) {
         super();
-        // ×î´ó16¸ö½Úµã
+        // æœ€å¤§16ä¸ªèŠ‚ç‚¹
         if (workerId > maxWorkerId || workerId < 0) {
             throw new IllegalArgumentException(String.format("worker Id can't be greater than %d or less than 0", maxWorkerId));
         }
@@ -43,19 +43,19 @@ public class IdWorker {
     public synchronized long nextId() {
         long timestamp = this.timeGen();
         if (this.lastTimestamp == timestamp) {
-            // ÔÚÍ³Ò»ºÁÃëÄÚ²úÉú
+            // åœ¨ç»Ÿä¸€æ¯«ç§’å†…äº§ç”Ÿ
             this.sequence = (this.sequence + 1) & this.sequenceMask;
             if (this.sequence == 0) {
-                // Í¬Ò»ºÁÃëÄÚµÄIDÒÑ¾­ÓÃ¹âÁË£¬µÈµ½ÏÂÒ»ºÁÃë²ÅÄÜ¼ÌĞø²úÉú
+                // åŒä¸€æ¯«ç§’å†…çš„IDå·²ç»ç”¨å…‰äº†ï¼Œç­‰åˆ°ä¸‹ä¸€æ¯«ç§’æ‰èƒ½ç»§ç»­äº§ç”Ÿ
                 System.out.println("###########" + sequenceMask);
                 timestamp = this.tilNextMillis(this.lastTimestamp);
             }
         } else {
-            // ÉÏÒ»´ÎµÄºÁÃëÒÑ¾­¹ıÈ¥ÁË£¬ÏÖÔÚ½øÈëÏÂÒ»¸öºÁÃë£¬ÖØÖÃSequence
+            // ä¸Šä¸€æ¬¡çš„æ¯«ç§’å·²ç»è¿‡å»äº†ï¼Œç°åœ¨è¿›å…¥ä¸‹ä¸€ä¸ªæ¯«ç§’ï¼Œé‡ç½®Sequence
             this.sequence = 0;
         }
 
-        // Èç¹ûÏµÍ³Ê±¼ä·¢ÉúÁË¸ü¸Ä£¬¶øÇÒ¸ü¸Äµ½ÁËÒ»¸ö¹ıÈ¥µÄÊ±¼ä
+        // å¦‚æœç³»ç»Ÿæ—¶é—´å‘ç”Ÿäº†æ›´æ”¹ï¼Œè€Œä¸”æ›´æ”¹åˆ°äº†ä¸€ä¸ªè¿‡å»çš„æ—¶é—´
         if (timestamp < this.lastTimestamp) {
             try {
                 throw new Exception(String.format("Clock moved backwards.  Refusing to generate id for %d milliseconds", this.lastTimestamp
@@ -65,16 +65,16 @@ public class IdWorker {
             }
         }
 
-        // ±£´æÉÏ´ÎµÄºÁÃë
+        // ä¿å­˜ä¸Šæ¬¡çš„æ¯«ç§’
         this.lastTimestamp = timestamp;
 
-        // ºÁÃëÊı ------> »úÆ÷ID ------> ºÁÃëÄÚµÄSequence
+        // æ¯«ç§’æ•° ------> æœºå™¨ID ------> æ¯«ç§’å†…çš„Sequence
         long nextId = ((timestamp - twepoch << timestampLeftShift)) | (workerId << workerIdShift) | (this.sequence);
         return nextId;
     }
 
     private long tilNextMillis(final long lastTimestamp) {
-        // µÈ´ıµ½ÏÂÒ»¸öºÁÃë
+        // ç­‰å¾…åˆ°ä¸‹ä¸€ä¸ªæ¯«ç§’
         long timestamp = this.timeGen();
         while (timestamp <= lastTimestamp) {
             timestamp = this.timeGen();

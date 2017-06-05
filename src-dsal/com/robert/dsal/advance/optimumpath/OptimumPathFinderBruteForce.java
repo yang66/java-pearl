@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * 
- * O(2^(n*n)), Ö¸Êı¼¶
+ * O(2^(n*n)), æŒ‡æ•°çº§
  * 
  */
 public class OptimumPathFinderBruteForce implements OptimumPathFinder {
@@ -25,31 +25,31 @@ public class OptimumPathFinderBruteForce implements OptimumPathFinder {
 
 	private void findOptimumPath(int[][] matrix, int x, int y,
 			List<Point> solutionPool, OptimumPath solution) {
-		// 1.ÏÈ°Ñµ±Ç°×´Ì¬Ìí¼Ó 2.¼ì²é½â¾ö·½°¸ 3.µİ¹éÏÂÒ»²½ 4.Çå³ıµ±Ç°×´Ì¬£¬ÍË»ØÉÏÒ»²¿
+		// 1.å…ˆæŠŠå½“å‰çŠ¶æ€æ·»åŠ  2.æ£€æŸ¥è§£å†³æ–¹æ¡ˆ 3.é€’å½’ä¸‹ä¸€æ­¥ 4.æ¸…é™¤å½“å‰çŠ¶æ€ï¼Œé€€å›ä¸Šä¸€éƒ¨
 
 		Point self = new Point();
 		self.x = x;
 		self.y = y;
 		solutionPool.add(self);
 
-		// ½øÈëµÄµãµ½´ïÁË×îºóÒ»¸öµã£¬ÔòÊÇ½â¾ö·½°¸
+		// è¿›å…¥çš„ç‚¹åˆ°è¾¾äº†æœ€åä¸€ä¸ªç‚¹ï¼Œåˆ™æ˜¯è§£å†³æ–¹æ¡ˆ
 		if (x == matrix.length - 1 && y == matrix[0].length - 1) {
 			checkSolution(matrix, solutionPool, solution);
 			solutionPool.remove(self);
 			return;
 		}
 
-		// ÍùÏÂ×ß
+		// å¾€ä¸‹èµ°
 		if (x != matrix.length - 1) {
 			findOptimumPath(matrix, x + 1, y, solutionPool, solution);
 		}
 
-		// ÍùÓÒ×ß
+		// å¾€å³èµ°
 		if (y != matrix[0].length - 1) {
 			findOptimumPath(matrix, x, y + 1, solutionPool, solution);
 		}
 
-		// Ò»¶¨ÒªÇå³ıµ±Ç°×´Ì¬£¬ÍË»Øµ½ÉÏÒ»²½
+		// ä¸€å®šè¦æ¸…é™¤å½“å‰çŠ¶æ€ï¼Œé€€å›åˆ°ä¸Šä¸€æ­¥
 		solutionPool.remove(self);
 	}
 

@@ -5,7 +5,7 @@ import com.robert.dsal.list.ds.LinkedListNode;
 public class MergeListMyImpl implements MergeList {
 	public LinkedListNode mergeList(LinkedListNode m, LinkedListNode n) {
 		
-		// 保留m，如果n中某一个比较小，则插入到m中来
+		// 淇濈暀m锛屽鏋渘涓煇涓�涓瘮杈冨皬锛屽垯鎻掑叆鍒癿涓潵
 		LinkedListNode p = null, t = null;
 		LinkedListNode i = m;
 		LinkedListNode j = n;

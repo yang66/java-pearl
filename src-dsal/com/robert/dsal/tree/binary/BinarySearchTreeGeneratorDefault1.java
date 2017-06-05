@@ -4,13 +4,13 @@ package com.robert.dsal.tree.binary;
 public class BinarySearchTreeGeneratorDefault1 implements
 		BinarySearchTreeGenerator {
 	private void genBinarySearchTree(BinaryTreeNode root, int value) {
-		// Èç¹û±Èµ±Ç°¸ù½ÚµãĞ¡£¬Ôò´¦Àí×ó×ÓÊ÷
+		// å¦‚æœæ¯”å½“å‰æ ¹èŠ‚ç‚¹å°ï¼Œåˆ™å¤„ç†å·¦å­æ ‘
 		if (value < root.value) {
-			// Èç¹û×ó×ÓÊ÷²»Îª¿Õ£¬Ôòµİ¹é²úÉú×ó×ÓÊ÷
+			// å¦‚æœå·¦å­æ ‘ä¸ä¸ºç©ºï¼Œåˆ™é€’å½’äº§ç”Ÿå·¦å­æ ‘
 			if (root.left != null)
 				genBinarySearchTree(root.left, value);
 
-			// Èç¹û×ó×ÓÊ÷Îª¿Õ£¬Ôò½¨Á¢×ó×ÓÊ÷
+			// å¦‚æœå·¦å­æ ‘ä¸ºç©ºï¼Œåˆ™å»ºç«‹å·¦å­æ ‘
 			else {
 				BinaryTreeNode btn = new BinaryTreeNode();
 				btn.value = value;

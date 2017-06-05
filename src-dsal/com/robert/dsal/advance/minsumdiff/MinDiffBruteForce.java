@@ -5,8 +5,8 @@ import java.util.List;
 
 /*
  * 
- *  ×ó±ßÊÇÊı×Ö¸öÊı£¬·Ö³É2×é£¬ÓÃÂùÁ¦·¨Çó½â£¬ÓÒÃæµÃ³öµÄÁ½¸ö¼¯ºÏµÄ×îĞ¡²îÖµ£¬ÎÒÃÇ·¢ÏÖµ±num > 10ÒÔºó£¬²îÖµÊÇ010101µÄÑ­»·£¬
- *  ÔÙÏêÏ¸µã£¬µ±×Ü¹²Êı×Ö³¬¹ı10£¬¾ÍÊÇÈç¹ûÕû¸öÊı×éºÍÊÇÅ¼Êı£¬ÄÜ¾ù·Ö£¬Õû¸öÊı×éºÍÊÇÆæÊı£¬ÔòºÍ×îĞ¡Ïà²î1¡£
+ *  å·¦è¾¹æ˜¯æ•°å­—ä¸ªæ•°ï¼Œåˆ†æˆ2ç»„ï¼Œç”¨è›®åŠ›æ³•æ±‚è§£ï¼Œå³é¢å¾—å‡ºçš„ä¸¤ä¸ªé›†åˆçš„æœ€å°å·®å€¼ï¼Œæˆ‘ä»¬å‘ç°å½“num > 10ä»¥åï¼Œå·®å€¼æ˜¯010101çš„å¾ªç¯ï¼Œ
+ *  å†è¯¦ç»†ç‚¹ï¼Œå½“æ€»å…±æ•°å­—è¶…è¿‡10ï¼Œå°±æ˜¯å¦‚æœæ•´ä¸ªæ•°ç»„å’Œæ˜¯å¶æ•°ï¼Œèƒ½å‡åˆ†ï¼Œæ•´ä¸ªæ•°ç»„å’Œæ˜¯å¥‡æ•°ï¼Œåˆ™å’Œæœ€å°ç›¸å·®1ã€‚
  *  
  *  2->7   4->30   6->9   8->4   10->19   12->0   14->1   16->0   18->1   20->0   22->1   24->0   26->1
  *
@@ -14,20 +14,20 @@ import java.util.List;
  */
 public class MinDiffBruteForce implements MinDiff {
 	public Result minDiff(int start, int end, int power) {
-		// ³õÊ¼»¯
+		// åˆå§‹åŒ–
 		int[] x = new int[end - start + 1];
 
 		for (int i = 0; i < x.length; i++) {
 			x[i] = (int) Math.pow(start + i, power);
 		}
 
-		// ÇóºÍ
+		// æ±‚å’Œ
 		long sum = sum(x);
 
 		List<Integer> c1 = new ArrayList<Integer>();
 		List<Integer> c2 = new ArrayList<Integer>();
 
-		// µİ¹éÇó½â
+		// é€’å½’æ±‚è§£
 		Result result = new Result();
 		minDiff(x, c1, c2, 0, 0, result, 0, (int) sum / 2);
 
@@ -38,22 +38,22 @@ public class MinDiffBruteForce implements MinDiff {
 	private void minDiff(int[] x, List<Integer> c1, List<Integer> c2, int s1,
 			int s2, Result result, int pos, int avg) {
 
-		// µİ¹é¹ı³ÌÖĞ£¬Èç¹ûÄ³¸öÊı×éÖ®ºÍÒÑ¾­´óÓÚÆ½¾ùÊı£¬ÄÇÃ´²îÖµ³ËÒÔ2¾ÍÊÇÁ½¸öÊı×éÖ®²î£¬Èç¹û´óÓÚÒÑ¾­Çó³öµÄºÍÖ®²î×îĞ¡Öµ£¬ÔòÅ×Æúµ±Ç°Â·¾¶£¬»ØËİ
+		// é€’å½’è¿‡ç¨‹ä¸­ï¼Œå¦‚æœæŸä¸ªæ•°ç»„ä¹‹å’Œå·²ç»å¤§äºå¹³å‡æ•°ï¼Œé‚£ä¹ˆå·®å€¼ä¹˜ä»¥2å°±æ˜¯ä¸¤ä¸ªæ•°ç»„ä¹‹å·®ï¼Œå¦‚æœå¤§äºå·²ç»æ±‚å‡ºçš„å’Œä¹‹å·®æœ€å°å€¼ï¼Œåˆ™æŠ›å¼ƒå½“å‰è·¯å¾„ï¼Œå›æº¯
 		if (s1 > avg && (s1 - avg) * 2 > result.diff)
 			return;
 		if (s2 > avg && (s2 - avg) * 2 > result.diff)
 			return;
 
-		// Èç¹ûËùÓĞÔªËØÒÑ·Ö×é
+		// å¦‚æœæ‰€æœ‰å…ƒç´ å·²åˆ†ç»„
 		if (c1.size() + c2.size() == x.length) {
-			// Èç¹û²»ÊÇÆ½·Ö£¬ÔòÍË³ö
+			// å¦‚æœä¸æ˜¯å¹³åˆ†ï¼Œåˆ™é€€å‡º
 			if (c1.size() != c2.size())
 				return;
 
-			// Çó²îÖµ
+			// æ±‚å·®å€¼
 			int diff = Math.abs(s1 - s2);
 
-			// Èç¹û²îÖµ±ÈÒÑÓĞ½â»¹Ğ¡£¬Ôò±£´æµ±Ç°×îÓÅ½â
+			// å¦‚æœå·®å€¼æ¯”å·²æœ‰è§£è¿˜å°ï¼Œåˆ™ä¿å­˜å½“å‰æœ€ä¼˜è§£
 			if (diff < result.diff) {
 
 				result.diff = diff;
@@ -64,12 +64,12 @@ public class MinDiffBruteForce implements MinDiff {
 			return;
 		}
 
-		// µ±Ç°ÔªËØ·ÅÔÚµÚÒ»¼¯ºÏµİ¹é
+		// å½“å‰å…ƒç´ æ”¾åœ¨ç¬¬ä¸€é›†åˆé€’å½’
 		c1.add(x[pos]);
 		minDiff(x, c1, c2, s1 + x[pos], s2, result, pos + 1, avg);
 		c1.remove((Integer) x[pos]);
 
-		// µ±Ç°ÔªËØ·ÅÔÚµÚ¶ş¼¯ºÏµİ¹é
+		// å½“å‰å…ƒç´ æ”¾åœ¨ç¬¬äºŒé›†åˆé€’å½’
 		c2.add(x[pos]);
 		minDiff(x, c1, c2, s1, s2 + x[pos], result, pos + 1, avg);
 		c2.remove((Integer) x[pos]);

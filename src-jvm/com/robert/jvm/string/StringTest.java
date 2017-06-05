@@ -4,7 +4,7 @@ import java.io.UnsupportedEncodingException;
 
 public class StringTest {
     public static void main(String[] args) {
-        // ÒÔÏÂÁ½¸öbyteÊı×é·Ö±ğ´ú±íÒ»¸öÖĞÎÄ×Ö·û£¬Ç°Ò»¸öÊôÓÚÕı³£×Ö·û·¶Î§£¬ºóÒ»¸öÊôÓÚÔö²¹Âë·¶Î§¡£Ê¹ÓÃutf-8±àÂëÀ´²úÉú×Ö·û´®¡£
+        // ä»¥ä¸‹ä¸¤ä¸ªbyteæ•°ç»„åˆ†åˆ«ä»£è¡¨ä¸€ä¸ªä¸­æ–‡å­—ç¬¦ï¼Œå‰ä¸€ä¸ªå±äºæ­£å¸¸å­—ç¬¦èŒƒå›´ï¼Œåä¸€ä¸ªå±äºå¢è¡¥ç èŒƒå›´ã€‚ä½¿ç”¨utf-8ç¼–ç æ¥äº§ç”Ÿå­—ç¬¦ä¸²ã€‚
 
         // http://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=5357
         byte[] b1 = {(byte) 0xE5, (byte) 0x8D, (byte) 0x97};
@@ -17,10 +17,10 @@ public class StringTest {
             String s2 = new String(b2, "UTF-8");
 
 
-            System.out.println("ÖĞÎÄ×Ö·û£º" + s1 + ":" + s2);
-            System.out.println("UTF8×Ö½Ú³¤¶È" + s1.getBytes("UTF-8").length + ":" + s2.getBytes("UTF-8").length);
-            System.out.println("´®³¤¶È*.length()" + s1.length() + ":" + s2.length());
-            System.out.println("×Ö·û´®CodePointCount" + s1.codePointCount(0, s1.length()) + ":" + s2.codePointCount(0, s2.length()));
+            System.out.println("ä¸­æ–‡å­—ç¬¦ï¼š" + s1 + ":" + s2);
+            System.out.println("UTF8å­—èŠ‚é•¿åº¦" + s1.getBytes("UTF-8").length + ":" + s2.getBytes("UTF-8").length);
+            System.out.println("ä¸²é•¿åº¦*.length()" + s1.length() + ":" + s2.length());
+            System.out.println("å­—ç¬¦ä¸²CodePointCount" + s1.codePointCount(0, s1.length()) + ":" + s2.codePointCount(0, s2.length()));
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

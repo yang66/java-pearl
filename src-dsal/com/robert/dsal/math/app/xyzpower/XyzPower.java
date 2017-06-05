@@ -2,7 +2,7 @@ package com.robert.dsal.math.app.xyzpower;
 
 /**
  * 
- * Êä³ö1 - nÖ®¼äÂú×ãx*x + y*y = z*zµÄËùÓĞÊı×Ö¡£
+ * è¾“å‡º1 - nä¹‹é—´æ»¡è¶³x*x + y*y = z*zçš„æ‰€æœ‰æ•°å­—ã€‚
  * 
  * 
  */

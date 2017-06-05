@@ -14,7 +14,7 @@ public class MinDiffTest {
 		MinDiff minDiff = new MinDiffDoubleWaySearch();
 
 		Result result = minDiff.minDiff(1, 50, 3);
-		System.out.println("×îĞ¡²îÖµ: " + result.diff);
+		System.out.println("æœ€å°å·®å€¼: " + result.diff);
 		System.out.println(result.c1);
 		System.out.println(result.c2);
 	}
@@ -23,7 +23,7 @@ public class MinDiffTest {
 		MinDiff minDiff = new MinDiffSearch();
 
 		Result result = minDiff.minDiff(1, 50, 3);
-		System.out.println("×îĞ¡²îÖµ: " + result.diff);
+		System.out.println("æœ€å°å·®å€¼: " + result.diff);
 		System.out.println(result.c1);
 		System.out.println(result.c2);
 	}

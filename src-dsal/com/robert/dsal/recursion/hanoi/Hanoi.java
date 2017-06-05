@@ -1,7 +1,7 @@
 package com.robert.dsal.recursion.hanoi;
 
 public class Hanoi {
-	// °Ñ0 - n¸öÅÌ×Ó´ÓfromÍ¨¹ıbyÒÆ¶¯µ½to
+	// æŠŠ0 - nä¸ªç›˜å­ä»fromé€šè¿‡byç§»åŠ¨åˆ°to
 	public void moveDisks(int n, char from, char to, char by) {
 		if (n == 1) {
 			moveDisk(1, from, to);
@@ -13,7 +13,7 @@ public class Hanoi {
 		moveDisks(n - 1, by, to, from);
 	}
 
-	// °ÑµÚn¸öÅÌ×Ó£¨Ò»¸öÅÌ×Ó£©´ÓfromÒÆ¶¯µ½to
+	// æŠŠç¬¬nä¸ªç›˜å­ï¼ˆä¸€ä¸ªç›˜å­ï¼‰ä»fromç§»åŠ¨åˆ°to
 	private void moveDisk(int n, char from, char to) {
 		System.out.println("Move disk# " + n + " from " + from + " to " + to);
 	}

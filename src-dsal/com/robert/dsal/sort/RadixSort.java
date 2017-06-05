@@ -2,11 +2,11 @@ package com.robert.dsal.sort;
 
 public class RadixSort implements Sort {
 
-	// �Ӹ�λ����λһֱ���ϣ�ÿ��ȷ��һλ��˳�������λû�иı�˳������Ȼ�������˳�򣬷����ո�λ��
+	// 从个位到百位一直往上，每次确定一位的顺序，如果高位没有改变顺序则仍然保持这个顺序，否则按照高位算
 
-	// ��λ���������������ȼ�
+	// 高位后处理，所以有优先级
 
-	// �����BucketSort.java��˵��ÿ�η�Ͱ�����ݻ�����һ�������У����õݹ飬�ǵݹ��㷨
+	// 相对于BucketSort.java来说，每次分桶后，数据还是在一个集合中，不用递归，非递归算法
 
 	public void sortRadix(int[] seq, int d) {
 		int n = 1;
@@ -36,7 +36,7 @@ public class RadixSort implements Sort {
 	}
 
 	public void sort(int seq[]) {
-		// ֻ����10λʮ��������
+		// 只排序10位十进制数字
 		sortRadix(seq, 10);
 	}
 }

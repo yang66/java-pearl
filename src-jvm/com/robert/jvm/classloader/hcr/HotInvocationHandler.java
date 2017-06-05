@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
   
   
 /** 
- * À¹½Øjava·½·¨£¬¸üĞÂĞÂµÄÀà 
+ * æ‹¦æˆªjavaæ–¹æ³•ï¼Œæ›´æ–°æ–°çš„ç±» 
  * @author xuwei 
  * Jul 9, 2008 12:02:26 PM 
  */  
@@ -17,7 +17,7 @@ public class HotInvocationHandler extends DefaultInvocationHandler {
     }  
   
     /** 
-     * ÔÚµ÷ÓÃÀàÊ±ÅĞ¶Ï¸ÃÀàÊÇ·ñÖØĞÂ±àÒë¹ı£¬Èç±àÒë¹ıÔòµ÷ÓÃĞÂÀàµÄ·½·¨ 
+     * åœ¨è°ƒç”¨ç±»æ—¶åˆ¤æ–­è¯¥ç±»æ˜¯å¦é‡æ–°ç¼–è¯‘è¿‡ï¼Œå¦‚ç¼–è¯‘è¿‡åˆ™è°ƒç”¨æ–°ç±»çš„æ–¹æ³• 
      */  
     public Object invoke(Object proxy, Method method, Object[] args)  
             throws Throwable {  

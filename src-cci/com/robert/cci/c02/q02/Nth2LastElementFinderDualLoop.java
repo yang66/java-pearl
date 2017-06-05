@@ -2,9 +2,9 @@ package com.robert.cci.c02.q02;
 
 /**
  * 
- * �򵥽ⷨ�����ڵ�������ÿ��Ԫ�أ�����ӵ�ǰԪ������β�ߣ��߹�n-1��Ԫ�ص����β���򷵻ص�ǰԪ�ء�
+ * 简单解法：对于单链表中每个元素，如果从当前元素往表尾走，走过n-1个元素到达表尾，则返回当前元素。
  * 
- * ���ʱ�临�Ӷ�: O(n^2)
+ * 最坏的时间复杂度: O(n^2)
  * 
  */
 public class Nth2LastElementFinderDualLoop implements Nth2LastElementFinder {

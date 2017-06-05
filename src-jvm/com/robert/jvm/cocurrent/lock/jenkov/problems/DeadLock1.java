@@ -51,7 +51,7 @@ class TreeNode {
 	public synchronized void addChild(TreeNode child) {
 		if (!this.children.contains(child)) {
 			this.children.add(child);
-			// ËøÁËparent£¬ÊÔÍ¼Ëøchild
+			// é”äº†parentï¼Œè¯•å›¾é”child
 			child.setParentOnly(this);
 		}
 	}
@@ -64,7 +64,7 @@ class TreeNode {
 
 	public synchronized void setParent(TreeNode parent) {
 		this.parent = parent;
-		// ËøÁËchildÊÔÍ¼Ëøparent
+		// é”äº†childè¯•å›¾é”parent
 		parent.addChildOnly(this);
 	}
 

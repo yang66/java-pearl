@@ -3,8 +3,8 @@ package com.robert.dsal.advance.queens8;
 // TODO Not Done
 /**
  * 
- * 1. 暴力递归所有元素法
- * 2. 转化为全排列, 例如12345678的全排列，复杂度和解的数量都是n!
+ * 1. 鏆村姏閫掑綊鎵�鏈夊厓绱犳硶
+ * 2. 杞寲涓哄叏鎺掑垪, 渚嬪12345678鐨勫叏鎺掑垪锛屽鏉傚害鍜岃В鐨勬暟閲忛兘鏄痭!
  *
  */
 public interface Queens {

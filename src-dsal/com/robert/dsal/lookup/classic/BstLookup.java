@@ -3,15 +3,15 @@ package com.robert.dsal.lookup.classic;
 import com.robert.dsal.tree.binary.BinaryTreeNode;
 
 /**
- * Ëã·¨Ãû³Æ£º
+ * ç®—æ³•åç§°ï¼š
  * 
- * ÅÅÐò¶þ²æÊ÷²éÕÒ
+ * æŽ’åºäºŒå‰æ ‘æŸ¥æ‰¾
  * 
- * Ëã·¨ÃèÊö£º
+ * ç®—æ³•æè¿°ï¼š
  * 
- * ¶Ô²éÕÒµÄÊý×é¹¹½¨ÅÅÐò¶þ²æÊ÷£¬ÀûÓÃÅÅÐò¶þ²æÊ÷µÄÓÐÐòÐÔ½øÐÐ²éÕÒ¡£
+ * å¯¹æŸ¥æ‰¾çš„æ•°ç»„æž„å»ºæŽ’åºäºŒå‰æ ‘ï¼Œåˆ©ç”¨æŽ’åºäºŒå‰æ ‘çš„æœ‰åºæ€§è¿›è¡ŒæŸ¥æ‰¾ã€‚
  * 
- * Ê±¼ä¸´ÔÓ¶È£º
+ * æ—¶é—´å¤æ‚åº¦ï¼š
  * 
  * O(log2N)
  */

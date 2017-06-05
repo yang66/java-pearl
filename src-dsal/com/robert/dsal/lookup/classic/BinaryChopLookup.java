@@ -3,24 +3,24 @@ package com.robert.dsal.lookup.classic;
 import java.util.Arrays;
 
 /**
- * Ëã·¨Ãû³Æ£º
+ * ç®—æ³•åç§°ï¼š
  * 
- * ¶þ·Ö²éÕÒ»òÕßÕÛ°ë²éÕÒ
+ * äºŒåˆ†æŸ¥æ‰¾æˆ–è€…æŠ˜åŠæŸ¥æ‰¾
  * 
- * Ëã·¨ÃèÊö£º
+ * ç®—æ³•æè¿°ï¼š
  * 
- * 1.È¡ÕûÊýÐòÁÐÖÐ¼äµÄÖµ£¬Èç¹ûµÈÓÚÄ¿±êÕûÊý£¬ÔòÕÒµ½¡£ ¡¡ ¡¡¡¡¡¡¡¡¡¡¡¡ 2.Èç¹ûÄ¿±êÕûÊýÐ¡ÓÚÖÐ¼äµÄÕûÊý£¬µ÷ÕûË÷ÒýÔÚlµ½m-1×ÓÐòÁÐ²éÕÒ¡£
- * 3.·ñÔò£¬µ÷ÕûË÷ÒýÔÚm+1µ½h×ÓÐòÁÐ²éÕÒ¡£
+ * 1.å–æ•´æ•°åºåˆ—ä¸­é—´çš„å€¼ï¼Œå¦‚æžœç­‰äºŽç›®æ ‡æ•´æ•°ï¼Œåˆ™æ‰¾åˆ°ã€‚ ã€€ ã€€ã€€ã€€ã€€ã€€ã€€ 2.å¦‚æžœç›®æ ‡æ•´æ•°å°äºŽä¸­é—´çš„æ•´æ•°ï¼Œè°ƒæ•´ç´¢å¼•åœ¨låˆ°m-1å­åºåˆ—æŸ¥æ‰¾ã€‚
+ * 3.å¦åˆ™ï¼Œè°ƒæ•´ç´¢å¼•åœ¨m+1åˆ°hå­åºåˆ—æŸ¥æ‰¾ã€‚
  * 
- * Ê±¼ä¸´ÔÓ¶È£º
+ * æ—¶é—´å¤æ‚åº¦ï¼š
  * 
- * O(logN) ¾­¹ý1´ÎÊ£Óà n/2 ¾­¹ý2´ÎÊ£Óà n/4 ¾­¹ý3´ÎÊ£Óà n/8 .......... ¾­¹ýx´ÎÊ£Óàn/2^x 2^x = n => x=
+ * O(logN) ç»è¿‡1æ¬¡å‰©ä½™ n/2 ç»è¿‡2æ¬¡å‰©ä½™ n/4 ç»è¿‡3æ¬¡å‰©ä½™ n/8 .......... ç»è¿‡xæ¬¡å‰©ä½™n/2^x 2^x = n => x=
  * logN
  * 
- * ¹Ø¼üµã£º
+ * å…³é”®ç‚¹ï¼š
  * 
- * 1.1000¸öÊý¾ÝÐèÒª10²½£¬1000000¸öÊý¾ÝÐèÒª20²½£¬¿É¼ûÊý¾ÝÔ½¶à¶þ·Ö²éÕÒÔ½¿ì£¬logNËæ×ÅÊý¾ÝµÄÔö´ó¸´ÔÓ¶ÈÔö¼ÓµÄÇ÷ÊÆ±äÐ¡£¬Ð¡ÓÚÏßÐÔ¡£
- * 2.¶þ·Ö²éÕÒÒªÇóÊäÈëÐòÁÐÊÇÅÅÐò¹ýµÄÐòÁÐ¡£ 3.Ñ­»·ÖÕÖ¹Ìõ¼þÊÇl > r¡£
+ * 1.1000ä¸ªæ•°æ®éœ€è¦10æ­¥ï¼Œ1000000ä¸ªæ•°æ®éœ€è¦20æ­¥ï¼Œå¯è§æ•°æ®è¶Šå¤šäºŒåˆ†æŸ¥æ‰¾è¶Šå¿«ï¼ŒlogNéšç€æ•°æ®çš„å¢žå¤§å¤æ‚åº¦å¢žåŠ çš„è¶‹åŠ¿å˜å°ï¼Œå°äºŽçº¿æ€§ã€‚
+ * 2.äºŒåˆ†æŸ¥æ‰¾è¦æ±‚è¾“å…¥åºåˆ—æ˜¯æŽ’åºè¿‡çš„åºåˆ—ã€‚ 3.å¾ªçŽ¯ç»ˆæ­¢æ¡ä»¶æ˜¯l > rã€‚
  * 
  */
 public class BinaryChopLookup extends AbstractLookup {
@@ -37,9 +37,9 @@ public class BinaryChopLookup extends AbstractLookup {
 	}
 
 	private int lookup(int[] seq, int l, int r, int t) {
-		// ÕâÀïÊÇ>=, ¶ÔÓÚ=ÆäÊµÊÇÅÐ¶ÏÁËÒ»´Îseq[l] == t£¬ÖØÓÃÁËÑ­»·ÀïÃæµÄÅÐ¶Ï
+		// è¿™é‡Œæ˜¯>=, å¯¹äºŽ=å…¶å®žæ˜¯åˆ¤æ–­äº†ä¸€æ¬¡seq[l] == tï¼Œé‡ç”¨äº†å¾ªçŽ¯é‡Œé¢çš„åˆ¤æ–­
 		while (l <= r) {
-			// ·Ö³ÉÈý¸öÇø¼ä l - m-1, m, m+1 - r
+			// åˆ†æˆä¸‰ä¸ªåŒºé—´ l - m-1, m, m+1 - r
 			int m = (l + r) / 2;
 			if (seq[m] == t)
 				return m;

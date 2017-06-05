@@ -7,9 +7,9 @@ import java.util.Map;
 
 /**
  * 
- * Ê¹ÓÃHash, ¶ÔÃ¿Ò»¸öÊı£¬Èç¹û sum - currÒ²ÔÚhashÀï£¬¾ÍÊÇÄ¿±ê£¬È»ºó´ÓhashÉ¾³ıÕâÁ½¸öÊı×Ö
+ * ä½¿ç”¨Hash, å¯¹æ¯ä¸€ä¸ªæ•°ï¼Œå¦‚æœ sum - currä¹Ÿåœ¨hashé‡Œï¼Œå°±æ˜¯ç›®æ ‡ï¼Œç„¶åä»hashåˆ é™¤è¿™ä¸¤ä¸ªæ•°å­—
  * 
- * Ê±¼ä¸´ÔÓ¶ÈO(n)£¬ ¿Õ¼ä¸´ÔÓ¶ÈO(n)
+ * æ—¶é—´å¤æ‚åº¦O(n)ï¼Œ ç©ºé—´å¤æ‚åº¦O(n)
  * 
  */
 public class Find2SumHash implements Find2Sum {

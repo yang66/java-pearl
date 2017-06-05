@@ -2,17 +2,17 @@ package com.robert.dsal.advance.bag01;
 
 /**
  * 
- * O(n * v), nÊÇÎïÆ·µÄÊıÁ¿£¬ vÊÇ±³°üµÄÈİÁ¿£¬ÕâÊÇÒòÎªĞèÒªÌî¶şÎ¬±í
+ * O(n * v), næ˜¯ç‰©å“çš„æ•°é‡ï¼Œ væ˜¯èƒŒåŒ…çš„å®¹é‡ï¼Œè¿™æ˜¯å› ä¸ºéœ€è¦å¡«äºŒç»´è¡¨
  * 
- * ¶ÔÏó±í£º
+ * å¯¹è±¡è¡¨ï¼š
 		ID W V
 		0  3  8
 		1 10  5
 		2  2  3
 		3  8 20
 
-      ±³°üÖØÁ¿ÊÇ£º 13
-      ¶¯Ì¬¹æ»®±í£º
+      èƒŒåŒ…é‡é‡æ˜¯ï¼š 13
+      åŠ¨æ€è§„åˆ’è¡¨ï¼š
  *  0  0  8  8  8  8  8  8  8  8  8  8  8 
  *  5  5  8  8  8  8  8  8  8  8  8  8 13 
  *  5  5  8  8 11 11 11 11 11 11 11 11 13 
@@ -23,19 +23,19 @@ public class BagProblemDynamicProgramming implements BagProblem {
 	public BagSolution bestSolution(Object[] objects, int volume) {
 		int[][] matrix = new int[objects.length][volume];
 
-		// ³õÊ¼»¯µÚÒ»ÅÅ
+		// åˆå§‹åŒ–ç¬¬ä¸€æ’
 		for (int i = 0; i < matrix[0].length; i++) {
-			// i±íÊ¾ÖØÁ¿i + 1
+			// iè¡¨ç¤ºé‡é‡i + 1
 			if (i + 1 < objects[0].weight)
 				matrix[0][i] = 0;
 			else
 				matrix[0][i] = objects[0].value;
 		}
 
-		// ¼ÆËã¶¯Ì¬¹æ»®±í
+		// è®¡ç®—åŠ¨æ€è§„åˆ’è¡¨
 		for (int i = 1; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[0].length; j++) {
-				// ¶¯Ì¬¹æ»®º¯Êı
+				// åŠ¨æ€è§„åˆ’å‡½æ•°
 				// matrix[i][j]= max(matrix[i-1][j-objects[i].weight] +
 				// objects[i].value, matrix[i-1][j])
 				matrix[i][j] = Math.max(includeCurrent(matrix, objects, i, j),
@@ -43,7 +43,7 @@ public class BagProblemDynamicProgramming implements BagProblem {
 			}
 		}
 
-		// µ÷ÊÔÊä³ö
+		// è°ƒè¯•è¾“å‡º
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[0].length; j++) {
 				System.out.format("%2d ", matrix[i][j]);
@@ -51,22 +51,22 @@ public class BagProblemDynamicProgramming implements BagProblem {
 			System.out.println();
 		}
 
-		// ´ÓÓÒÏÂ½Ç¿ªÊ¼Íù×óÉÏ½Ç¼ÆËã½á¹¹£¬Èç¹ûÄ³¸öÖµºÍÇ°Ò»¸öÔªËØÄÇ¸öÖµÏàµÈ£¬Ôò²»°üº¬
-		// ·ñÔò°üº¬
+		// ä»å³ä¸‹è§’å¼€å§‹å¾€å·¦ä¸Šè§’è®¡ç®—ç»“æ„ï¼Œå¦‚æœæŸä¸ªå€¼å’Œå‰ä¸€ä¸ªå…ƒç´ é‚£ä¸ªå€¼ç›¸ç­‰ï¼Œåˆ™ä¸åŒ…å«
+		// å¦åˆ™åŒ…å«
 		int i = matrix.length - 1;
 		int j = matrix[0].length - 1;
 
 		boolean[] vector = new boolean[matrix.length];
 		while (i - 1 >= 0) {
 			if (matrix[i][j] != matrix[i - 1][j]) {
-				// Èç¹û°üº¬µ±Ç°ÔªËØ£¬ÄÇÃ´ÏÂÒ»ĞĞÔªËØÑ¡È¡ÒªÌøÔ¾µ±Ç°ÔªËØµÄÖØÁ¿
+				// å¦‚æœåŒ…å«å½“å‰å…ƒç´ ï¼Œé‚£ä¹ˆä¸‹ä¸€è¡Œå…ƒç´ é€‰å–è¦è·³è·ƒå½“å‰å…ƒç´ çš„é‡é‡
 				vector[i] = true;
 				j -= objects[i].weight;
 			}
 			i--;
 		}
 
-		// ¼ÆËãµÚÒ»¸ö¸öÔªËØ
+		// è®¡ç®—ç¬¬ä¸€ä¸ªä¸ªå…ƒç´ 
 		if (matrix[i][j] > 0)
 			vector[0] = true;
 
@@ -75,20 +75,20 @@ public class BagProblemDynamicProgramming implements BagProblem {
 	}
 
 	private int includeCurrent(int[][] matrix, Object[] objects, int i, int j) {
-		// Ô½½ç¾Í·µ»Øµ±Ç°Öµ
+		// è¶Šç•Œå°±è¿”å›å½“å‰å€¼
 		if (i - 1 < 0 || j - objects[i].weight < 0)
 			return objects[i].value;
 
-		// ²»Ô½½ç¾Í·µ»Ø´ÓÇ°i-1¸öÎïÌåÀïÃæÑ¡³ö²»°üÀ¨µ±Ç°ÎïÌåµÄ¼ÛÖµ£¬¼ÓÉÏµ±Ç°ÎïÌåµÄ¼ÛÖµ£¬Ò²¾ÍÊÇ¼ÆËã³ö°üº¬µ±Ç°ÎïÌåµÄ¼ÛÖµ
+		// ä¸è¶Šç•Œå°±è¿”å›ä»å‰i-1ä¸ªç‰©ä½“é‡Œé¢é€‰å‡ºä¸åŒ…æ‹¬å½“å‰ç‰©ä½“çš„ä»·å€¼ï¼ŒåŠ ä¸Šå½“å‰ç‰©ä½“çš„ä»·å€¼ï¼Œä¹Ÿå°±æ˜¯è®¡ç®—å‡ºåŒ…å«å½“å‰ç‰©ä½“çš„ä»·å€¼
 		return matrix[i - 1][j - objects[i].weight] + objects[i].value;
 	}
 
 	private int excludeCurrent(int[][] matrix, int i, int j) {
-		// Ô½½ç·µ»Ø0
+		// è¶Šç•Œè¿”å›0
 		if (i - 1 < 0 || j < 0)
 			return 0;
 
-		// ·µ»ØÇ°i-1¸öÎïÀíÄÜ¹»²úÉúµÄ×î´óÖµ£¬Ò²¾ÍÊÇ²»°üº¬µ±Ç°ÎïÌå
+		// è¿”å›å‰i-1ä¸ªç‰©ç†èƒ½å¤Ÿäº§ç”Ÿçš„æœ€å¤§å€¼ï¼Œä¹Ÿå°±æ˜¯ä¸åŒ…å«å½“å‰ç‰©ä½“
 		return matrix[i - 1][j];
 	}
 }

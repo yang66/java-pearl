@@ -2,7 +2,7 @@ package com.robert.dsal.lookup.app.wrongnum;
 
 /**
  * 
- * 1µ½nÖ®¼äµÄn¸öÊý²»ÖØ¸´ÂÒÐò£¬ÓÐÒ»¸öÊýx±ä³ÉÁËy£¬ÇóÕâÁ©Êý¡£ÀýÈç£¬ 3±ä³ÉÁË4£¬Ò²¾ÍÊÇÓÐ2¸ö4£¬µ«ÊÇÖ»ÓÐÒ»¸ö3¡£
+ * 1åˆ°nä¹‹é—´çš„nä¸ªæ•°ä¸é‡å¤ä¹±åºï¼Œæœ‰ä¸€ä¸ªæ•°xå˜æˆäº†yï¼Œæ±‚è¿™ä¿©æ•°ã€‚ä¾‹å¦‚ï¼Œ 3å˜æˆäº†4ï¼Œä¹Ÿå°±æ˜¯æœ‰2ä¸ª4ï¼Œä½†æ˜¯åªæœ‰ä¸€ä¸ª3ã€‚
  * 
  */
 public interface WrongNumFinder {

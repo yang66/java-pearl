@@ -3,15 +3,15 @@ package com.robert.dsal.sort;
 public class ShellSort implements Sort {
 
 	public void sort(int[] seq) {
-		// Ñ¡Ôñ²½³¤
+		// é€‰æ‹©æ­¥é•¿
 		int h = 1;
 		while (h < seq.length)
 			h = 3 * h + 1;
 
-		// Ñ­»·Ã¿Ò»¸ö²½³¤£¬×îºóµ½1Î»ÖÃ
+		// å¾ªçŽ¯æ¯ä¸€ä¸ªæ­¥é•¿ï¼Œæœ€åŽåˆ°1ä½ç½®
 		h /= 3;
 		while (h > 0) {
-			// ¶ÔÓÚÃ¿¸ö²½³¤ÖÐµÄÃ¿Ò»¸ö×ÖÊý×éÖ´ÐÐÒ»´ÎÃ°ÅÝÅÅÐò
+			// å¯¹äºŽæ¯ä¸ªæ­¥é•¿ä¸­çš„æ¯ä¸€ä¸ªå­—æ•°ç»„æ‰§è¡Œä¸€æ¬¡å†’æ³¡æŽ’åº
 			for (int i = seq.length / h * h; i > 0; i -= h) {
 				for (int j = 0; j < i; j++) {
 					if (j + h < seq.length && seq[j] > seq[j + h])

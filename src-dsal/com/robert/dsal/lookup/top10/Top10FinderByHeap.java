@@ -7,21 +7,21 @@ public class Top10FinderByHeap implements Top10Finder {
     public int[] findTop10(int[] a) {
         DisplayUtil.printSeq("Srouce Data", a);
 
-        // Ìî³ä¶Ñ
+        // å¡«å……å †
         int[] heap = new int[10];
         for (int i = 0; i < 10; i++)
             heap[i] = a[i];
 
         DisplayUtil.printSeq("Heap Filled", heap);
         
-        // ¹¹Ôì×îÐ¡¶Ñ
+        // æž„é€ æœ€å°å †
         construct(heap);
         
         DisplayUtil.printSeq("Heap Init", heap);
 
         for (int i = 10; i < a.length; i++) {
             if (a[i] > heap[0]) {
-                //Èç¹ûÄ³Ò»¸öÖµ±È×îÐ¡¶ÑµÄ×îÐ¡Öµ´ó£¬ÔòÌæ»»×îÐ¡¶ÑµÄ×îÐ¡Öµ
+                //å¦‚æžœæŸä¸€ä¸ªå€¼æ¯”æœ€å°å †çš„æœ€å°å€¼å¤§ï¼Œåˆ™æ›¿æ¢æœ€å°å †çš„æœ€å°å€¼
                 heap[0] = a[i];
                 adjust(heap, 0, heap.length);
             }
@@ -33,7 +33,7 @@ public class Top10FinderByHeap implements Top10Finder {
     }
 
     private void construct(int[] heap) {
-        // ´ÓµÚÒ»¸ö·ÇÒ¶×Ó½Úµã¿ªÊ¼ÏòÇ°µ÷Õû
+        // ä»Žç¬¬ä¸€ä¸ªéžå¶å­èŠ‚ç‚¹å¼€å§‹å‘å‰è°ƒæ•´
         for (int i = heap.length / 2; i >= 0; i--) {
             adjust(heap, i, heap.length);
         }
@@ -43,16 +43,16 @@ public class Top10FinderByHeap implements Top10Finder {
         while (2 * start + 1 < end) {
             int min = 2 * start + 1;
 
-            // ÕÒµ½Á½¸öº¢×ÓÖÐ×îÐ¡µÄ
+            // æ‰¾åˆ°ä¸¤ä¸ªå­©å­ä¸­æœ€å°çš„
             if (2 * start + 2 < end && heap[2 * start + 2] < heap[min]) min = 2 * start + 2;
 
             
             if (heap[min] < heap[start]) {
-             // Èç¹ûº¢×Ó±È¸¸Ç×»¹Ð¡£¬Ôò½»»»£¬´Ó½»»»µÄº¢×Ó½Úµã¼ÌÐøÍùÏÂµ÷Õû
+             // å¦‚æžœå­©å­æ¯”çˆ¶äº²è¿˜å°ï¼Œåˆ™äº¤æ¢ï¼Œä»Žäº¤æ¢çš„å­©å­èŠ‚ç‚¹ç»§ç»­å¾€ä¸‹è°ƒæ•´
                 AlUtil.swap(heap, min, start);
                 start = min;
             } else
-                // Èç¹û¸¸½Úµã×îÐ¡£¬ÔòÊÇºÏ·¨µÄ¶Ñ
+                // å¦‚æžœçˆ¶èŠ‚ç‚¹æœ€å°ï¼Œåˆ™æ˜¯åˆæ³•çš„å †
                 break;
         }
     }

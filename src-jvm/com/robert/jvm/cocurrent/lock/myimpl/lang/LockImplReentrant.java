@@ -4,7 +4,7 @@ import com.robert.jvm.cocurrent.lock.myimpl.Lock;
 
 /**
  * 
- * ¿ÉÖØÈëµÄËø£¬µ«ÊÇ²»¹«Æ½
+ * å¯é‡å…¥çš„é”ï¼Œä½†æ˜¯ä¸å…¬å¹³
  * 
  */
 public class LockImplReentrant implements Lock {

@@ -15,7 +15,7 @@ public class DeleteRangeImpl implements DeleteRange {
 		if (head == null)
 			return null;
 
-		// Ö»ÓĞÒ»¸öÔªËØÇĞĞèÒªÉ¾³ı
+		// åªæœ‰ä¸€ä¸ªå…ƒç´ åˆ‡éœ€è¦åˆ é™¤
 		if (head.next == null && start < head.value && end > head.value) {
 			return null;
 		}
@@ -26,34 +26,34 @@ public class DeleteRangeImpl implements DeleteRange {
 		LinkedListNode prev = null;
 		LinkedListNode t = head;
 		while (t != null) {
-			// ÕÒµ½×óÔªËØµÄÇ°Ò»¸öÔªËØ
+			// æ‰¾åˆ°å·¦å…ƒç´ çš„å‰ä¸€ä¸ªå…ƒç´ 
 			if (start <= t.value)
 				left = prev;
 
-			// ÕÒµ½ÓÒÔªËØµÄÏÂÒ»¸öÔªËØ
+			// æ‰¾åˆ°å³å…ƒç´ çš„ä¸‹ä¸€ä¸ªå…ƒç´ 
 			if (end < t.value)
 				right = t;
 			else if (end == t.value)
 				right = t.next;
 
-			// Ë«Ö¸ÕëÏòÇ°ÒÆ¶¯
+			// åŒæŒ‡é’ˆå‘å‰ç§»åŠ¨
 			prev = t;
 			t = t.next;
 		}
 
-		// ×óÓÒ¶¼Îª¿Õ£¬¾ÍÊÇÕû¸öÁ´±í¶¼ÒªÉ¾³ı
+		// å·¦å³éƒ½ä¸ºç©ºï¼Œå°±æ˜¯æ•´ä¸ªé“¾è¡¨éƒ½è¦åˆ é™¤
 		if (left == null && right == null)
 			return null;
 
-		// Èç¹û×óÔªËØÊÇ¿Õ£¬ÓÒÔªËØ²»Îª¿Õ
+		// å¦‚æœå·¦å…ƒç´ æ˜¯ç©ºï¼Œå³å…ƒç´ ä¸ä¸ºç©º
 		if (left == null)
 			head = right;
 
-		// Èç¹ûÓÒÔªËØÊÇ¿Õ£¬×öÔªËØ²»ÊÇ¿Õ
+		// å¦‚æœå³å…ƒç´ æ˜¯ç©ºï¼Œåšå…ƒç´ ä¸æ˜¯ç©º
 		if (right == null)
 			left.next = null;
 
-		// Èç¹ûÁ½¸öÔªËØ¶¼²»Îª¿Õ
+		// å¦‚æœä¸¤ä¸ªå…ƒç´ éƒ½ä¸ä¸ºç©º
 		left.next = right;
 
 		return head;

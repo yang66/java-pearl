@@ -17,7 +17,7 @@ public class CombinationByArray implements Combination {
 
 	private void combination(List<String> results, String s, BitSet bitSet,
 			int count) {
-		// ³õÊ¼»¯Ç°k¸öÔªËØ
+		// åˆå§‹åŒ–å‰kä¸ªå…ƒç´ 
 		for (int i = 0; i < s.length(); i++) {
 			if (i < count)
 				bitSet.set(i, true);
@@ -29,7 +29,7 @@ public class CombinationByArray implements Combination {
 
 		while (true) {
 
-			// ÕÒµ½µÚÒ»¸ö10£¬È»ºó½«10»¥»»£¬Ö±µ½×îÇ°ÃæÔªËØ0
+			// æ‰¾åˆ°ç¬¬ä¸€ä¸ª10ï¼Œç„¶åå°†10äº’æ¢ï¼Œç›´åˆ°æœ€å‰é¢å…ƒç´ 0
 			int index = findFirst10(bitSet, s.length());
 			if (index == -1)
 				break;
@@ -39,7 +39,7 @@ public class CombinationByArray implements Combination {
 				getOneCombination(results, s, bitSet);
 			}
 
-			// ÕÒµ½µÚÒ»¸ö10£¬½«Ç°ÃæµÄ1·ÅÔÚ×îÇ°Ãæ£¬½«Ç°ÃæµÄ0·ÅÔÚ1ºóÃæ£¬Õâ¸ö10»¥»»
+			// æ‰¾åˆ°ç¬¬ä¸€ä¸ª10ï¼Œå°†å‰é¢çš„1æ”¾åœ¨æœ€å‰é¢ï¼Œå°†å‰é¢çš„0æ”¾åœ¨1åé¢ï¼Œè¿™ä¸ª10äº’æ¢
 			int index1 = findFirst10(bitSet, s.length());
 			if (index1 == -1)
 				break;
@@ -53,7 +53,7 @@ public class CombinationByArray implements Combination {
 			swap(bitSet, index1, index1 + 1);
 			getOneCombination(results, s, bitSet);
 
-			// Ö±µ½ËùÓĞµÄ1¶¼ÅÜµ½×îºóÃæÈ¥ÁË£¬¾ÍÊÇÕÒ²»µ½10ÁË
+			// ç›´åˆ°æ‰€æœ‰çš„1éƒ½è·‘åˆ°æœ€åé¢å»äº†ï¼Œå°±æ˜¯æ‰¾ä¸åˆ°10äº†
 		}
 	}
 

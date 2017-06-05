@@ -5,9 +5,9 @@ import java.io.IOException;
 /**
  * Hot Code Replacement(HCR)
  * 
- * 要实现类的热加载，必须使用父类和接口，父类或者接口在App ClassLoader中加载，
- * 子类在客户化的ClassLoader中加载，当需要替换类的时候，同时需要替换ClassLoader的实例， 这样由于父类或者接口在App
- * ClassLoader中加载，因此即使换了ClassLoader也不会不匹配
+ * 瑕佸疄鐜扮被鐨勭儹鍔犺浇锛屽繀椤讳娇鐢ㄧ埗绫诲拰鎺ュ彛锛岀埗绫绘垨鑰呮帴鍙ｅ湪App ClassLoader涓姞杞斤紝
+ * 瀛愮被鍦ㄥ鎴峰寲鐨凜lassLoader涓姞杞斤紝褰撻渶瑕佹浛鎹㈢被鐨勬椂鍊欙紝鍚屾椂闇�瑕佹浛鎹lassLoader鐨勫疄渚嬶紝 杩欐牱鐢变簬鐖剁被鎴栬�呮帴鍙ｅ湪App
+ * ClassLoader涓姞杞斤紝鍥犳鍗充娇鎹簡ClassLoader涔熶笉浼氫笉鍖归厤
  * 
  */
 public class Main {

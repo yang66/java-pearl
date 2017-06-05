@@ -7,13 +7,13 @@ public class ContineousDivRecursion implements ContineousDiv {
 	}
 
 	/**
-	 * ¼ÆËã´Ó0 - iËùÔÚÎ»ÖÃÁ¬³ıµÄÖµ
+	 * è®¡ç®—ä»0 - iæ‰€åœ¨ä½ç½®è¿é™¤çš„å€¼
 	 */
 	private double divContineously(double[] operants, int i) {
 		if (i == 1)
 			return operants[0] / operants[1];
 
-		// ¼ÆËã´Ó0 - i-1×îÔÚÎ»ÖÃÁ¬³ıµÄÖµ£¬È»ºóÔÙ³ıÒÔiËùÔÚÎ»ÖÃµÄÖµ
+		// è®¡ç®—ä»0 - i-1æœ€åœ¨ä½ç½®è¿é™¤çš„å€¼ï¼Œç„¶åå†é™¤ä»¥iæ‰€åœ¨ä½ç½®çš„å€¼
 		return divContineously(operants, i - 1) / operants[i];
 	}
 

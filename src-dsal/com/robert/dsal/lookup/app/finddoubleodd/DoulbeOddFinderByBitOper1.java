@@ -1,7 +1,7 @@
 package com.robert.dsal.lookup.app.finddoubleodd;
 
 /**
- * Ìá¸ßÁË·½·¨ findFirstDiffBit()
+ * æé«˜äº†æ–¹æ³• findFirstDiffBit()
  */
 public class DoulbeOddFinderByBitOper1 extends DoulbeOddFinderByBitOper {
 

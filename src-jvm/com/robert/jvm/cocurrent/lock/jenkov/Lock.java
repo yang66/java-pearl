@@ -1,6 +1,6 @@
 package com.robert.jvm.cocurrent.lock.jenkov;
 
-// 请注意这个不是可重入的锁
+// 璇锋敞鎰忚繖涓笉鏄彲閲嶅叆鐨勯攣
 
 public class Lock {
 	private boolean isLocked = false;

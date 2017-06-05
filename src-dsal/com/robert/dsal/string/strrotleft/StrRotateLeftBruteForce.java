@@ -2,7 +2,7 @@ package com.robert.dsal.string.strrotleft;
 
 /**
  * 
- * ռ��O(size)�Ŀռ�
+ * 占用O(size)的空间
  * 
  */
 public class StrRotateLeftBruteForce implements StrRotateLeft {

@@ -6,7 +6,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-// TODO ÑÐ¾¿RMI-IIOP, WSI
+// TODO ç ”ç©¶RMI-IIOP, WSI
 // http://www.blogjava.net/boddi/archive/2006/10/11/74430.html
 public class HelloClient {
 

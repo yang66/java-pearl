@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * 
- * 排序后，前后双指针推进，时间复杂度O(nlog2n), 主要用于排序
+ * 鎺掑簭鍚庯紝鍓嶅悗鍙屾寚閽堟帹杩涳紝鏃堕棿澶嶆潅搴(nlog2n), 涓昏鐢ㄤ簬鎺掑簭
  * 
  */
 public class Find2SumSort implements Find2Sum {

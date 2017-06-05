@@ -5,9 +5,9 @@ import java.util.Random;
 
 /**
  * 
- * (PI * r * r / 4) / (r * r) = PI / 4, Ò²¾ÍÊÇËµÔÚµÚÒ»ÏñÏÞ£¬ÓÐPI/4µÄµãÂäÔÚÔ²µÄÀïÃæ¡£
+ * (PI * r * r / 4) / (r * r) = PI / 4, ä¹Ÿå°±æ˜¯è¯´åœ¨ç¬¬ä¸€åƒé™ï¼Œæœ‰PI/4çš„ç‚¹è½åœ¨åœ†çš„é‡Œé¢ã€‚
  * 
- * PI*r^2ÊÇÔ²µÄÃæ»ý£¬³ýÒÔ4£¬ÊÇµÚÒ»ÏñÏÞÔ²µÄÃæ»ý£¬r^2ÊÇµÚÒ»ÏñÏÞËùÔÚÕý·½ÐÎµÄÃæ»ý£¬ PI/4¾ÍÊÇ 1/4Ô²ËùÔÚµÄÃæ»ý±ÈÉÏÕý·½ÐÎÃæ»ýµÄ±ÈÀýratio
+ * PI*r^2æ˜¯åœ†çš„é¢ç§¯ï¼Œé™¤ä»¥4ï¼Œæ˜¯ç¬¬ä¸€åƒé™åœ†çš„é¢ç§¯ï¼Œr^2æ˜¯ç¬¬ä¸€åƒé™æ‰€åœ¨æ­£æ–¹å½¢çš„é¢ç§¯ï¼Œ PI/4å°±æ˜¯ 1/4åœ†æ‰€åœ¨çš„é¢ç§¯æ¯”ä¸Šæ­£æ–¹å½¢é¢ç§¯çš„æ¯”ä¾‹ratio
  * 
  * PI = ratio * 4
  * 
@@ -24,7 +24,7 @@ public class PiImpl implements Pi {
 			double x = ran.nextDouble();
 			double y = ran.nextDouble();
 
-			// ÔÚÔ²ÄÚÔòÍ³¼ÆÊýÁ¿
+			// åœ¨åœ†å†…åˆ™ç»Ÿè®¡æ•°é‡
 			if (x * x + y * y < 1 * 1)
 				numsin++;
 		}

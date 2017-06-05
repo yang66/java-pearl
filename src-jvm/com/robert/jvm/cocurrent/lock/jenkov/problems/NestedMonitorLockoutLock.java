@@ -11,7 +11,7 @@ public class NestedMonitorLockoutLock {
 	public void lock() throws InterruptedException {
 		synchronized (this) {
 			while (isLocked) {
-				// Èç¹ûËøÁË¾ÍµÈ´ı£¬Èç¹û×Ô¼ºËøÁËÒ²µÈ´ı£¬ËùÒÔ£¬²»ÊÇÖØÈëµÄ
+				// å¦‚æœé”äº†å°±ç­‰å¾…ï¼Œå¦‚æœè‡ªå·±é”äº†ä¹Ÿç­‰å¾…ï¼Œæ‰€ä»¥ï¼Œä¸æ˜¯é‡å…¥çš„
 				synchronized (this.monitorObject) {
 					this.monitorObject.wait();
 				}

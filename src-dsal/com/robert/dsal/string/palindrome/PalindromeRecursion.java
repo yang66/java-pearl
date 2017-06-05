@@ -4,7 +4,7 @@ package com.robert.dsal.string.palindrome;
  * 
  * O(n)
  * 
- * Ê±¼äÉÏĞèÒªn/2µÄ¶ÑÕ»¿Õ¼ä£¬¿ªÏú´ó
+ * æ—¶é—´ä¸Šéœ€è¦n/2çš„å †æ ˆç©ºé—´ï¼Œå¼€é”€å¤§
  * 
  */
 public class PalindromeRecursion implements Palindrome {

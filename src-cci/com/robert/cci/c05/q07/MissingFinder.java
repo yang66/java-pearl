@@ -19,10 +19,10 @@ package com.robert.cci.c05.q07;
  1101
  1110
 
- µÚÒ»ÁĞ¶ş½øÖÆ°´ÕÕ010101ÖØ¸´
- µÚÒ»ÁĞ¶ş½øÖÆ°´ÕÕ00110011ÖØ¸´
- µÚÒ»ÁĞ¶ş½øÖÆ°´ÕÕ0000111100001111ÖØ¸´
- µÚÒ»ÁĞ¶ş½øÖÆ°´ÕÕ00000000111111110000000011111111ÖØ¸´
+ ç¬¬ä¸€åˆ—äºŒè¿›åˆ¶æŒ‰ç…§010101é‡å¤
+ ç¬¬ä¸€åˆ—äºŒè¿›åˆ¶æŒ‰ç…§00110011é‡å¤
+ ç¬¬ä¸€åˆ—äºŒè¿›åˆ¶æŒ‰ç…§0000111100001111é‡å¤
+ ç¬¬ä¸€åˆ—äºŒè¿›åˆ¶æŒ‰ç…§00000000111111110000000011111111é‡å¤
 
  factor = 2;
  factor *= column_num;
@@ -38,7 +38,7 @@ package com.robert.cci.c05.q07;
  odd += (remain - factor/2);
  }
 
- È»ºóÍ³¼ÆÈ±µÄÊÇÆæÊı»¹ÊÇÅ¼Êı£¬È±ÆæÊı£¬Ä¿±êÊı×ÖµÄ´ËÎ»Îª1£¬È±Å¼Êı£¬Ä¿±êÊı×Ö´ËÎ»Îª0, ¶ÔÓÚÃ¿Ò»Î»È·¶¨Ò»´Î£¬½á¹û¾ÍÄÜÈ·¶¨È±ÉÙµÄÄÇ¸öÖµ
+ ç„¶åç»Ÿè®¡ç¼ºçš„æ˜¯å¥‡æ•°è¿˜æ˜¯å¶æ•°ï¼Œç¼ºå¥‡æ•°ï¼Œç›®æ ‡æ•°å­—çš„æ­¤ä½ä¸º1ï¼Œç¼ºå¶æ•°ï¼Œç›®æ ‡æ•°å­—æ­¤ä½ä¸º0, å¯¹äºæ¯ä¸€ä½ç¡®å®šä¸€æ¬¡ï¼Œç»“æœå°±èƒ½ç¡®å®šç¼ºå°‘çš„é‚£ä¸ªå€¼
 
  */
 
@@ -47,8 +47,8 @@ package com.robert.cci.c05.q07;
  * An array A[1... n] contains all the integers from 0 to n except for one
  * number which is missing. In this problem, we cannot access an entire integer
  * in A with a single operation. The elements of A are represented in binary,
- * and the only operation we can use to access them is ¡°fetch the jth bit of
- * A[i]¡±, which takes constant time. Write code to find the missing integer. Can
+ * and the only operation we can use to access them is â€œfetch the jth bit of
+ * A[i]â€, which takes constant time. Write code to find the missing integer. Can
  * you do it in O(n) time?
  * 
  */

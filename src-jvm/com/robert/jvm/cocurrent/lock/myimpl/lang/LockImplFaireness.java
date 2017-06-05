@@ -7,31 +7,31 @@ import com.robert.jvm.cocurrent.lock.myimpl.Lock;
 
 /**
  * 
- * ¹«Æ½Ëø£¬²»¿ÉÖØÈë
+ * å…¬å¹³é”ï¼Œä¸å¯é‡å…¥
  * 
  */
 public class LockImplFaireness implements Lock {
 	private boolean isLocked = false;
 	private Thread lockedThread = null;
 
-	// Ò²¿ÉÒÔÓÃBlockingQueue, ¾Í²»ÓÃÍâÍ¬²½ÁË
+	// ä¹Ÿå¯ä»¥ç”¨BlockingQueue, å°±ä¸ç”¨å¤–åŒæ­¥äº†
 	private Queue<MonitorObject> waitingThreads = new LinkedList<MonitorObject>();
 
 	public void lock() {
 
-		// Õâ¸ö¶ÔÏó·ÅÕâÀï£¬ÈÃsyncrhonized(this)ÄÜ·ÃÎÊ£¬ÈÃ monitor.waitÒ²ÄÜ·ÃÎÊ
+		// è¿™ä¸ªå¯¹è±¡æ”¾è¿™é‡Œï¼Œè®©syncrhonized(this)èƒ½è®¿é—®ï¼Œè®© monitor.waitä¹Ÿèƒ½è®¿é—®
 		MonitorObject monitor = new MonitorObject();
-		// Ëøµ±Ç°¶ÔÏó£¬ÎªÁË¸ü¸Ä±äÁ¿
+		// é”å½“å‰å¯¹è±¡ï¼Œä¸ºäº†æ›´æ”¹å˜é‡
 		synchronized (this) {
 			waitingThreads.add(monitor);
 
-			// Õâ¸öËÀÑ­»·ÊÇÎªÁË×èÖ¹Nested Monitor Lockup Issue,
-			// ¾ÍÊÇËø¸¸£¬Ëø×Ó£¬È»ºó½âËø×Ó£¬µ«ÊÇ¸¸ÈÔÈ»ÔÚËø£¬Òò´Ë¾ÍÎŞ·¨unlock, ÒòÎªunlockÎŞ·¨»ñµÃ¸¸Ëø
+			// è¿™ä¸ªæ­»å¾ªç¯æ˜¯ä¸ºäº†é˜»æ­¢Nested Monitor Lockup Issue,
+			// å°±æ˜¯é”çˆ¶ï¼Œé”å­ï¼Œç„¶åè§£é”å­ï¼Œä½†æ˜¯çˆ¶ä»ç„¶åœ¨é”ï¼Œå› æ­¤å°±æ— æ³•unlock, å› ä¸ºunlockæ— æ³•è·å¾—çˆ¶é”
 			while (true) {
-				// Ëøµ±Ç°¶ÔÏó£¬ÎªÁË¸ü¸Ä±äÁ¿
+				// é”å½“å‰å¯¹è±¡ï¼Œä¸ºäº†æ›´æ”¹å˜é‡
 				synchronized (this) {
 					if (!isLocked && monitor == waitingThreads.peek()) {
-						// Ò»¸öÏß³Ì»ñµÃËøÁË
+						// ä¸€ä¸ªçº¿ç¨‹è·å¾—é”äº†
 						waitingThreads.remove();
 						isLocked = true;
 						lockedThread = Thread.currentThread();
@@ -40,10 +40,10 @@ public class LockImplFaireness implements Lock {
 				}
 
 				try {
-					// ½øÈë×Ó¶ÔÏóµÄµÈ´ı
+					// è¿›å…¥å­å¯¹è±¡çš„ç­‰å¾…
 					monitor.wait();
 				} catch (InterruptedException e) {
-					// Suspicious wakeup£¬ eat it and have it queue again
+					// Suspicious wakeupï¼Œ eat it and have it queue again
 				}
 			}
 		}

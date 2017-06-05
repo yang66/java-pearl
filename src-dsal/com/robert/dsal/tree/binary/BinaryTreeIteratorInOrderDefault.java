@@ -15,11 +15,11 @@ public class BinaryTreeIteratorInOrderDefault implements BinaryTreeIteratorInOrd
 
         while (true) {
             if (p != null) {
-            	// Èç¹ûpÓĞ×ó×ÓÊ÷Ôòp½øÕ»£¬ÖªµÀÃ»ÓĞ×ó×ÓÊ÷ÁË
+            	// å¦‚æœpæœ‰å·¦å­æ ‘åˆ™pè¿›æ ˆï¼ŒçŸ¥é“æ²¡æœ‰å·¦å­æ ‘äº†
                 stack.push(p);
                 p = p.left;
             } else if (!stack.isEmpty()) {
-            	//Ö±µ½Ã»ÓĞ×ó×ÓÊ÷ÁË£¬Ôò´ÓÕ»ÖĞÈ¡³öÒ»¸ö£¬´òÓ¡£¬ÕâÊÇÖĞ¼ä½Úµã£¬²¢ÇÒ°Ñp×ªÎªÓÒ×ÓÊ÷
+            	//ç›´åˆ°æ²¡æœ‰å·¦å­æ ‘äº†ï¼Œåˆ™ä»æ ˆä¸­å–å‡ºä¸€ä¸ªï¼Œæ‰“å°ï¼Œè¿™æ˜¯ä¸­é—´èŠ‚ç‚¹ï¼Œå¹¶ä¸”æŠŠpè½¬ä¸ºå³å­æ ‘
                 p = stack.pop();
                 result.add(p.value);
                 p = p.right;

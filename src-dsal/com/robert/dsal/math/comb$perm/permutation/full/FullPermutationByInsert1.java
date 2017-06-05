@@ -4,15 +4,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * ���뷨 - �ݹ����������ʣ��һ���ַ������о������Լ���ֻ��һ����Ȼ��ѵڶ����ַ����뵽����ַ������ң����ֽⷨ��ÿ�εݹ鶼�д�������ʱ�ռ䣬���Ƽ�ʹ�ã�
- * �뿴FullPermutationByInsert.java�� ��ʵ�ֲ����Ƽ�
+ * 插入法 - 递归结束条件是剩下一个字符的排列就是它自己，只有一个，然后把第二个字符插入到这个字符的左右，这种解法是每次递归都有大量的临时空间，不推荐使用，
+ * 请看FullPermutationByInsert.java， 此实现不被推荐
  * 
- * ��һ��˼·�����ַ���a{n}��ȫ���У����Էֽ�Ϊ��a{n - 1}��ȫ���У�����a{n - 1}��ÿһ��ȫ���н����ֻҪ��a[n]���뵽a{n -
- * 1}���е�n��λ����
- * �����ɵõ�a{n}��ȫ���н�������磺��abc��ȫ���У���������ab��ȫ���У��ٽ�c���뵽��0,1,2λ���ɵõ�abc��ȫ���У�������ab��ȫ����
- * ����������a��ȫ����
- * ���ٽ�b���뵽��0,1λ���ɵõ�abȫ���н������Ϊa�ǵ����ַ�������ȫ���н��ֻ��һ����a�����Եݹ鿪ʼ���أ�������ϣ��õ�abc��ȫ���еĽ�
- * ���ܽ᣺���ǻ��ڲ���������㷨��
+ * 第一种思路：求字符串a{n}的全排列，可以分解为求a{n - 1}的全排列，对于a{n - 1}的每一个全排列结果，只要将a[n]插入到a{n -
+ * 1}序列的n个位置中
+ * ，即可得到a{n}的全排列结果。例如：求abc的全排列，可以先求ab的全排列，再将c插入到第0,1,2位即可得到abc的全排列，而对于ab的全排列
+ * ，可以先求a的全排列
+ * ，再将b插入到第0,1位即可得到ab全排列结果，因为a是单个字符，它的全排列结果只有一个：a，所以递归开始返回，层层向上，得到abc的全排列的解
+ * 。总结：这是基于插入操作的算法！
  * 
  */
 public class FullPermutationByInsert1 implements FullPermutation {
@@ -24,13 +24,13 @@ public class FullPermutationByInsert1 implements FullPermutation {
 	public List<String> fullPermutation(String s, int start, int end) {
 		List<String> results = new LinkedList<String>();
 
-		// �����ʣ��һ���ַ��ˣ���ȫ���о�ֻ��һ����
+		// 如果就剩下一个字符了，那全排列就只有一种了
 		if (start == end - 1) {
 			results.add(s.substring(start, end).toString());
 			return results;
 		}
 
-		// ���¿�ʼ�ַ������ں���������ַ���ȫ���У�����ÿ�����е�ÿ��λ�ò��뵱ǰ�ַ���Ϊ�µ�����
+		// 留下开始字符，对于后面的所有字符求全排列，对于每个排列的每个位置插入当前字符成为新的排列
 		List<String> resultsSub = fullPermutation(s, start + 1, end);
 
 		for (String sSub : resultsSub) {
@@ -42,7 +42,7 @@ public class FullPermutationByInsert1 implements FullPermutation {
 			}
 		}
 
-		// ȱ����û��ȥ��
+		// 缺点是没法去重
 
 		return results;
 	}

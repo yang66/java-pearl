@@ -5,7 +5,7 @@ public class BinarySearchTreeGeneratorDefault implements
 		BinarySearchTreeGenerator {
 	private BinaryTreeNode genBinarySearchTree(BinaryTreeNode root, int[] seq,
 			int index) {
-		// 如果当前根节点是空则创建节点返回
+		// 濡傛灉褰撳墠鏍硅妭鐐规槸绌哄垯鍒涘缓鑺傜偣杩斿洖
 		if (root == null) {
 			root = new BinaryTreeNode();
 			root.value = seq[index];
@@ -13,7 +13,7 @@ public class BinarySearchTreeGeneratorDefault implements
 			return root;
 		}
 
-		// 递归创建左右子树
+		// 閫掑綊鍒涘缓宸﹀彸瀛愭爲
 		if (seq[index] < root.value)
 			root.left = genBinarySearchTree(root.left, seq, index);
 		else

@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * 
- * l^n, l����Ԫ�ص�ƽ����С��Ҳ��ƽ���������ȣ��������з�֧�綨�Ļ��ݣ��ܹ���֦�����ԣ�Ч�ʴ����ߣ����������������н⣬Ȼ�����ڼ�֦
+ * l^n, l就是元素的平均大小，也是平均弹跳长度，这里面有分支界定的回溯，能够剪枝，所以，效率大大提高，优先搜索可能最有解，然后用于剪枝
  * 
  */
 
@@ -25,7 +25,7 @@ public class FrogLeapBranchbound implements FrogLeap {
 		possibles.add(current);
 
 		while ((current = mostPossible(possibles, optimum[optimum.length - 1])) != null) {
-			// ÿ��ȡ��һ����㣬Ȼ����������֮���û�ڵ������չ�ڵ㣬��ʱ���Զ���չ�ڵ���˼�֦
+			// 每次取得一个活几点，然后处理，处理之后用活节点产生扩展节点，此时可以对扩展节点过滤剪枝
 			if (isOneSolution(current)) {
 				if (current[current.length - 1] < optimum[optimum.length - 1]) {
 					copySolution(optimum, current);
@@ -37,7 +37,7 @@ public class FrogLeapBranchbound implements FrogLeap {
 			int cindex = current[csize - 1];
 			int cvalue = arrays[cindex];
 
-			// ������չ�ڵ㣬�����ڲ��������н��м�֦���������ﶼ�����ռ䣬Ȼ���ó���ڵ��ʱ���ټ�֦
+			// 产生扩展节点，可以在产生过程中进行剪枝，但是这里都放入解空间，然后拿出活节点的时候再剪枝
 			for (int i = 1; i <= cvalue; i++) {
 				int nindex = cindex + i;
 
@@ -58,8 +58,8 @@ public class FrogLeapBranchbound implements FrogLeap {
 
 			int psize = p[p.length - 1];
 			if (psize > osize)
-				// �������Ƿ�֧�綨����Ļ��ݣ�Ҳ���Ǽ�֦
-				// ��Ҫ�Ľ�����ṹ���������ṹ���ӣ�������������һ��Ԫ����Ϊ���ȱȽ��鷳
+				// 这里面是分支界定里面的回溯，也就是剪枝
+				// 需要改进程序结构，这个程序结构复杂，而且数组最有一个元素作为长度比较麻烦
 				possibles.remove(p);
 			else if (mostPossible == null
 					|| p[psize - 1] > mostPossible[mostPossible.length - 1])

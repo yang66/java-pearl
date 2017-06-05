@@ -5,11 +5,11 @@ import java.nio.ByteBuffer;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 /**
- * MappedByteBufferÊÊºÏ¶à´ÎÀ´»ØµÄ¶ÁÈ¡µÄ³ÌĞò£¬ÀıÈç£¬¸øÔ´´úÂë×ÅÉ«
+ * MappedByteBufferé€‚åˆå¤šæ¬¡æ¥å›çš„è¯»å–çš„ç¨‹åºï¼Œä¾‹å¦‚ï¼Œç»™æºä»£ç ç€è‰²
  * 
- * Ëæ»ú¶ÁÈ¡ºÍË³Ğò¶ÁÈ¡Ğ§ÂÊ¶¼ºÜ¸ß
+ * éšæœºè¯»å–å’Œé¡ºåºè¯»å–æ•ˆç‡éƒ½å¾ˆé«˜
  * 
- * ²»ÊÊºÏĞ´Èë¶àµÄ³ÌĞò
+ * ä¸é€‚åˆå†™å…¥å¤šçš„ç¨‹åº
  * 
  *
  */

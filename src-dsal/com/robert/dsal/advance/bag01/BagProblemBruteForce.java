@@ -2,7 +2,7 @@ package com.robert.dsal.advance.bag01;
 
 /**
  * 
- * 2^n£¬ ÕâÊÇÉî¶ÈÓÅÏÈ±éÀú
+ * 2^nï¼Œ è¿™æ˜¯æ·±åº¦ä¼˜å…ˆéå†
  * 
  */
 public class BagProblemBruteForce implements BagProblem {

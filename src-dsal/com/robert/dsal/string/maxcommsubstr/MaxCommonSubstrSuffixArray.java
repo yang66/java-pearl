@@ -4,12 +4,12 @@ import java.util.Arrays;
 
 /**
  * 
- * O(nlog2n)£¬ Ö÷ÒªÓÃÓÚÅÅĞò£¬¿¼ÂÇµ½¶Ô±ÈÁ½¸öºó×ºÊı×éÖ¸ÏòµÄ×Ö´®£¬O(c*nlog2n), cÊÇ¶Ô±ÈÊ±ºòµÄwhileÑ­»·£¬È¡¾öÓÚ×Ö·ûÏàËÆ¶È
+ * O(nlog2n)ï¼Œ ä¸»è¦ç”¨äºæ’åºï¼Œè€ƒè™‘åˆ°å¯¹æ¯”ä¸¤ä¸ªåç¼€æ•°ç»„æŒ‡å‘çš„å­—ä¸²ï¼ŒO(c*nlog2n), cæ˜¯å¯¹æ¯”æ—¶å€™çš„whileå¾ªç¯ï¼Œå–å†³äºå­—ç¬¦ç›¸ä¼¼åº¦
  * 
  */
 public class MaxCommonSubstrSuffixArray implements MaxCommonSubstr {
 	public char[] maxCommonSubstr(char[] s1, char[] s2) {
-		// ºÏ²¢Êı×é
+		// åˆå¹¶æ•°ç»„
 		char[] source = new char[s1.length + s2.length];
 		for (int i = 0; i < s1.length; i++) {
 			source[i] = s1[i];
@@ -18,17 +18,17 @@ public class MaxCommonSubstrSuffixArray implements MaxCommonSubstr {
 			source[s1.length + j] = s2[j];
 		}
 
-		// ³õÊ¼»¯ºó×ºÊı×é
+		// åˆå§‹åŒ–åç¼€æ•°ç»„
 		int[] suffixes = new int[source.length];
 		for (int i = 0; i < suffixes.length; i++) {
 			suffixes[i] = i;
 		}
 
-		// ÅÅĞòºó×ºÊı×é
+		// æ’åºåç¼€æ•°ç»„
 
 		sort(source, suffixes);
 
-		// ¼ÆËãÅÅĞòºóÏàÁÚÁ¬¸ö×Ö·û´®µÄ¹«¹²×Ö´®
+		// è®¡ç®—æ’åºåç›¸é‚»è¿ä¸ªå­—ç¬¦ä¸²çš„å…¬å…±å­—ä¸²
 		int maxstart = -1;
 		int maxlength = 0;
 
@@ -42,7 +42,7 @@ public class MaxCommonSubstrSuffixArray implements MaxCommonSubstr {
 			if (prev >= s1.length && next <= s1.length)
 				continue;
 
-			// ¶ÔÏàÁÚÁ½¸ö×Ö·û´®Í³¼ÆÏàÍ¬×Ö·û¸öÊı
+			// å¯¹ç›¸é‚»ä¸¤ä¸ªå­—ç¬¦ä¸²ç»Ÿè®¡ç›¸åŒå­—ç¬¦ä¸ªæ•°
 			int length = 0;
 			while (prev < suffixes.length && next < suffixes.length
 					&& source[prev++] == source[next++])

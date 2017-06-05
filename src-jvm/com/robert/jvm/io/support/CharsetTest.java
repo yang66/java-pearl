@@ -15,11 +15,11 @@ public class CharsetTest {
 		}
 
 		Charset utf8 = Charset.forName("UTF-8");
-		ByteBuffer bb = utf8.encode("中国");
+		ByteBuffer bb = utf8.encode("涓浗");
 
 		System.out.println(bb.position() + ":" + bb.limit());
 
-		// 为了测试，把UTF-8转成GB
+		// 涓轰簡娴嬭瘯锛屾妸UTF-8杞垚GB
 		Charset gb2312 = Charset.forName("GB2312");
 		CharBuffer cb = gb2312.decode(bb);
 

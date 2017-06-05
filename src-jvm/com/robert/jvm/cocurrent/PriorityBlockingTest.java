@@ -36,7 +36,7 @@ public class PriorityBlockingTest {
 		System.out.println(pbq.take().getSeq());
 		System.out.println(pbq.take().getSeq());
 		
-		// Priority Blocking Queue是按照升序排列的
+		// Priority Blocking Queue鏄寜鐓у崌搴忔帓鍒楃殑
 	}
 
 }

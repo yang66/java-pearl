@@ -1,13 +1,13 @@
 package com.robert.jvm.cocurrent.app.abcprinter;
 
 /**
- * ���������� :ABCABCABCABCABC
- * ˼·������˼·����������ģ����������̣߳�ÿ���߳�һ�δ�ӡһ����ĸ�����Ұ���һ����˳���ӡ������ӡA��ʱ��
- * �����̴߳�������״̬����ӡ��A�Ժ󣬽��߳̽�����
- * �ô�ӡB���Ǹ��߳̿����������̴߳�������״̬��ͬ����ӡC��ʱ�����������̣߳��������߳�˳��ѭ�����ʹﵽ˳���δ�ӡABC��Ŀ���ˡ�
+ * 输出结果如下 :ABCABCABCABCABC
+ * 思路：解题思路大概是这样的，开启三个线程，每个线程一次打印一个字母，并且按照一定的顺序打印，当打印A的时候，
+ * 其他线程处于阻塞状态，打印完A以后，将线程解锁，
+ * 让打印B的那个线程开启，其他线程处于阻塞状态，同理打印C的时候，阻塞其他线程，这三个线程顺序循环，就达到顺序多次打印ABC的目的了。
  * 
- * ����⿴��˼·�򵥣���ʵ��Ҫ��Ҫ�õ�wait()������notify()���������йؼ���synchronized��ֻ�г����������Щ�����ܽ������⡣
- * �������б�Ҫ����һ�����������������йؼ���synchronized��
+ * 这道题看似思路简单，其实主要需要用到wait()方法和notify()方法，还有关键字synchronized，只有充分理解了这些，才能解出这道题。
+ * 下面我有必要讲解一下这两个方法，还有关键字synchronized。
  * 
  * 
  */

@@ -8,7 +8,7 @@ public class AnagramBitOper implements Anagram {
 			int cha = str[i];
 			int index = cha - 'a';
 
-			// ÕâÀïÓÃµÈÓÚ0»òÕß²»µÈÓÚ0ÅĞ¶Ï£¬²»ÄÜÓÃµÈÓÚ1ºÍ²»µÈÓÚ1ÅĞ¶Ï
+			// è¿™é‡Œç”¨ç­‰äº0æˆ–è€…ä¸ç­‰äº0åˆ¤æ–­ï¼Œä¸èƒ½ç”¨ç­‰äº1å’Œä¸ç­‰äº1åˆ¤æ–­
 			if ((bits & (1 << index)) == 0) {
 				bits |= 1 << index;
 			} else {

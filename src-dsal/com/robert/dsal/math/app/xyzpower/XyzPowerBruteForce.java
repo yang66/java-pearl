@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 /**
  * 
- * z*z�����n^2, x*x����ǵ�y=0ʱ�� x^2 = n^2, ���ԣ�x������n
+ * z*z最大是n^2, x*x最大是当y=0时， x^2 = n^2, 所以，x最大就是n
  * 
- * �㷨ʱ�临�Ӷȣ� O(n^3)
+ * 算法时间复杂度： O(n^3)
  * 
  */
 public class XyzPowerBruteForce implements XyzPower {

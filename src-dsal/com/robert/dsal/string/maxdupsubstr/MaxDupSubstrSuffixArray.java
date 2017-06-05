@@ -4,22 +4,22 @@ import java.util.Arrays;
 
 /**
  * 
- * Ê±¼ä¸´ÔÓ¶ÈO(nlog2n), Ö÷ÒªÓÃÓÚÅÅĞò£¬¶Ô±Èº¯ÊıÖĞÓĞ¸öwhile£¬ËùÒÔ£¬»¹ÓĞÒ»¸ö³£ÏµÊı, O(c*nlog2n), ¿´less() -> whileÑ­»·
+ * æ—¶é—´å¤æ‚åº¦O(nlog2n), ä¸»è¦ç”¨äºæ’åºï¼Œå¯¹æ¯”å‡½æ•°ä¸­æœ‰ä¸ªwhileï¼Œæ‰€ä»¥ï¼Œè¿˜æœ‰ä¸€ä¸ªå¸¸ç³»æ•°, O(c*nlog2n), çœ‹less() -> whileå¾ªç¯
  * 
  */
 public class MaxDupSubstrSuffixArray implements MaxDupSubstr {
 	public char[] maxCommStr(char[] source) {
 		int[] suffixes = new int[source.length];
 
-		// ¹¹Ôìºó×ºÊı×é
+		// æ„é€ åç¼€æ•°ç»„
 		for (int i = 0; i < source.length; i++) {
 			suffixes[i] = i;
 		}
 
-		// ¶Ôºó×ºÊı×é½øĞĞÅÅĞò
+		// å¯¹åç¼€æ•°ç»„è¿›è¡Œæ’åº
 		sort(source, suffixes);
 
-		// ¼ÆËãÅÅĞòºóÏàÁÚÁ¬¸ö×Ö·û´®µÄ¹«¹²×Ö´®
+		// è®¡ç®—æ’åºåç›¸é‚»è¿ä¸ªå­—ç¬¦ä¸²çš„å…¬å…±å­—ä¸²
 		int maxstart = -1;
 		int maxlength = 0;
 
@@ -27,7 +27,7 @@ public class MaxDupSubstrSuffixArray implements MaxDupSubstr {
 			int prev = suffixes[i];
 			int next = suffixes[i + 1];
 
-			// ¶ÔÏàÁÚÁ½¸ö×Ö·û´®Í³¼ÆÏàÍ¬×Ö·û¸öÊı
+			// å¯¹ç›¸é‚»ä¸¤ä¸ªå­—ç¬¦ä¸²ç»Ÿè®¡ç›¸åŒå­—ç¬¦ä¸ªæ•°
 			int length = 0;
 			while (prev < suffixes.length && next < suffixes.length
 					&& source[prev++] == source[next++])

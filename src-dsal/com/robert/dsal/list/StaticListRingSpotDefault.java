@@ -27,7 +27,7 @@ public class StaticListRingSpotDefault implements StaticListRingSpot {
 			f = seq[seq[f]];
 		}
 
-		// ÏÖÔÚÏàÓöµãÒ»¶¨ÔÚ»·ÉÏ£¬ÄÇÃ´Ö»×ßs£¬µ½ÏÂÒ»´ÎÓö¼û×Ô¼º¾ÍÊÇ»·µÄ³¤¶È
+		// ç°åœ¨ç›¸é‡ç‚¹ä¸€å®šåœ¨ç¯ä¸Šï¼Œé‚£ä¹ˆåªèµ°sï¼Œåˆ°ä¸‹ä¸€æ¬¡é‡è§è‡ªå·±å°±æ˜¯ç¯çš„é•¿åº¦
 		f = seq[seq[s]];
 		int count = 1;
 		while (s != f) {

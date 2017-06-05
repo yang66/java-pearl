@@ -2,9 +2,9 @@ package com.robert.cci.c02.q02;
 
 /**
  * 
- * ×î¼Ñ½â·¨£ºÈ¡Á½¸öÖ¸Õë£¬Ò»¸öÖ¸Ïò±íÍ·£¬ÁíÍâÒ»¸öÁìÏÈn-1µÄ¾àÀë£¬È»ºóÍ¬Ê±Íù±íÎ²×ß£¬Ç°ÃæÖ¸Õëµ½´ï±íÎ²£¬ÔòºóÃæÖ¸Õë¾ÍÊÇµ¹ÊıµÚn¸öÔªËØ¡£
+ * æœ€ä½³è§£æ³•ï¼šå–ä¸¤ä¸ªæŒ‡é’ˆï¼Œä¸€ä¸ªæŒ‡å‘è¡¨å¤´ï¼Œå¦å¤–ä¸€ä¸ªé¢†å…ˆn-1çš„è·ç¦»ï¼Œç„¶ååŒæ—¶å¾€è¡¨å°¾èµ°ï¼Œå‰é¢æŒ‡é’ˆåˆ°è¾¾è¡¨å°¾ï¼Œåˆ™åé¢æŒ‡é’ˆå°±æ˜¯å€’æ•°ç¬¬nä¸ªå…ƒç´ ã€‚
  * 
- * ×î»µÊ±¼ä¸´ÔÓ¶È£ºO(n)
+ * æœ€åæ—¶é—´å¤æ‚åº¦ï¼šO(n)
  * 
  */
 public class Nth2LastElementFinderGapPointer implements Nth2LastElementFinder {
@@ -13,7 +13,7 @@ public class Nth2LastElementFinderGapPointer implements Nth2LastElementFinder {
 		if (head == null || n <= 0)
 			return null;
 
-		// µ¹ÊıµÚÒ»¸öµ½µ¹ÊıµÚn¸öÔªËØÖ®¼ä¾àÀëÊÇn-1,ËùÒÔ£¬ÈÃfastºÍheadÏà²în-1µÄ¾àÀë
+		// å€’æ•°ç¬¬ä¸€ä¸ªåˆ°å€’æ•°ç¬¬nä¸ªå…ƒç´ ä¹‹é—´è·ç¦»æ˜¯n-1,æ‰€ä»¥ï¼Œè®©fastå’Œheadç›¸å·®n-1çš„è·ç¦»
 		LinkedListNode fast = head;
 		for (int i = 0; i < n - 1; i++) {
 			fast = fast.next;
@@ -21,7 +21,7 @@ public class Nth2LastElementFinderGapPointer implements Nth2LastElementFinder {
 				return null;
 		}
 
-		// Ò»Ö±×ßµ½±íÎ²
+		// ä¸€ç›´èµ°åˆ°è¡¨å°¾
 		while (fast.next != null) {
 			head = head.next;
 			fast = fast.next;

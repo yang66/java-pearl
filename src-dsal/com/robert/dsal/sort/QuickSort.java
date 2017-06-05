@@ -3,30 +3,30 @@ package com.robert.dsal.sort;
 import com.robert.dsal.util.AlUtil;
 
 /**
- * <b>�㷨����:</b><br>
- * 1. ��һ�η����ҵ�һ��Ԫ�ص���ȷλ�á�<br>
- * 2. Ȼ�����з�Ϊ���������У���Ԫ��֮ǰ�����кʹ�Ԫ��֮������С�<br>
- * 3. �ݹ����������������С�
+ * <b>算法描述:</b><br>
+ * 1. 第一次分区找到一个元素的正确位置。<br>
+ * 2. 然后将序列分为两个子序列，此元素之前的序列和次元素之后的序列。<br>
+ * 3. 递归排序着两个子序列。
  * <p>
- * <b>ʱ�临�Ӷȣ�</b><br>
+ * <b>时间复杂度：</b><br>
  * O(NlogN)<br>
- * n + 2*n/2 + 4*n/4 + ....(һ��logN��)�� �����NLogN�
+ * n + 2*n/2 + 4*n/4 + ....(一共logN项)， 因此是NLogN项。
  * 
- * ����1��N�Σ��ҵ�1��
- * ����2��N�Σ��ҵ�2��
- * ����3��N�Σ��ҵ�4��
- * ����4��N�Σ��ҵ�8��
- * ����5��N�Σ��ҵ�16��
- * ����6��N�Σ��ҵ�32��
- * ����x��N�Σ��ҵ�n��
+ * 遍历1个N次，找到1个
+ * 遍历2个N次，找到2个
+ * 遍历3个N次，找到4个
+ * 遍历4个N次，找到8个
+ * 遍历5个N次，找到16个
+ * 遍历6个N次，找到32个
+ * 遍历x个N次，找到n个
  * 2^x = n
- * һ������logn�Σ�ÿ��ִ��N�ζԱȣ������NLogN
+ * 一共便利logn次，每次执行N次对比，因此是NLogN
  * 
  */
 public class QuickSort implements Sort {
 
 	private int partition(int[] seq, int l, int r) {
-		// �����ѡȡ���Ż��������������ɵ�����O(n^2����ʱ�临�Ӷȡ�
+		// 可随机选取来优化输入的特殊性造成的趋于O(n^2）的时间复杂度。
 		int tmp = seq[l];
 		int k = l;
 		for (int i = l + 1; i <= r; i++)

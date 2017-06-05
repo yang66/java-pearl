@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-// TODO 优化成一边输入一遍直接转换后缀表达式，并且计算出部分结果，例如Windowscalc
+// TODO 浼樺寲鎴愪竴杈硅緭鍏ヤ竴閬嶇洿鎺ヨ浆鎹㈠悗缂�琛ㄨ揪寮忥紝骞朵笖璁＄畻鍑洪儴鍒嗙粨鏋滐紝渚嬪Windowscalc
 
 /**
  * 

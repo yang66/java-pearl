@@ -3,27 +3,27 @@ package com.robert.bigdata.fileinter;
 import java.io.File;
 
 /*
- �������ļ��󽻼�, ��������m - n
+ 两个大文件求交集, 数据量：m - n
 
- ��O(mn)
+ 最差：O(mn)
 
- �ⷨ1��ƽ���ֿ�: k
+ 解法1：平均分块: k
 
- �Ա�O(mn)
- ���̶�ȡ����O(m + k * n) = O(m + kn)
- -----�ֿ�kԽ�࣬��ȡ������Խ�࣬���ǣ�ÿ�������ڴ��ԽС
- -----�ֿ�kԽ�٣���ȡ������Խ�٣����ǣ���Ҫ���ڴ��Խ��
- -----�ڴ�ʹ�úͶ�ȡ�����ǳɷ��ȵ�
+ 对比O(mn)
+ 磁盘读取次数O(m + k * n) = O(m + kn)
+ -----分块k越多，读取次数就越多，但是，每次利用内存就越小
+ -----分块k越少，读取次数就越少，但是，需要的内存就越高
+ -----内存使用和读取次数是成反比的
 
 
- �ⷨ2��ʹ��hash�ֿ飬hash(string) % k, һ���ֳ�k��,ͬ����������ͬ����Ҫ�Ŀ��Ȼ������hashͳ�� 
+ 解法2：使用hash分块，hash(string) % k, 一共分成k块,同样的数据在同样需要的块里，然后再用hash统计 
 
- �Ա�O(m + n + (m/k + n/k) * k) = O(m + n) ��������
- ���̶�ȡ����O(m + n + (m/k + n /k) * k) = O(2m + 2n) = O(m + n) ��������
+ 对比O(m + n + (m/k + n/k) * k) = O(m + n) 近似线性
+ 磁盘读取次数O(m + n + (m/k + n /k) * k) = O(2m + 2n) = O(m + n) 近似线性
 
- ------�ɼ�����ʹ��hash���������ڷֿ�ķ�Χ�ڣ��ͽ����˸��Ӷȣ�ʱ�临�ӶȽ��Ƴ�����
+ ------可见这样使用hash限制数据在分块的范围内，就降低了复杂度，时间复杂度近似成线性
 
- �ⷨ3�������еĹ����Ӹ��ڵ����������
+ 解法3：找树中的公共子父节点的其他方法
 
  http://www.cnblogs.com/chenwenbiao/archive/2011/05/26/2058261.html
  */

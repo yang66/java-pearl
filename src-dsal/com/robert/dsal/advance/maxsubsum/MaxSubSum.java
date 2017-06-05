@@ -2,9 +2,9 @@ package com.robert.dsal.advance.maxsubsum;
 
 /**
  * 
- * ÕÒ³ö×ÓÊı×é×î´óºÍµÄËã·¨
+ * æ‰¾å‡ºå­æ•°ç»„æœ€å¤§å’Œçš„ç®—æ³•
  * 
- * ÎÊÌâ½â¾ö·½°¸ÃèÊö£º http://www.cnblogs.com/xkfz007/archive/2012/05/17/2506299.html
+ * é—®é¢˜è§£å†³æ–¹æ¡ˆæè¿°ï¼š http://www.cnblogs.com/xkfz007/archive/2012/05/17/2506299.html
  * 
  * 
  */

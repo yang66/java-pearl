@@ -1,23 +1,23 @@
 package com.robert.dsal.lookup;
 
 /**
- * Ëã·¨ÃèÊö£º 
+ * ç®—æ³•æè¿°ï¼š 
  * 
- * 1.È¡ÕûÊýÐòÁÐÖÐ¼äµÄÖµ£¬Èç¹ûµÈÓÚÄ¿±êÕûÊý£¬ÔòÕÒµ½¡£ ¡¡ ¡¡¡¡¡¡¡¡¡¡¡¡ 
- * 2.Èç¹ûÄ¿±êÕûÊýÐ¡ÓÚÖÐ¼äµÄÕûÊý£¬µ÷ÕûË÷ÒýÔÚlµ½m-1×ÓÐòÁÐ²éÕÒ¡£
- * 3.·ñÔò£¬µ÷ÕûË÷ÒýÔÚm+1µ½h×ÓÐòÁÐ²éÕÒ¡£
+ * 1.å–æ•´æ•°åºåˆ—ä¸­é—´çš„å€¼ï¼Œå¦‚æžœç­‰äºŽç›®æ ‡æ•´æ•°ï¼Œåˆ™æ‰¾åˆ°ã€‚ ã€€ ã€€ã€€ã€€ã€€ã€€ã€€ 
+ * 2.å¦‚æžœç›®æ ‡æ•´æ•°å°äºŽä¸­é—´çš„æ•´æ•°ï¼Œè°ƒæ•´ç´¢å¼•åœ¨låˆ°m-1å­åºåˆ—æŸ¥æ‰¾ã€‚
+ * 3.å¦åˆ™ï¼Œè°ƒæ•´ç´¢å¼•åœ¨m+1åˆ°hå­åºåˆ—æŸ¥æ‰¾ã€‚
  * 
- * Ê±¼ä¸´ÔÓ¶È£º 
+ * æ—¶é—´å¤æ‚åº¦ï¼š 
  * 
  * O(logN)
- * ¾­¹ý1´ÎÊ£Óà n/2 ¾­¹ý2´ÎÊ£Óà n/4 ¾­¹ý3´ÎÊ£Óà n/8 .......... ¾­¹ýx´ÎÊ£Óàn/2^x
+ * ç»è¿‡1æ¬¡å‰©ä½™ n/2 ç»è¿‡2æ¬¡å‰©ä½™ n/4 ç»è¿‡3æ¬¡å‰©ä½™ n/8 .......... ç»è¿‡xæ¬¡å‰©ä½™n/2^x
  * 2^x = n => x= logN
  * 
- * ¹Ø¼üµã£º
+ * å…³é”®ç‚¹ï¼š
  * 
- * 1.1000¸öÊý¾ÝÐèÒª10²½£¬1000000¸öÊý¾ÝÐèÒª20²½£¬¿É¼ûÊý¾ÝÔ½¶à¶þ·Ö²éÕÒÔ½¿ì£¬logNËæ×ÅÊý¾ÝµÄÔö´ó¸´ÔÓ¶ÈÔö¼ÓµÄÇ÷ÊÆ±äÐ¡£¬Ð¡ÓÚÏßÐÔ¡£
- * 2.¶þ·Ö²éÕÒÒªÇóÊäÈëÐòÁÐÊÇÅÅÐò¹ýµÄÐòÁÐ¡£
- * 3.Ñ­»·ÖÕÖ¹Ìõ¼þÊÇl <= h¡£ 
+ * 1.1000ä¸ªæ•°æ®éœ€è¦10æ­¥ï¼Œ1000000ä¸ªæ•°æ®éœ€è¦20æ­¥ï¼Œå¯è§æ•°æ®è¶Šå¤šäºŒåˆ†æŸ¥æ‰¾è¶Šå¿«ï¼ŒlogNéšç€æ•°æ®çš„å¢žå¤§å¤æ‚åº¦å¢žåŠ çš„è¶‹åŠ¿å˜å°ï¼Œå°äºŽçº¿æ€§ã€‚
+ * 2.äºŒåˆ†æŸ¥æ‰¾è¦æ±‚è¾“å…¥åºåˆ—æ˜¯æŽ’åºè¿‡çš„åºåˆ—ã€‚
+ * 3.å¾ªçŽ¯ç»ˆæ­¢æ¡ä»¶æ˜¯l <= hã€‚ 
  * 
  */
 public class BinaryChopLookup implements Lookup {
@@ -26,9 +26,9 @@ public class BinaryChopLookup implements Lookup {
 	}
 
 	private int lookup(int[] seq, int l, int r, int t) {
-		// ÕâÀïÊÇ>=, ¶ÔÓÚ=ÆäÊµÊÇÅÐ¶ÏÁËÒ»´Îseq[l] == t£¬ÖØÓÃÁËÑ­»·ÀïÃæµÄÅÐ¶Ï
+		// è¿™é‡Œæ˜¯>=, å¯¹äºŽ=å…¶å®žæ˜¯åˆ¤æ–­äº†ä¸€æ¬¡seq[l] == tï¼Œé‡ç”¨äº†å¾ªçŽ¯é‡Œé¢çš„åˆ¤æ–­
 		while (l <= r) {
-			// ·Ö³ÉÈý¸öÇø¼ä l - m-1, m, m+1 - r
+			// åˆ†æˆä¸‰ä¸ªåŒºé—´ l - m-1, m, m+1 - r
 			int m = (l + r) / 2;
 			if (seq[m] == t)
 				return m;
@@ -50,7 +50,7 @@ public class BinaryChopLookup implements Lookup {
 		while (l < r) {
 			int m = (l + r) / 2;
 
-			//·Ö³ÉÁ½¸öÇø¼ä, t <=seq[m]ÒâÎ¶×Åt¿ÉÄÜÔÚmÎ»ÖÃ»òÕßÖ®Ç°£¬Ò²¾ÍÊÇÓöµ½ÁËmÎ»ÖÃÊÇt£¬µ«ÊÇÒ²²»·µ»Ø£¬È»ºóÔÙÈ¥ÕÒÇ°Ãæ¿´¿´ÓÐÃ»ÓÐ£¬Öð½¥ËõÐ¡Ç°ÃæµÄÇø¼ä
+			//åˆ†æˆä¸¤ä¸ªåŒºé—´, t <=seq[m]æ„å‘³ç€tå¯èƒ½åœ¨mä½ç½®æˆ–è€…ä¹‹å‰ï¼Œä¹Ÿå°±æ˜¯é‡åˆ°äº†mä½ç½®æ˜¯tï¼Œä½†æ˜¯ä¹Ÿä¸è¿”å›žï¼Œç„¶åŽå†åŽ»æ‰¾å‰é¢çœ‹çœ‹æœ‰æ²¡æœ‰ï¼Œé€æ¸ç¼©å°å‰é¢çš„åŒºé—´
 			if (t <= seq[m])
 				r = m;
 			else
@@ -70,10 +70,10 @@ public class BinaryChopLookup implements Lookup {
 
 	private int lookupLast(int[] seq, int l, int r, int t) {
 		while (l < r) {
-			// ÒòÎªÃ¿´Î³ý¶þÈ¡Õû£¬Ê¹ÖÐ¼äÖµÆ«Ïò×ó£¬ÒªÕÒµ½×îÓÒÃæÒ»¸ö£¬ÐèÒªÃ¿´ÎÔÚºÍÉÏ¼ÓÒ»£¬ÕâÑùÊ¹ÖÐ¼äÖµÆ«ÓÒ
+			// å› ä¸ºæ¯æ¬¡é™¤äºŒå–æ•´ï¼Œä½¿ä¸­é—´å€¼åå‘å·¦ï¼Œè¦æ‰¾åˆ°æœ€å³é¢ä¸€ä¸ªï¼Œéœ€è¦æ¯æ¬¡åœ¨å’Œä¸ŠåŠ ä¸€ï¼Œè¿™æ ·ä½¿ä¸­é—´å€¼åå³
 			int m = (l + r + 1) / 2;
 
-			//·Ö³ÉÁ½¸öÇø¼ä, t >=seq[m]ÒâÎ¶×Åt¿ÉÄÜÔÚmÎ»ÖÃ»òÕßÖ®ºó£¬Ò²¾ÍÊÇÓöµ½ÁËmÎ»ÖÃÊÇt£¬µ«ÊÇÒ²²»·µ»Ø£¬È»ºóÔÙÈ¥ÕÒºóÃæ¿´¿´ÓÐÃ»ÓÐ£¬Öð½¥ËõÐ¡ºóÃæµÄÇø¼ä
+			//åˆ†æˆä¸¤ä¸ªåŒºé—´, t >=seq[m]æ„å‘³ç€tå¯èƒ½åœ¨mä½ç½®æˆ–è€…ä¹‹åŽï¼Œä¹Ÿå°±æ˜¯é‡åˆ°äº†mä½ç½®æ˜¯tï¼Œä½†æ˜¯ä¹Ÿä¸è¿”å›žï¼Œç„¶åŽå†åŽ»æ‰¾åŽé¢çœ‹çœ‹æœ‰æ²¡æœ‰ï¼Œé€æ¸ç¼©å°åŽé¢çš„åŒºé—´
 			if (t >= seq[m])
 				l = m;
 			else

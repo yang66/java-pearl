@@ -3,6 +3,6 @@ package com.robert.dsal.lookup.app.findsum;
 import java.util.List;
 
 public interface Find2Sum {
-	// ÕÒµ½Á½¸öÊýµÄºÍ
+	// æ‰¾åˆ°ä¸¤ä¸ªæ•°çš„å’Œ
 	List<int[]> find2Sum(int[] nums, int sum);
 }

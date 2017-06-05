@@ -9,7 +9,7 @@ public class BagSolution implements Cloneable {
 	public int valueSum;
 	public int weightSum;
 
-	// ·ÖÖ§½ç¶¨ÊÇ¹ã¶ÈÓÅÏÈ±éÀú£¬ĞèÒª±£´æ²¿·Ö½â¾ö·½°¸
+	// åˆ†æ”¯ç•Œå®šæ˜¯å¹¿åº¦ä¼˜å…ˆéå†ï¼Œéœ€è¦ä¿å­˜éƒ¨åˆ†è§£å†³æ–¹æ¡ˆ
 	public int curr;
 
 	public BagSolution(Object[] bags, boolean[] vector, int volumn) {

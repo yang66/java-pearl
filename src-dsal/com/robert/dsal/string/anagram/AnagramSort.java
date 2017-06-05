@@ -6,7 +6,7 @@ public class AnagramSort implements Anagram {
 
 		int count = 0;
 		for (int i = 0; i < str.length; i++) {
-			// ×¢Òâ×îºóÒ»¸ö×Ö·û
+			// æ³¨æ„æœ€åŽä¸€ä¸ªå­—ç¬¦
 			if (i + 1 >= str.length || str[i] != str[i + 1])
 				count++;
 			else {

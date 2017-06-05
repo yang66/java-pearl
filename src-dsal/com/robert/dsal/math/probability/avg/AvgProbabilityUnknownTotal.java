@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  * 
- * ��δ֪��������ʱ�򣬻�Ҫȷ������ÿ��Ԫ�ص�ѡ���������ͬ��
+ * 在未知总数量的时候，还要确保对于每个元素的选择概率是相同的
  * 
  */
 public class AvgProbabilityUnknownTotal {

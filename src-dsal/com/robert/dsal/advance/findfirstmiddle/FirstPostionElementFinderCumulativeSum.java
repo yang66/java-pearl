@@ -15,17 +15,17 @@ public class FirstPostionElementFinderCumulativeSum implements
 		int left[] = new int[seq.length];
 		int right[] = new int[seq.length];
 
-		// ¼ÙÉè×î×óÃæµÄÊÇ×î´óµÄ£¬×óÓÒÃæµÄÊÇ×îĞ¡µÄ
+		// å‡è®¾æœ€å·¦é¢çš„æ˜¯æœ€å¤§çš„ï¼Œå·¦å³é¢çš„æ˜¯æœ€å°çš„
 		int i, max = seq[0], min = seq[seq.length - 1];
 
-		// ¼ÇÂ¼Ã¿¸öÔªËØËùÔÚµ±Ç°Î»ÖÃÖ®Ç°×îĞ¡µÄÖµ
+		// è®°å½•æ¯ä¸ªå…ƒç´ æ‰€åœ¨å½“å‰ä½ç½®ä¹‹å‰æœ€å°çš„å€¼
 		for (i = 0; i < seq.length; i++) {
 			if (less(max, seq[i]))
 				max = seq[i];
 			left[i] = max;
 		}
 
-		// ¼ÇÂ¼Ã¿¸öÔªËØËùÔÚµ±Ç°Î»ÖÃÖ®ºó×î´óµÄÖµ
+		// è®°å½•æ¯ä¸ªå…ƒç´ æ‰€åœ¨å½“å‰ä½ç½®ä¹‹åæœ€å¤§çš„å€¼
 		// It is OK to use the only n extra space
 		for (i = seq.length - 1; i > -1; i--) {
 			if (less(seq[i], min))
@@ -33,7 +33,7 @@ public class FirstPostionElementFinderCumulativeSum implements
 			right[i] = min;
 		}
 
-		// Èç¹ûÄ³¸öÔªËØ×î´óºÍ×îĞ¡ÏàÍ¬£¬Ò²¾ÍÊÇ¶ÔÓÚÇ°ÃæÀ´ËµÊÇ×î´óµÄ£¬¶ÔÓÚºóÃæÀ´ËµÊÇ×îĞ¡µÄËùÒÔ¾ÍÒªÇóÕâ¸öÔªËØ
+		// å¦‚æœæŸä¸ªå…ƒç´ æœ€å¤§å’Œæœ€å°ç›¸åŒï¼Œä¹Ÿå°±æ˜¯å¯¹äºå‰é¢æ¥è¯´æ˜¯æœ€å¤§çš„ï¼Œå¯¹äºåé¢æ¥è¯´æ˜¯æœ€å°çš„æ‰€ä»¥å°±è¦æ±‚è¿™ä¸ªå…ƒç´ 
 		for (i = 0; i < seq.length; i++)
 			if (left[i] == right[i])
 				result.add(seq[i]);

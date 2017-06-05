@@ -6,9 +6,9 @@ import java.util.List;
 
 /**
  * 
- * �ݹ������ Ŀ������Ԫ�صĸ���
- * ÿ�ι�������������Ԫ�����ó�����һ��Ԫ�أ���������һ��λ���ϣ��´εݹ��������ʣ�µ�Ԫ�أ�������һ��λ���ϣ���˿��ܲ���ab,
- * �����´β���ba�����������
+ * 递归次数： 目标排列元素的个数
+ * 每次工作：对于所有元素中拿出任意一个元素，放在其中一个位置上，下次递归遍历所有剩下的元素，放在下一个位置上，因此可能产生ab,
+ * 但是下次产生ba，因此是排列
  * 
  */
 public class PermutationByInsert implements Permutation {
@@ -32,9 +32,9 @@ public class PermutationByInsert implements Permutation {
 		for (int i = 0; i < currentBuffer.length(); i++) {
 			char c = currentBuffer.charAt(i);
 
-			// ÿ�δ������ַ����ó���һ���ŵ�Ŀ��ĵ�ǰλ���ϣ���ô��һ�εݹ����ȡʣ�µķ�����һ��λ�ã���ô��˳���������õ�
-			// ���磬abc����һ��ȡ��a��Ȼ��ȡb����ab�� �´�ȡ��b��Ȼ�󻹿��Ի���ȡa������ba�����������
-			// �����ϵ��󷨲�һ������ϵ�����ÿ��ֻ��ȡ�ұߵ�Ԫ�أ���˾�����ϣ�ɸѡ�����ظ�Ԫ�أ���CombinationByRecursive.java
+			// 每次从所有字符中拿出来一个放到目标的当前位置上，那么下一次递归就是取剩下的放在下一个位置，那么，顺序是起作用的
+			// 例如，abc，第一次取了a，然后取b，是ab， 下次取了b，然后还可以回来取a，就是ba，因此是排列
+			// 这个组合的求法不一样，组合的求法是每次只能取右边的元素，因此就是组合，筛选掉了重复元素，看CombinationByRecursive.java
 			currentBuffer.deleteCharAt(i);
 			buffer.insert(current, c);
 

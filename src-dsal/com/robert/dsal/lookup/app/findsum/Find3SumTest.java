@@ -9,7 +9,7 @@ public class Find3SumTest {
 		List<int[]> result = fs.find3Sum(new int[] { 10, 11, 12, 30, 1, 2 }, 33);
 		for (int i = 0; i < result.size(); i++) {
 			int[] comb = result.get(i);
-			System.out.println(comb[0] + "£º" + comb[1] + "£º" + comb[2]);
+			System.out.println(comb[0] + "ï¼š" + comb[1] + "ï¼š" + comb[2]);
 		}
 	}
 }

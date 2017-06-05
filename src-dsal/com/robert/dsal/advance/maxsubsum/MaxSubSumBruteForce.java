@@ -2,7 +2,7 @@ package com.robert.dsal.advance.maxsubsum;
 
 /**
  * 
- * ʱ�临�Ӷ�Ϊ�� n^3
+ * 时间复杂度为： n^3
  * 
  */
 

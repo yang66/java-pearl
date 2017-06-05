@@ -2,8 +2,8 @@ package com.robert.dsal.lookup.app.findrepeat;
 
 /**
  * 
- * 1-1000���ں���1001��Ԫ�ص������У�ֻ��Ψһ��һ��Ԫ��ֵ�ظ���������ֻ����һ�Ρ�ÿ������Ԫ��ֻ�ܷ���һ�Σ����һ���㷨�������ҳ�����
- * ���ø����洢�ռ䣬�ܷ����һ���㷨ʵ�֣�
+ * 1-1000放在含有1001个元素的数组中，只有唯一的一个元素值重复，其它均只出现一次。每个数组元素只能访问一次，设计一个算法，将它找出来；
+ * 不用辅助存储空间，能否设计一个算法实现？
  * 
  */
 public class SingleRepeatFinderDefault implements SingleRepeatFinder {

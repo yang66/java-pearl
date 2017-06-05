@@ -14,9 +14,9 @@ package com.robert.dsal.lookup.app.firstsingle;
  * 
  * 2. If the strict O(n) is required, it should be hash + linked list to do it.
  * 
- * ÔÚhashÖĞ´æ´¢³öÏÖ´ÎÊı£¬½«ËùÓĞ³öÏÖÒ»´ÎµÄÊ¹ÓÃÒ»¸öË«Á´±íÀ´´æ´¢
+ * åœ¨hashä¸­å­˜å‚¨å‡ºç°æ¬¡æ•°ï¼Œå°†æ‰€æœ‰å‡ºç°ä¸€æ¬¡çš„ä½¿ç”¨ä¸€ä¸ªåŒé“¾è¡¨æ¥å­˜å‚¨
  * 
- * 3. ¿ÉÒÔ½øĞĞÅÅĞò£¬È»ºóÕÒµ½Ò»¸öÖØ¸´µÄO(nlog2n)
+ * 3. å¯ä»¥è¿›è¡Œæ’åºï¼Œç„¶åæ‰¾åˆ°ä¸€ä¸ªé‡å¤çš„O(nlog2n)
  * 
  */
 

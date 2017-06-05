@@ -7,7 +7,7 @@ import java.util.Random;
 public class SampleNImpl implements SampleN {
 
 	/*
-	 * ÓĞÖØ¸´ÔªËØ£¬¿ÉÒÔÈ¡2n¸ö£¬È»ºóÔÙÅÅĞò£¬È¡n¸ö
+	 * æœ‰é‡å¤å…ƒç´ ï¼Œå¯ä»¥å–2nä¸ªï¼Œç„¶åå†æ’åºï¼Œå–nä¸ª
 	 */
 
 	public int[] sample(Iterator<Integer> x, int n) {

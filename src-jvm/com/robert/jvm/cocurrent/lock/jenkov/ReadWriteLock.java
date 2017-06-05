@@ -18,7 +18,7 @@ public class ReadWriteLock {
 
 	private Map<Thread, Integer> readingThreads = new HashMap<Thread, Integer>();
 
-	// ÕâÀïÃæÊÇĞ´ËøÓĞÏŞ£¬Ö»ÒªĞ´ÇëÇóÁË£¬¾Í²»ÔÊĞí¶ÁËøÁË
+	// è¿™é‡Œé¢æ˜¯å†™é”æœ‰é™ï¼Œåªè¦å†™è¯·æ±‚äº†ï¼Œå°±ä¸å…è®¸è¯»é”äº†
 	private int writeAccesses = 0;
 	private int writeRequests = 0;
 	private Thread writingThread = null;

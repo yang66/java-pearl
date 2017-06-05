@@ -2,7 +2,7 @@ package com.robert.dsal.string.strrotleft;
 
 /**
  * 
- * ʱ�临�Ӷ�O(size*n)
+ * 时间复杂度O(size*n)
  * 
  */
 public class StrRotateLeftBruteForce1 implements StrRotateLeft {

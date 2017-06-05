@@ -5,9 +5,9 @@ import java.util.List;
 
 /**
  * 
- * Ê±¼ä¸´ÔÓ¶È£ºO(n) ¿Õ¼ä¸´ÔÓ¶È: O(n), nÊÇÇø¼ä·¶Î§µÄ´óĞ¡£¬ÊÊºÏÇø¼ä±È½Ï¶à£¬µ«ÊÇ·¶Î§±È½ÏĞ¡µÄ
+ * æ—¶é—´å¤æ‚åº¦ï¼šO(n) ç©ºé—´å¤æ‚åº¦: O(n), næ˜¯åŒºé—´èŒƒå›´çš„å¤§å°ï¼Œé€‚åˆåŒºé—´æ¯”è¾ƒå¤šï¼Œä½†æ˜¯èŒƒå›´æ¯”è¾ƒå°çš„
  * 
- * ¶ÔµÚÒ»¸öÇø¼ä×öÎ»Í¼£¬µÚ¶ş¸öÇø¼äÈç¹ûÓëÖ®ÓĞ½»¼¯£¬Ôò¶ÔÎ»Í¼¸³Öµ£¬×îºó´òÓ¡ËùÓĞµÄÇø¼ä¡£
+ * å¯¹ç¬¬ä¸€ä¸ªåŒºé—´åšä½å›¾ï¼Œç¬¬äºŒä¸ªåŒºé—´å¦‚æœä¸ä¹‹æœ‰äº¤é›†ï¼Œåˆ™å¯¹ä½å›¾èµ‹å€¼ï¼Œæœ€åæ‰“å°æ‰€æœ‰çš„åŒºé—´ã€‚
  * 
  */
 public class IntervalInterceptImpl implements IntervalIntercept {
@@ -19,25 +19,25 @@ public class IntervalInterceptImpl implements IntervalIntercept {
 	}
 
 	private List<Interval> doIntercept(Interval i1, List<Interval> c2) {
-		// °´ÕÕµÚÒ»¸öÇø¼ä½øĞĞ³õÊ¼»¯±êÖ¾Çø¼ä
+		// æŒ‰ç…§ç¬¬ä¸€ä¸ªåŒºé—´è¿›è¡Œåˆå§‹åŒ–æ ‡å¿—åŒºé—´
 		int rleft = i1.x;
 		int rsize = i1.y - i1.x + 1;
 
-		// ±êÖ¾Çø¼äÈ«²¿×Ô¶¯³õÊ¼»¯Îªfalse
+		// æ ‡å¿—åŒºé—´å…¨éƒ¨è‡ªåŠ¨åˆå§‹åŒ–ä¸ºfalse
 		boolean[] frange = new boolean[rsize];
 
-		// ¶ÔÓÚµÚ¶ş¸ö¼¯ºÏµÄÃ¿Ò»¸öÇø¼ä£¬Èç¹ûºÍµÚÒ»¸öÇø¼äÖØºÏ£¬ÔòÉèÖÃÎªtrue
+		// å¯¹äºç¬¬äºŒä¸ªé›†åˆçš„æ¯ä¸€ä¸ªåŒºé—´ï¼Œå¦‚æœå’Œç¬¬ä¸€ä¸ªåŒºé—´é‡åˆï¼Œåˆ™è®¾ç½®ä¸ºtrue
 		for (Interval interval : c2) {
 			mark(interval, i1, frange);
 		}
 
-		// ¼ÆËãËùÓĞµÄtrue¹¹³ÉµÄÇø¼ä¼¯ºÏ
+		// è®¡ç®—æ‰€æœ‰çš„trueæ„æˆçš„åŒºé—´é›†åˆ
 		return calcIntervals(rleft, frange);
 
 	}
 
 	private void mark(Interval interval, Interval range, boolean[] frange) {
-		// ÕÒµ½ÖØºÏ£¬È»ºóÉèÖÃÎªtrue
+		// æ‰¾åˆ°é‡åˆï¼Œç„¶åè®¾ç½®ä¸ºtrue
 		for (int i = (interval.x > range.x ? interval.x : range.x); i <= (interval.y < range.y ? interval.y
 				: range.y); i++) {
 			int diff = i - range.x;
@@ -48,22 +48,22 @@ public class IntervalInterceptImpl implements IntervalIntercept {
 	private List<Interval> calcIntervals(int left, boolean[] frange) {
 		List<Interval> result = new ArrayList<Interval>();
 
-		// Çø¼ä±êÖ¾
+		// åŒºé—´æ ‡å¿—
 		int start = -1;
 		for (int i = 0; i < frange.length; i++) {
-			// Çø¼ä¿ªÊ¼
+			// åŒºé—´å¼€å§‹
 			if (start == -1 && frange[i]) {
 				start = i;
 			}
 
-			// Çø¼ä½áÊø
+			// åŒºé—´ç»“æŸ
 			if (start != -1 && !frange[i]) {
 				result.add(new Interval(start + left, i - 1 + left));
 				start = -1;
 			}
 		}
 
-		// ×îºóÒ»¸öÇø¼ä
+		// æœ€åä¸€ä¸ªåŒºé—´
 		if (start != -1)
 			result.add(new Interval(start + left, frange.length - 1 + left));
 

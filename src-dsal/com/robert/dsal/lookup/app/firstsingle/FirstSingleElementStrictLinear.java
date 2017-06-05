@@ -10,32 +10,32 @@ public class FirstSingleElementStrictLinear implements FirstSingleElement{
 			String key;
 			int count;
 
-			// ´¦Àíhash³åÍ»
+			// å¤„ç†hashå†²çª
 			Node sibling;
 
 			Node prev;
 			Node next;
 		}
 
-		// ´´½¨hash±í
+		// åˆ›å»ºhashè¡¨
 		final int HASH_MAX_SIZE = 1024;
 		Node[] nodes = new Node[HASH_MAX_SIZE];
 
-		// µ¥ÔªËØÁ´±í
+		// å•å…ƒç´ é“¾è¡¨
 		Node singleHead = null, singleTail = null;
 
 		for (int i = 0; i < strs.length; i++) {
-			// È¡³öÃ¿Ò»¸öÔªËØ£¬È»ºóÈ¡hashÖµ
+			// å–å‡ºæ¯ä¸€ä¸ªå…ƒç´ ï¼Œç„¶åå–hashå€¼
 			String curr = strs[i];
 			int hash = curr.hashCode();
 			if (hash < 0)
 				hash = -hash;
 
-			// Ê¹ÓÃhashÖµÕÒµ½ÏàÓ¦µÄ½ÚµãÁĞ±íÍ·
+			// ä½¿ç”¨hashå€¼æ‰¾åˆ°ç›¸åº”çš„èŠ‚ç‚¹åˆ—è¡¨å¤´
 			Node n = nodes[hash % HASH_MAX_SIZE];
 			while (n != null) {
 				if (n.key.equals(curr)) {
-					// Èç¹ûµ±Ç°×Ö·û´®´æÔÚ£¬Ôò½«ÊıÁ¿¼Ó1
+					// å¦‚æœå½“å‰å­—ç¬¦ä¸²å­˜åœ¨ï¼Œåˆ™å°†æ•°é‡åŠ 1
 					n.count++;
 					if (n.count == 2) {
 						// Remove from single list if the count is from 1 to 2
@@ -61,12 +61,12 @@ public class FirstSingleElementStrictLinear implements FirstSingleElement{
 			}
 
 			if (n == null) {
-				// Èç¹ûÃ»ÕÒµ½ÒÑ´æ½Úµã£¬Ôò´´½¨Ò»¸ö
+				// å¦‚æœæ²¡æ‰¾åˆ°å·²å­˜èŠ‚ç‚¹ï¼Œåˆ™åˆ›å»ºä¸€ä¸ª
 				Node newnode = new Node();
 				newnode.key = curr;
 				newnode.count = 1;
 
-				// Í·²åĞÂ½Úµã
+				// å¤´æ’æ–°èŠ‚ç‚¹
 				newnode.sibling = nodes[hash % HASH_MAX_SIZE];
 				nodes[hash % HASH_MAX_SIZE] = newnode;
 

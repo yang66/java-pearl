@@ -1,11 +1,11 @@
 package com.robert.dsal.math.matrix.multiple;
 
 /**
- * <b>�㷨����:</b><br>
- * 1. a[x][y] * b[y][z] = r[x][z], ����a������������ھ���b��������<br>
- * 2. ĳһ��Ԫ��r[i][j]���ھ���a����i�е�Ԫ�س��Ծ���b����j�е�����Ԫ�س˻�֮�͡�
+ * <b>算法描述:</b><br>
+ * 1. a[x][y] * b[y][z] = r[x][z], 矩阵a的列数必须等于矩阵b的行数。<br>
+ * 2. 某一个元素r[i][j]等于矩阵a所在i行的元素乘以矩阵b所在j列的所有元素乘积之和。
  * <p>
- * <b>�㷨ʱ�临�Ӷ�:</b><br>
+ * <b>算法时间复杂度:</b><br>
  * O(N^3)
  * 
  */

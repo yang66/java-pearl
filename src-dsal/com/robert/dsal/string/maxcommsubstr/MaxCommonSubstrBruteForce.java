@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 
- * O(n^2) => 还有个常系数O(c*n^2), c取决于字符的相似程度，看下面while循环
+ * O(n^2) => 杩樻湁涓父绯绘暟O(c*n^2), c鍙栧喅浜庡瓧绗︾殑鐩镐技绋嬪害锛岀湅涓嬮潰while寰幆
  * 
  */
 public class MaxCommonSubstrBruteForce implements MaxCommonSubstr {

@@ -2,7 +2,7 @@ package com.robert.dsal.math.app.findfactor;
 
 /**
  * 
- * 给定一个正整数，求所有因子的个数。如6的因子是1,2,3,6，个数为4;
+ * 缁欏畾涓�涓鏁存暟锛屾眰鎵�鏈夊洜瀛愮殑涓暟銆傚6鐨勫洜瀛愭槸1,2,3,6锛屼釜鏁颁负4;
  * 
  */
 public interface FactorFinder {

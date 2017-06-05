@@ -1,6 +1,6 @@
 package com.robert.dsal.math.app.seqsum;
 
-// 实现和要求略微有些不同，总结，对于每个题目得看好要求再写，别让自己的假设成为要求
+// 瀹炵幇鍜岃姹傜暐寰湁浜涗笉鍚岋紝鎬荤粨锛屽浜庢瘡涓鐩緱鐪嬪ソ瑕佹眰鍐嶅啓锛屽埆璁╄嚜宸辩殑鍋囪鎴愪负瑕佹眰
 
 /*
  Calculate the sum of N+NN+NNN+NNNN ... and there are total M N-sequence.

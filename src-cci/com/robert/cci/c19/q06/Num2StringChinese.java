@@ -4,22 +4,22 @@ import java.util.Arrays;
 
 /**
  * 
- * ºº×Ö²»ÏñÓ¢Óï£¬ÆäÊµ±È½ÏÕûÆë£¬³ıÁË¸öÎ»Êı£¬¾ÍÊÇÊ®°ÙÇ§£¬È»ºóÏÂÒ»¸ö²ã´Î¾ÍÊÇÍòºÍÒÚ
+ * æ±‰å­—ä¸åƒè‹±è¯­ï¼Œå…¶å®æ¯”è¾ƒæ•´é½ï¼Œé™¤äº†ä¸ªä½æ•°ï¼Œå°±æ˜¯åç™¾åƒï¼Œç„¶åä¸‹ä¸€ä¸ªå±‚æ¬¡å°±æ˜¯ä¸‡å’Œäº¿
  * 
- * 1. Í¨¹ıÍòºÍÒÚ°´ÕÕ4Î»·Ö³ÉÒ»×é 
- * 2. ¶ÔÓÚÃ¿Ò»×é½øĞĞ¸ö°ÙÊ®Ç§¹¹Ôì´® 
- * 3. È»ºó½«²»Í¬µÄ·Ö×éÓÃÍòºÍÒÚÀ´±íÊ¾
+ * 1. é€šè¿‡ä¸‡å’Œäº¿æŒ‰ç…§4ä½åˆ†æˆä¸€ç»„ 
+ * 2. å¯¹äºæ¯ä¸€ç»„è¿›è¡Œä¸ªç™¾ååƒæ„é€ ä¸² 
+ * 3. ç„¶åå°†ä¸åŒçš„åˆ†ç»„ç”¨ä¸‡å’Œäº¿æ¥è¡¨ç¤º
  * 
  */
 public class Num2StringChinese implements Num2String {
-	static final String zero = "Áã";
+	static final String zero = "é›¶";
 
-	static final String[] lighter = { "", "Ò»", "¶ş", "Èı", "ËÄ", "Îå", "Áù", "Æß",
-			"°Ë", "¾Å" };
+	static final String[] lighter = { "", "ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­", "ä¸ƒ",
+			"å…«", "ä¹" };
 
-	static final String[] weighter = { "", "Ê®", "°Ù", "Ç§" };
+	static final String[] weighter = { "", "å", "ç™¾", "åƒ" };
 
-	static final String[] more = { "", "Íò", "ÒÚ" };
+	static final String[] more = { "", "ä¸‡", "äº¿" };
 
 	public String convert(int num) {
 		int[] wans = spit(num);
@@ -47,14 +47,14 @@ public class Num2StringChinese implements Num2String {
 
 	private String trim(String src) {
 		StringBuilder sb = new StringBuilder(src);
-		while (sb.charAt(0) == 'Áã')
+		while (sb.charAt(0) == 'é›¶')
 			sb.delete(0, 1);
 
-		while (sb.charAt(sb.length() - 1) == 'Áã')
+		while (sb.charAt(sb.length() - 1) == 'é›¶')
 			sb.delete(sb.length() - 1, sb.length());
 
 		for (int i = 0; i < sb.length() - 1; i++) {
-			if (sb.charAt(i) == sb.charAt(i + 1) && sb.charAt(i) == 'Áã') {
+			if (sb.charAt(i) == sb.charAt(i + 1) && sb.charAt(i) == 'é›¶') {
 				sb.delete(i, i + 1);
 				i--;
 			}
@@ -66,10 +66,10 @@ public class Num2StringChinese implements Num2String {
 	private String convertWan(int num) {
 		StringBuilder sb = new StringBuilder();
 
-		sb.append(convertWeighter(num / 1000, 3)); // Ç§
-		sb.append(convertWeighter(num / 100 % 10, 2)); // °Ù
-		sb.append(convertWeighter(num / 10 % 10, 1)); // Ê®
-		sb.append(convertLighter(num % 10)); // ¸ö
+		sb.append(convertWeighter(num / 1000, 3)); // åƒ
+		sb.append(convertWeighter(num / 100 % 10, 2)); // ç™¾
+		sb.append(convertWeighter(num / 10 % 10, 1)); // å
+		sb.append(convertLighter(num % 10)); // ä¸ª
 
 		return sb.toString();
 	}
@@ -80,7 +80,7 @@ public class Num2StringChinese implements Num2String {
 
 	public String convertWeighter(int num, int weight) {
 		if (num == 0)
-			return "Áã";
+			return "é›¶";
 
 		return lighter[num] + weighter[weight];
 	}

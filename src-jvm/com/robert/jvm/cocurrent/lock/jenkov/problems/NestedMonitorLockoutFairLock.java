@@ -20,7 +20,7 @@ public class NestedMonitorLockoutFairLock {
 			waitingThreads.add(queueObject);
 
 			while (isLocked || waitingThreads.get(0) != queueObject) {
-				// 自己锁过了，自己也会进行阻塞
+				// 鑷繁閿佽繃浜嗭紝鑷繁涔熶細杩涜闃诲
 				synchronized (queueObject) {
 					try {
 						queueObject.wait();

@@ -2,11 +2,11 @@ package com.robert.dsal.lookup.app.minn;
 
 /**
  * 
- * Êý×éÓÐN+M¸öÊý×Ö, Êý×ÖµÄ·¶Î§Îª1 ... N, ´òÓ¡ÖØ¸´µÄÔªËØ, ÒªÇóO(M + N), ²»¿ÉÒÔÓÃ¶îÍâµÄ¿Õ¼ä
+ * æ•°ç»„æœ‰N+Mä¸ªæ•°å­—, æ•°å­—çš„èŒƒå›´ä¸º1 ... N, æ‰“å°é‡å¤çš„å…ƒç´ , è¦æ±‚O(M + N), ä¸å¯ä»¥ç”¨é¢å¤–çš„ç©ºé—´
  * 
  */
 
 public interface FindMInN {
-	// ½Ó¿Ú¶¨ÒåÖÐ£¬ÓÉÓÚN+M¾ÍÊÇÊý×éµÄ³¤¶È£¬¶øÇÒNºÍM¶¼ÊÇÎ´Öª£¬ËùÒÔ²»ÊÇÊäÈë²ÎÊý
+	// æŽ¥å£å®šä¹‰ä¸­ï¼Œç”±äºŽN+Må°±æ˜¯æ•°ç»„çš„é•¿åº¦ï¼Œè€Œä¸”Nå’ŒMéƒ½æ˜¯æœªçŸ¥ï¼Œæ‰€ä»¥ä¸æ˜¯è¾“å…¥å‚æ•°
 	int[] findMInN(int[] x);
 }

@@ -9,9 +9,9 @@ import com.robert.dsal.util.CollectionUtil;
 
 /**
  * 
- * <b>�㷨ʱ�临�Ӷȣ�</b><br>
+ * <b>算法时间复杂度：</b><br>
  * O(2^n)<br>
- * ����ÿһ����Ԫ���Ϊ���ڻʺ�Ͳ����ڻʺ������������������������ 2^(n*n), ����8���ʺ������������ 2^64�����㡣
+ * 对于每一个单元格分为存在皇后和不存在皇后的两种情况，所以情况总数是 2^(n*n), 对于8个皇后的情况，结果是 2^64次运算。
  * 
  */
 public class QueensRecursion implements Queens {
